@@ -1,8 +1,9 @@
 import { useParams, Link } from 'react-router-dom'
-import { projects, ProjectType } from '@/utils/projects'
+import type { ProjectType } from '@/utils/projects'
+import { projects } from '@/utils/projects'
 import { useEffect, useState } from 'react'
 import { Octokit } from '@octokit/rest'
-import { Star, GitFork, ArrowLeft } from 'lucide-react'
+import { Star, GitFork, ArrowLeft, Users, GitCommit, Code } from 'lucide-react'
 
 const octokit = new Octokit()
 
@@ -11,30 +12,82 @@ interface RepoStats {
   forks: number
 }
 
+interface AdvancedRepoStats {
+  languages: Record<string, number>
+  contributors: { login: string; avatar_url: string; contributions: number }[]
+  totalCommits: number
+}
+
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>()
   const [project, setProject] = useState<ProjectType | undefined>()
   const [repoStats, setRepoStats] = useState<RepoStats | null>(null)
+  const [advancedStats, setAdvancedStats] = useState<AdvancedRepoStats | null>(
+    null
+  )
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    if (id) {
+    const fetchRepoData = async () => {
+      if (!id) return
+      setIsLoading(true)
+
       const foundProject = projects.find((p: ProjectType) => p.id === id)
       setProject(foundProject)
 
       if (foundProject?.repo) {
-        const [owner, repo] = foundProject.repo.split('/')
-        octokit.repos
-          .get({ owner, repo })
-          .then(({ data }) => {
-            setRepoStats({
-              stars: data.stargazers_count,
-              forks: data.forks_count,
-            })
+        try {
+          const [owner, repo] = foundProject.repo.split('/')
+
+          const [repoRes, languagesRes, contributorsRes, commitsRes] =
+            await Promise.all([
+              octokit.repos.get({ owner, repo }),
+              octokit.repos.listLanguages({ owner, repo }),
+              octokit.repos.listContributors({ owner, repo }),
+              octokit.repos.listCommits({ owner, repo, per_page: 1 }),
+            ])
+
+          setRepoStats({
+            stars: repoRes.data.stargazers_count,
+            forks: repoRes.data.forks_count,
           })
-          .catch(console.error)
+
+          // Extract total commit count from headers
+          const commitHeader = commitsRes.headers.link || ''
+          const match = commitHeader.match(/&page=(\d+)>; rel="last"/)
+          const totalCommits = match
+            ? parseInt(match[1], 10)
+            : commitsRes.data.length
+
+          setAdvancedStats({
+            languages: languagesRes.data,
+            contributors:
+              contributorsRes.data
+                ?.filter((c) => c.login && c.avatar_url && c.contributions)
+                .map((c) => ({
+                  login: c.login!,
+                  avatar_url: c.avatar_url!,
+                  contributions: c.contributions!,
+                })) || [],
+            totalCommits: totalCommits,
+          })
+        } catch (error) {
+          console.error('Failed to fetch advanced repo stats:', error)
+        }
       }
+      setIsLoading(false)
     }
+
+    fetchRepoData()
   }, [id])
+
+  if (isLoading && !project) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p className="text-2xl text-neon-cyan animate-pulse">Caricamento...</p>
+      </div>
+    )
+  }
 
   if (!project) {
     return (
@@ -43,6 +96,10 @@ const ProjectDetail = () => {
       </div>
     )
   }
+
+  const totalLanguageBytes = advancedStats
+    ? Object.values(advancedStats.languages).reduce((a, b) => a + b, 0)
+    : 0
 
   return (
     <div className="container mx-auto py-16 text-white min-h-screen">
@@ -61,13 +118,25 @@ const ProjectDetail = () => {
           <div className="flex items-center gap-6">
             {repoStats && (
               <>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2" title="Stelle">
                   <Star className="text-yellow-400" />
                   <span>{repoStats.stars}</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2" title="Forks">
                   <GitFork className="text-gray-400" />
                   <span>{repoStats.forks}</span>
+                </div>
+              </>
+            )}
+            {advancedStats && (
+              <>
+                <div className="flex items-center gap-2" title="Commits">
+                  <GitCommit className="text-gray-400" />
+                  <span>{advancedStats.totalCommits}</span>
+                </div>
+                <div className="flex items-center gap-2" title="Contributori">
+                  <Users className="text-gray-400" />
+                  <span>{advancedStats.contributors.length}</span>
                 </div>
               </>
             )}
@@ -98,6 +167,62 @@ const ProjectDetail = () => {
         ))}
       </div>
       <p className="text-lg leading-relaxed">{project.description}</p>
+
+      {advancedStats && (
+        <div className="mt-12">
+          <h3 className="text-2xl font-bold text-neon-purple mb-6">
+            Dettagli Repository
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 className="text-xl font-semibold text-neon-green mb-4 flex items-center gap-2">
+                <Code /> Linguaggi
+              </h4>
+              {totalLanguageBytes > 0 ? (
+                <div className="w-full bg-dark-surface rounded-full h-6 overflow-hidden flex">
+                  {Object.entries(advancedStats.languages).map(
+                    ([lang, bytes]) => (
+                      <div
+                        key={lang}
+                        className="h-full"
+                        style={{
+                          width: `${(bytes / totalLanguageBytes) * 100}%`,
+                          backgroundColor: `#${Math.floor(Math.random() * 16777215).toString(16)}`,
+                        }}
+                        title={`${lang}: ${((bytes / totalLanguageBytes) * 100).toFixed(2)}%`}
+                      />
+                    )
+                  )}
+                </div>
+              ) : (
+                <p>Nessun dato sui linguaggi.</p>
+              )}
+            </div>
+            <div>
+              <h4 className="text-xl font-semibold text-neon-green mb-4 flex items-center gap-2">
+                <Users /> Contributori Principali
+              </h4>
+              <div className="flex flex-wrap gap-4">
+                {advancedStats.contributors.slice(0, 5).map((c) => (
+                  <a
+                    href={`https://github.com/${c.login}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={c.login}
+                    title={c.login}
+                  >
+                    <img
+                      src={c.avatar_url}
+                      alt={c.login}
+                      className="w-12 h-12 rounded-full border-2 border-neon-purple hover:border-neon-cyan transition-all"
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
