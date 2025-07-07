@@ -13,7 +13,7 @@
           "id": 1,
           "title": "Setup Progetto React + TypeScript + Tailwind + Vite",
           "description": "Inizializzazione completa del progetto con stack tecnologico moderno",
-          "status": "pending",
+          "status": "done",
           "priority": "high",
           "dependencies": [],
           "details": "Creare nuovo progetto React con Vite, configurare TypeScript per type safety, installare Tailwind CSS con dark mode e CSS variables per effetti neon. Setup ESLint, Prettier, Git hooks. Configurare path aliases (@/components, @/utils, etc.).",
@@ -22,25 +22,25 @@
             {
               "id": "1.1",
               "title": "Inizializzazione Progetto con Vite + React + TS",
-              "status": "pending",
+              "status": "done",
               "dependencies": []
             },
             {
               "id": "1.2",
               "title": "Installazione e Configurazione Tailwind CSS",
-              "status": "pending",
+              "status": "done",
               "dependencies": ["1.1"]
             },
             {
               "id": "1.3",
               "title": "Setup ESLint, Prettier e Husky per Code Quality",
-              "status": "pending",
+              "status": "done",
               "dependencies": ["1.1"]
             },
             {
               "id": "1.4",
               "title": "Configurazione Path Aliases e Struttura Directory",
-              "status": "pending",
+              "status": "done",
               "dependencies": ["1.1"]
             }
           ]
@@ -49,7 +49,7 @@
           "id": 2,
           "title": "Struttura Componenti Base e Layout System",
           "description": "Architettura componenti principali con design system",
-          "status": "pending",
+          "status": "done",
           "priority": "high",
           "dependencies": [1],
           "details": "Creare Header/Navigation, Hero Section, Footer, Layout wrapper. Implementare design system con tipografia, spacing, colori. Componenti UI base (Button, Card, Section, etc.).",
@@ -59,7 +59,7 @@
           "id": 3,
           "title": "Sistema Navigazione Interna e Scroll Smooth",
           "description": "Navigazione fluida tra sezioni con animazioni",
-          "status": "pending",
+          "status": "done",
           "priority": "medium",
           "dependencies": [2],
           "details": "Implementare scroll-to-section navigation, smooth scrolling, attivazione menu items, scroll spy per evidenziare sezione corrente.",
@@ -69,7 +69,7 @@
           "id": 4,
           "title": "Dark Theme e CSS Variables per Effetti Neon",
           "description": "Sistema temi con effetti luminosi futuristici",
-          "status": "pending",
+          "status": "done",
           "priority": "high",
           "dependencies": [1],
           "details": "CSS custom properties per dark theme, palette colori neon (cyan, purple, green), glow effects, gradients animati, theme switcher opzionale.",
@@ -79,7 +79,7 @@
           "id": 5,
           "title": "Layout Responsive Mobile-First",
           "description": "Design responsive ottimizzato per tutti i device",
-          "status": "pending",
+          "status": "done",
           "priority": "high",
           "dependencies": [2],
           "details": "Implementare breakpoints Tailwind, grid responsive, tipografia scalabile, touch-friendly interactions per mobile.",
@@ -89,7 +89,7 @@
           "id": 6,
           "title": "Sezione About Me con Informazioni Personali",
           "description": "Presentazione personale completa e professionale",
-          "status": "pending",
+          "status": "done",
           "priority": "medium",
           "dependencies": [3, 5],
           "details": "Hero section con nome, ruolo, età (21), neolaureato in informatica, location. Bio professionale, call-to-action principali, avatar/foto.",
@@ -99,7 +99,7 @@
           "id": 7,
           "title": "Timeline Carriera Interattiva",
           "description": "Visualizzazione cronologica del percorso formativo/professionale",
-          "status": "pending",
+          "status": "done",
           "priority": "medium",
           "dependencies": [6],
           "details": "Timeline verticale animata: laurea triennale, tirocini, certificazioni, progetti principali. Punti interattivi con dettagli on-hover.",
@@ -109,7 +109,7 @@
           "id": 8,
           "title": "Showcase Linguaggi Programmazione Animato",
           "description": "Visualizzazione interattiva delle competenze di programmazione",
-          "status": "pending",
+          "status": "done",
           "priority": "high",
           "dependencies": [6],
           "details": "Grid animata per linguaggi: JavaScript/TypeScript, Python, PHP, Java, C#, SQL, HTML/CSS. Icone colorate, livelli competenza, progetti correlati, hover effects.",
@@ -118,25 +118,25 @@
             {
               "id": "8.1",
               "title": "Creare componente per Card Linguaggio",
-              "status": "pending",
+              "status": "done",
               "dependencies": []
             },
             {
               "id": "8.2",
               "title": "Implementare animazioni di hover con GSAP",
-              "status": "pending",
+              "status": "done",
               "dependencies": ["8.1"]
             },
             {
               "id": "8.3",
               "title": "Strutturare dati per i linguaggi (JSON o JS object)",
-              "status": "pending",
+              "status": "done",
               "dependencies": []
             },
             {
               "id": "8.4",
               "title": "Creare la grid responsiva per le card",
-              "status": "pending",
+              "status": "done",
               "dependencies": ["8.1", "8.3"]
             }
           ]
@@ -145,7 +145,7 @@
           "id": 9,
           "title": "Competenze Tecniche con Radar Chart",
           "description": "Overview grafica delle skill tecniche con visualizzazioni avanzate",
-          "status": "pending",
+          "status": "done",
           "priority": "medium",
           "dependencies": [8],
           "details": "Radar chart per categorie skill, progress bars animate, badge framework/tecnologie, sezione tools & platforms.",
@@ -155,7 +155,7 @@
           "id": 10,
           "title": "Sezione GitHub Dedicata con API Integration",
           "description": "Dashboard GitHub live con statistiche e contributi",
-          "status": "pending",
+          "status": "done",
           "priority": "high",
           "dependencies": [8],
           "details": "GitHub contribution heatmap, stats live (commits, repos, stars), most used languages, recent activity feed, profilo integration.",
@@ -164,31 +164,31 @@
             {
               "id": "10.1",
               "title": "Setup client API per GitHub (Octokit)",
-              "status": "pending",
+              "status": "done",
               "dependencies": []
             },
             {
               "id": "10.2",
               "title": "Fetch e visualizzazione Contribution Graph",
-              "status": "pending",
+              "status": "done",
               "dependencies": ["10.1"]
             },
             {
               "id": "10.3",
               "title": "Componente per statistiche live (commits, stars)",
-              "status": "pending",
+              "status": "done",
               "dependencies": ["10.1"]
             },
             {
               "id": "10.4",
               "title": "Creare componenti per Pinned Repositories",
-              "status": "pending",
+              "status": "done",
               "dependencies": ["10.1"]
             },
             {
               "id": "10.5",
               "title": "Implementare caching per le risposte API",
-              "status": "pending",
+              "status": "done",
               "dependencies": ["10.1"]
             }
           ]
@@ -197,7 +197,7 @@
           "id": 11,
           "title": "Sezione Hobby e Interessi Personali",
           "description": "Humanizzazione del profilo con attività personali",
-          "status": "pending",
+          "status": "done",
           "priority": "low",
           "dependencies": [6],
           "details": "Sport e hobbies: palestra, tennis, ciclismo strada. Micro-animazioni, icone custom, work-life balance messaging.",
@@ -207,7 +207,7 @@
           "id": 12,
           "title": "Asset Management e Media Optimization",
           "description": "Sistema gestione immagini, documenti e risorse",
-          "status": "pending",
+          "status": "done",
           "priority": "medium",
           "dependencies": [5],
           "details": "Struttura folder assets, ottimizzazione immagini (WebP, lazy loading), gestione CV/tesi PDF, favicon e meta images.",
@@ -217,7 +217,7 @@
           "id": 13,
           "title": "Galleria Progetti con Grid Responsivo",
           "description": "Showcase progetti con layout accattivante",
-          "status": "pending",
+          "status": "done",
           "priority": "high",
           "dependencies": [10, 12],
           "details": "Grid layout per 4 progetti principali: Gestionale calcio (PHP), React PWA, Gestionale ecommerce (Django+React), Galleria iPhone WIP.",
@@ -227,7 +227,7 @@
           "id": 14,
           "title": "Pagine Dettaglio Progetti con GitHub Stats",
           "description": "Dettagli completi progetti con integrazione repository",
-          "status": "pending",
+          "status": "done",
           "priority": "high",
           "dependencies": [13],
           "details": "Pagina dedicata per ogni progetto: screenshots, demo live, repository GitHub stats, linguaggi utilizzati, README preview, documentazione tecnica.",
@@ -236,25 +236,25 @@
             {
               "id": "14.1",
               "title": "Creare template pagina dettaglio progetto",
-              "status": "pending",
+              "status": "done",
               "dependencies": []
             },
             {
               "id": "14.2",
               "title": "Integrare galleria screenshots/mockups",
-              "status": "pending",
+              "status": "done",
               "dependencies": ["14.1"]
             },
             {
               "id": "14.3",
               "title": "Fetch e visualizzazione stats repo da GitHub API",
-              "status": "pending",
+              "status": "done",
               "dependencies": ["14.1", "10.1"]
             },
             {
               "id": "14.4",
               "title": "Componente per rendering README.md del progetto",
-              "status": "pending",
+              "status": "done",
               "dependencies": ["14.1"]
             }
           ]
@@ -263,7 +263,7 @@
           "id": 15,
           "title": "GitHub Repository Stats e Analytics",
           "description": "Statistiche avanzate repository con data visualization",
-          "status": "pending",
+          "status": "done",
           "priority": "medium",
           "dependencies": [14],
           "details": "Per ogni progetto: commit count, contributors, stars/forks, languages breakdown, recent commits, issues/PRs stats.",
@@ -273,7 +273,7 @@
           "id": 16,
           "title": "Sistema Filtri Progetti per Tecnologie",
           "description": "Filtri interattivi per esplorare progetti per stack tech",
-          "status": "pending",
+          "status": "done",
           "priority": "medium",
           "dependencies": [13],
           "details": "Filtri per linguaggi (React, PHP, Python, Django), categorie (Frontend, Backend, Fullstack), complessità progetto.",
@@ -283,7 +283,7 @@
           "id": 17,
           "title": "Demo Live e Link Esterni Progetti",
           "description": "Integrazione demo funzionanti e repository links",
-          "status": "pending",
+          "status": "done",
           "priority": "medium",
           "dependencies": [14],
           "details": "Link a demo live, mockup interattivi, repository GitHub, documentazione esterna, video demo per progetti complessi.",
@@ -293,7 +293,7 @@
           "id": 18,
           "title": "Setup GSAP per Animazioni Complesse",
           "description": "Libreria animazioni per micro-interactions elaborate",
-          "status": "pending",
+          "status": "done",
           "priority": "medium",
           "dependencies": [5],
           "details": "Installazione GSAP gratuito, setup timeline animazioni, scroll-triggered animations, performance optimization, reduced motion support.",
@@ -303,7 +303,7 @@
           "id": 19,
           "title": "Elementi 3D con Three.js per Hero e Accents",
           "description": "Grafica 3D selezionata per impatto visivo",
-          "status": "pending",
+          "status": "done",
           "priority": "low",
           "dependencies": [18],
           "details": "Elementi 3D subtili nella hero section, accent geometrici, particelle leggere. Ottimizzazione performance, fallback 2D.",
@@ -312,134 +312,190 @@
             {
               "id": "19.1",
               "title": "Setup scena Three.js di base (camera, renderer)",
-              "status": "pending",
-              "dependencies": []
+              "status": "done"
             },
             {
               "id": "19.2",
               "title": "Creare e animare geometrie 3D semplici",
-              "status": "pending",
-              "dependencies": ["19.1"]
+              "status": "done"
             },
             {
               "id": "19.3",
               "title": "Integrare la scena Three.js nel componente React",
-              "status": "pending",
-              "dependencies": ["19.1"]
+              "status": "done"
             },
             {
               "id": "19.4",
               "title": "Ottimizzare performance e creare fallback 2D",
-              "status": "pending",
+              "status": "done",
               "dependencies": ["19.2", "19.3"]
             }
           ]
         },
         {
           "id": 20,
+          "title": "Animazioni Avanzate con GSAP e ScrollTrigger",
+          "description": "Animazioni complesse per storytelling visivo",
+          "status": "done",
+          "priority": "high",
+          "dependencies": [18],
+          "details": "Animazioni su sezioni 'About Me', 'Skills' e 'Timeline', parallax effects, scrubbing and pinning, animazioni su testo e SVG. Performance e reduced motion.",
+          "testStrategy": "Testare animazioni cross-browser, performance scroll, accessibilità animazioni",
+          "subtasks": [
+            {
+              "id": "20.1",
+              "title": "Animare la sezione 'About Me' allo scroll",
+              "status": "done"
+            },
+            {
+              "id": "20.2",
+              "title": "Creare effetto parallax per sfondi o elementi",
+              "status": "done"
+            },
+            {
+              "id": "20.3",
+              "title": "Usare pinning e scrubbing per la 'Timeline'",
+              "status": "done"
+            },
+            {
+              "id": "20.4",
+              "title": "Animare testo e SVG nella sezione 'Skills'",
+              "status": "done"
+            }
+          ]
+        },
+        {
+          "id": 21,
           "title": "Micro-interactions e Hover States",
           "description": "Dettagli interattivi per esperienza premium",
-          "status": "pending",
+          "status": "done",
           "priority": "medium",
           "dependencies": [18],
           "details": "Hover effects per skill cards, button animations, loading states eleganti, feedback interazioni, cursor personalizzato.",
           "testStrategy": "Touch device compatibility, performance interactions, accessibility focus states"
         },
         {
-          "id": 21,
-          "title": "Scroll-triggered Animations",
-          "description": "Animazioni sincronizzate con scroll per storytelling",
-          "status": "pending",
-          "priority": "medium",
-          "dependencies": [18],
-          "details": "Reveal animations sezioni, parallax sottile, progress indicators, scroll-based timeline animations.",
-          "testStrategy": "Performance scroll, smooth su low-end devices, motion sickness considerations"
-        },
-        {
           "id": 22,
-          "title": "Loading States e Transizioni Fluide",
-          "description": "Feedback visivo per tutte le interazioni async",
+          "title": "Creare un form di contatto funzionale",
+          "description": "Form contatti con validazione e invio",
           "status": "pending",
-          "priority": "medium",
-          "dependencies": [20],
-          "details": "Skeleton loading, progress bars, smooth page transitions, GitHub API loading states, error handling elegante.",
-          "testStrategy": "UX loading lento, error recovery, timeout handling"
+          "priority": "high",
+          "dependencies": [21],
+          "details": "Form con nome, email, messaggio. Validazione input, feedback visivo per errori/successo, invio a servizio backend (Netlify Forms, Formspree, o similari). Protezione spam (honeypot).",
+          "testStrategy": "Testare validazione campi, invio, gestione errori, protezione spam",
+          "subtasks": [
+            {
+              "id": "22.1",
+              "title": "Creare il componente React per il form di contatto",
+              "status": "done"
+            },
+            {
+              "id": "22.2",
+              "title": "Implementare la validazione dei campi con una libreria (es. react-hook-form)",
+              "status": "done"
+            },
+            {
+              "id": "22.3",
+              "title": "Configurare un servizio di backend per la gestione dell'invio (es. Formspree)",
+              "status": "pending"
+            },
+            {
+              "id": "22.4",
+              "title": "Gestire lo stato di invio (loading, success, error) e mostrare feedback",
+              "status": "done"
+            },
+            {
+              "id": "22.5",
+              "title": "Aggiungere un campo honeypot per la protezione anti-spam",
+              "status": "done"
+            }
+          ]
         },
         {
           "id": 23,
+          "title": "Loading States e Transizioni Fluide",
+          "description": "Feedback visivo per tutte le interazioni async",
+          "status": "done",
+          "priority": "medium",
+          "dependencies": [20],
+          "details": "Indicatori di caricamento per chiamate API (GitHub stats, progetti), skeleton loaders, transizioni di pagina con Framer Motion, animazioni entrata/uscita.",
+          "testStrategy": "Testare su connessioni lente, robustezza stati UI, performance animazioni"
+        },
+        {
+          "id": 24,
           "title": "Ottimizzazione Bundle e Code Splitting",
           "description": "Performance optimization per caricamento veloce",
-          "status": "pending",
+          "status": "done",
           "priority": "high",
           "dependencies": [19, 22],
           "details": "React.lazy per componenti, dynamic imports, tree shaking, bundle analysis, chunk optimization.",
           "testStrategy": "Lighthouse performance score 95+, Core Web Vitals, bundle size monitoring"
         },
         {
-          "id": 24,
+          "id": 25,
           "title": "Lazy Loading Immagini e Componenti",
           "description": "Caricamento ottimizzato delle risorse",
-          "status": "pending",
+          "status": "done",
           "priority": "high",
           "dependencies": [23],
           "details": "Intersection Observer per immagini, lazy component loading, progressive image loading, placeholder blur.",
           "testStrategy": "LCP optimization, visual stability, mobile performance"
         },
         {
-          "id": 25,
+          "id": 26,
           "title": "SEO Optimization e Meta Tags",
           "description": "Ottimizzazione per motori di ricerca",
-          "status": "pending",
+          "status": "done",
           "priority": "high",
           "dependencies": [24],
           "details": "React Helmet per meta tags dinamici, structured data JSON-LD, sitemap, robots.txt, Open Graph per social sharing.",
           "testStrategy": "Google Search Console validation, social media preview, structured data testing"
         },
         {
-          "id": 26,
+          "id": 27,
           "title": "Core Web Vitals Optimization",
           "description": "Performance metrics Google per ranking",
-          "status": "pending",
+          "status": "done",
           "priority": "high",
           "dependencies": [25],
           "details": "Ottimizzazione LCP, FID, CLS. Performance monitoring, web vitals tracking, optimization iterative.",
           "testStrategy": "Real user monitoring, field data analysis, performance budget"
         },
         {
-          "id": 27,
+          "id": 28,
           "title": "Testing Cross-browser e Mobile",
           "description": "Compatibilità completa su tutti i dispositivi",
-          "status": "pending",
+          "status": "done",
           "priority": "medium",
           "dependencies": [26],
           "details": "Testing Chrome, Firefox, Safari, Edge. iOS/Android testing, feature detection, polyfills necessari.",
           "testStrategy": "BrowserStack testing, real device testing, regression testing"
         },
         {
-          "id": 28,
+          "id": 29,
           "title": "Tesi PDF e CV Download",
           "description": "Documenti scaricabili per validazione competenze",
-          "status": "pending",
+          "status": "done",
           "priority": "medium",
           "dependencies": [12],
           "details": "Sezione download con tesi triennale PDF, CV aggiornato, preview documenti, tracking download.",
           "testStrategy": "File integrity, download analytics, mobile download UX"
         },
         {
-          "id": 29,
+          "id": 30,
           "title": "Contatti e Social Links",
           "description": "Collegamenti professionali e networking",
-          "status": "pending",
+          "status": "done",
           "priority": "medium",
           "dependencies": [6],
           "details": "Footer/sidebar con social links (GitHub prominente, LinkedIn, email), contact form opzionale, icone animate.",
           "testStrategy": "Link validity, social platform updates, contact form functionality"
         },
         {
-          "id": 30,
+          "id": 31,
           "title": "Docker Configuration + Nginx",
           "description": "Containerizzazione per deployment",
-          "status": "pending",
+          "status": "done",
           "priority": "high",
           "dependencies": [27],
           "details": "Dockerfile multi-stage build, nginx.conf per SPA routing, gzip compression, security headers, SSL ready.",
@@ -448,34 +504,39 @@
             {
               "id": "30.1",
               "title": "Creare Dockerfile per la build di produzione",
-              "status": "pending",
+              "status": "done",
               "dependencies": []
             },
             {
               "id": "30.2",
               "title": "Creare Dockerfile per il server Nginx",
-              "status": "pending",
+              "status": "done",
               "dependencies": []
             },
             {
               "id": "30.3",
               "title": "Configurare Nginx per servire la SPA React",
-              "status": "pending",
-              "dependencies": ["30.2"]
+              "status": "done",
+              "dependencies": [
+                "30.2"
+              ]
             },
             {
               "id": "30.4",
               "title": "Usare Docker Compose per orchestrare i container",
-              "status": "pending",
-              "dependencies": ["30.1", "30.3"]
+              "status": "done",
+              "dependencies": [
+                "30.1",
+                "30.3"
+              ]
             }
           ]
         },
         {
-          "id": 31,
+          "id": 32,
           "title": "CI/CD Pipeline con GitHub Actions",
           "description": "Deployment automatico su commit",
-          "status": "pending",
+          "status": "done",
           "priority": "medium",
           "dependencies": [30],
           "details": "GitHub Actions workflow: build, test, security scan, deploy su server, rollback automatico su fallimento.",
@@ -484,31 +545,37 @@
             {
               "id": "31.1",
               "title": "Creare workflow per build e test su ogni push",
-              "status": "pending",
+              "status": "done",
               "dependencies": []
             },
             {
               "id": "31.2",
               "title": "Aggiungere step per buildare e pushare l'immagine Docker",
-              "status": "pending",
-              "dependencies": ["31.1"]
+              "status": "done",
+              "dependencies": [
+                "31.1"
+              ]
             },
             {
               "id": "31.3",
               "title": "Configurare secrets per l'autenticazione al registry Docker",
-              "status": "pending",
-              "dependencies": ["31.2"]
+              "status": "done",
+              "dependencies": [
+                "31.2"
+              ]
             },
             {
               "id": "31.4",
               "title": "Creare job di deploy che si connette al server via SSH",
-              "status": "pending",
-              "dependencies": ["31.3"]
+              "status": "done",
+              "dependencies": [
+                "31.3"
+              ]
             }
           ]
         },
         {
-          "id": 32,
+          "id": 33,
           "title": "Portainer Integration e Documentation",
           "description": "Setup deployment su server personale",
           "status": "pending",
@@ -518,7 +585,7 @@
           "testStrategy": "Deployment automation, backup/restore procedures, monitoring setup"
         },
         {
-          "id": 33,
+          "id": 34,
           "title": "Performance Monitoring e Analytics",
           "description": "Tracking metriche performance e utilizzo",
           "status": "pending",
@@ -528,17 +595,17 @@
           "testStrategy": "Privacy compliance, data accuracy, performance impact analytics"
         },
         {
-          "id": 34,
+          "id": 35,
           "title": "Security Headers e Best Practices",
           "description": "Sicurezza applicazione web",
-          "status": "pending",
+          "status": "done",
           "priority": "medium",
           "dependencies": [30],
           "details": "CSP headers, HTTPS enforcement, security.txt, dependency security scanning, vulnerability monitoring.",
           "testStrategy": "Security audit, penetration testing, vulnerability scanning"
         },
         {
-          "id": 35,
+          "id": 36,
           "title": "Final Testing e Production Readiness",
           "description": "Verifica finale pre-launch",
           "status": "pending",

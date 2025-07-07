@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -8,7 +11,7 @@ export default {
         'neon-purple': '#BC00FF',
         'neon-green': '#39FF14',
         'dark-bg': '#0D0221',
-        'dark-surface': '#221C35',
+        'dark-base': '#221C35',
       },
     },
   },

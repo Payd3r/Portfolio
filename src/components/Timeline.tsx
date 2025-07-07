@@ -22,24 +22,42 @@ const timelineData = [
 
 const Timeline: React.FC = () => {
   return (
-    <div className="relative mt-12">
-      <div className="absolute left-1/2 h-full w-1 -translate-x-1/2 bg-neon-purple/30"></div>
-      {timelineData.map((item, index) => (
-        <div
-          key={index}
-          className="relative mb-8 flex w-full items-center justify-between"
-        >
-          <div className="order-1 w-5/12"></div>
-          <div className="z-10 order-1 flex h-8 w-8 items-center justify-center rounded-full bg-neon-purple text-white shadow-xl shadow-neon-purple/30">
-            {index + 1}
+    <div className="relative mt-20 container mx-auto">
+      <div className="absolute left-1/2 h-full w-1 -translate-x-1/2 bg-neon-purple/30 timeline-line"></div>
+      <div className="relative">
+        {timelineData.map((item, index) => (
+          <div
+            key={index}
+            className="relative mb-12 flex w-full items-center timeline-item"
+          >
+            {index % 2 === 0 ? (
+              <>
+                <div className="w-5/12 pr-8 text-right timeline-content">
+                  <p className="mb-2 text-sm text-neon-cyan">{item.year}</p>
+                  <h3 className="mb-2 font-bold text-lg">{item.title}</h3>
+                  <p className="text-sm text-gray-300">{item.description}</p>
+                </div>
+                <div className="z-10 flex h-8 w-8 items-center justify-center rounded-full bg-neon-purple text-white shadow-xl shadow-neon-purple/30 timeline-milestone">
+                  {index + 1}
+                </div>
+                <div className="w-5/12"></div>
+              </>
+            ) : (
+              <>
+                <div className="w-5/12"></div>
+                <div className="z-10 flex h-8 w-8 items-center justify-center rounded-full bg-neon-purple text-white shadow-xl shadow-neon-purple/30 timeline-milestone">
+                  {index + 1}
+                </div>
+                <div className="w-5/12 pl-8 text-left timeline-content">
+                  <p className="mb-2 text-sm text-neon-cyan">{item.year}</p>
+                  <h3 className="mb-2 font-bold text-lg">{item.title}</h3>
+                  <p className="text-sm text-gray-300">{item.description}</p>
+                </div>
+              </>
+            )}
           </div>
-          <div className="order-1 w-5/12 rounded-lg bg-dark-surface p-4 shadow-md">
-            <p className="mb-2 text-sm text-neon-cyan">{item.year}</p>
-            <h3 className="mb-2 font-bold">{item.title}</h3>
-            <p className="text-sm text-gray-300">{item.description}</p>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   )
 }

@@ -1,0 +1,9 @@
+services:
+  app:
+    container_name: portfolio-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3020:80"
+    restart: unless-stopped 

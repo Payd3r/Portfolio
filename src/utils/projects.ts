@@ -5,6 +5,7 @@ export interface ProjectType {
   tags: string[]
   imageUrl: string
   repo?: string
+  demoUrl?: string
 }
 
 export const projects: ProjectType[] = [
@@ -16,6 +17,7 @@ export const projects: ProjectType[] = [
     tags: ['PHP', 'Backend', 'Fullstack'],
     imageUrl: 'https://placehold.co/400x300/0D0221/39FF14?text=Gestionale',
     repo: 'Payd3r/gestionale-calcio',
+    demoUrl: '#',
   },
   {
     id: 'react-pwa',
@@ -25,6 +27,7 @@ export const projects: ProjectType[] = [
     tags: ['React', 'Frontend', 'PWA'],
     imageUrl: 'https://placehold.co/400x300/0D0221/00FFFF?text=PWA',
     repo: 'Payd3r/react-pwa-todo',
+    demoUrl: '#',
   },
   {
     id: 'gestionale-ecommerce',
@@ -42,5 +45,6 @@ export const projects: ProjectType[] = [
       'Una galleria 3D interattiva per visualizzare modelli di iPhone, in fase di sviluppo.',
     tags: ['Three.js', 'Frontend', '3D'],
     imageUrl: 'https://placehold.co/400x300/221C35/FFFFFF?text=WIP',
+    repo: 'Payd3r/galleria-iphone-threejs-react',
   },
 ]

@@ -3,7 +3,10 @@ import type { ProjectType } from '@/utils/projects'
 import { projects } from '@/utils/projects'
 import { useEffect, useState } from 'react'
 import { Octokit } from '@octokit/rest'
-import { Star, GitFork, ArrowLeft, Users, GitCommit, Code } from 'lucide-react'
+import { Star, GitFork, ArrowLeft, Users, GitCommit, Code, Github, ExternalLink } from 'lucide-react'
+import AnimatedPage from '@/components/AnimatedPage'
+import ProjectDetailSkeleton from '@/components/ProjectDetailSkeleton'
+import SEO from '@/components/SEO'
 
 const octokit = new Octokit()
 
@@ -81,19 +84,15 @@ const ProjectDetail = () => {
     fetchRepoData()
   }, [id])
 
-  if (isLoading && !project) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <p className="text-2xl text-neon-cyan animate-pulse">Caricamento...</p>
-      </div>
-    )
+  if (isLoading) {
+    return <ProjectDetailSkeleton />
   }
 
   if (!project) {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <AnimatedPage className="flex justify-center items-center h-screen">
         <h2 className="text-2xl text-neon-purple">Progetto non trovato</h2>
-      </div>
+      </AnimatedPage>
     )
   }
 
@@ -102,7 +101,13 @@ const ProjectDetail = () => {
     : 0
 
   return (
-    <div className="container mx-auto py-16 text-white min-h-screen">
+    <AnimatedPage className="container mx-auto py-16 text-white min-h-screen">
+      <SEO
+        title={project.title}
+        description={project.description}
+        imageUrl={project.imageUrl}
+        type="article"
+      />
       <Link
         to="/"
         className="inline-flex items-center gap-2 text-neon-cyan mb-8 hover:underline"
@@ -140,17 +145,35 @@ const ProjectDetail = () => {
                 </div>
               </>
             )}
-            <a
-              href={`https://github.com/${project.repo}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neon-green hover:underline"
-            >
-              Vedi su GitHub
-            </a>
           </div>
         )}
       </div>
+
+      <div className="flex flex-wrap gap-4 mb-8">
+        {project.repo && (
+          <a
+            href={`https://github.com/${project.repo}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 border-2 border-neon-purple text-neon-purple rounded-full transition-all duration-300 hover:bg-neon-purple hover:text-dark-bg hover:shadow-lg hover:shadow-neon-purple/30"
+          >
+            <Github />
+            <span>Repository</span>
+          </a>
+        )}
+        {project.demoUrl && (
+          <a
+            href={project.demoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 border-2 border-neon-cyan text-neon-cyan rounded-full transition-all duration-300 hover:bg-neon-cyan hover:text-dark-bg hover:shadow-lg hover:shadow-neon-cyan/30"
+          >
+            <ExternalLink />
+            <span>Live Demo</span>
+          </a>
+        )}
+      </div>
+
       <img
         src={project.imageUrl}
         alt={project.title}
@@ -223,7 +246,7 @@ const ProjectDetail = () => {
           </div>
         </div>
       )}
-    </div>
+    </AnimatedPage>
   )
 }
 

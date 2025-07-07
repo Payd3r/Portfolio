@@ -11,6 +11,13 @@ const octokit = new Octokit({
   // auth: process.env.REACT_APP_GITHUB_TOKEN
 })
 
+const SkeletonStat = () => (
+  <div className="bg-dark-surface p-6 rounded-lg shadow-lg animate-pulse">
+    <div className="h-10 w-20 bg-gray-700/50 rounded mb-2"></div>
+    <div className="h-6 w-32 bg-gray-700/50 rounded"></div>
+  </div>
+)
+
 const GitHubStats: React.FC = () => {
   const [stats, setStats] = useState<GitHubStatsData | null>(null)
   const [loading, setLoading] = useState(true)
@@ -36,8 +43,15 @@ const GitHubStats: React.FC = () => {
     fetchGitHubStats()
   }, [])
 
-  if (loading)
-    return <p className="text-neon-cyan">Caricamento statistiche GitHub...</p>
+  if (loading) {
+    return (
+      <div className="flex justify-center gap-8">
+        <SkeletonStat />
+        <SkeletonStat />
+      </div>
+    )
+  }
+
   if (error) return <p className="text-red-500">{error}</p>
 
   return (
