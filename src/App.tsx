@@ -4,6 +4,8 @@ import LanguageCard from '@/components/LanguageCard'
 import { languages } from '@/utils/data'
 import SkillsRadarChart from '@/components/SkillsRadarChart'
 import GitHubStats from '@/components/GitHubStats'
+import HobbyCard from '@/components/HobbyCard'
+import { Dumbbell, Bike, Code } from 'lucide-react'
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
               src="https://placehold.co/150x150/0D0221/00FFFF?text=Avatar"
               alt="Mio Avatar"
               className="w-40 h-40 rounded-full border-4 border-neon-cyan shadow-lg shadow-neon-cyan/20"
+              loading="lazy"
             />
             <div className="max-w-xl text-left">
               <p className="mb-4">
@@ -84,6 +87,30 @@ function App() {
             Attività GitHub
           </h2>
           <GitHubStats />
+        </div>
+      </section>
+      <section id="hobbies" className="py-16">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold text-neon-purple mb-8">
+            Hobby & Interessi
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <HobbyCard
+              icon={Dumbbell}
+              title="Palestra"
+              description="Mantenere uno stile di vita sano e attivo è fondamentale per me."
+            />
+            <HobbyCard
+              icon={Bike}
+              title="Ciclismo"
+              description="Esplorare nuovi percorsi su strada, una passione che unisce sport e natura."
+            />
+            <HobbyCard
+              icon={Code}
+              title="Progetti Personali"
+              description="Nel tempo libero, amo sperimentare con nuove tecnologie e creare piccoli progetti."
+            />
+          </div>
         </div>
       </section>
       <section id="contact" className="min-h-screen py-16">
