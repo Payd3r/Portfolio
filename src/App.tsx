@@ -1,4 +1,7 @@
 import Layout from '@/components/Layout'
+import Timeline from '@/components/Timeline'
+import LanguageCard from '@/components/LanguageCard'
+import { languages } from '@/utils/data'
 
 function App() {
   return (
@@ -40,13 +43,25 @@ function App() {
               </p>
             </div>
           </div>
+          <Timeline />
         </div>
       </section>
       <section id="projects" className="min-h-screen py-16">
         <h2 className="text-3xl font-bold text-center">Progetti</h2>
       </section>
       <section id="skills" className="min-h-screen py-16">
-        <h2 className="text-3xl font-bold text-center">Competenze</h2>
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold text-neon-purple mb-8">
+            Competenze
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {languages.map(
+              (lang: { name: string; level: string; icon: string }) => (
+                <LanguageCard key={lang.name} {...lang} />
+              )
+            )}
+          </div>
+        </div>
       </section>
       <section id="contact" className="min-h-screen py-16">
         <h2 className="text-3xl font-bold text-center">Contatti</h2>
