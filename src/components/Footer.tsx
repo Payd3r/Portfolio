@@ -1,5 +1,5 @@
 import React from 'react'
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { Github, Linkedin, Instagram } from 'lucide-react'
 
 const socialLinks = [
   {
@@ -13,9 +13,9 @@ const socialLinks = [
     icon: Linkedin,
   },
   {
-    name: 'Email',
-    url: 'mailto:tua-email@example.com', // Sostituire
-    icon: Mail,
+    name: 'Instagram',
+    url: 'https://instagram.com/tuo-profilo', // Sostituire
+    icon: Instagram,
   },
 ]
 
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
         ))}
       </div>
       <p>
-        &copy; {new Date().getFullYear()} Il Mio Nome. Tutti i diritti
+        &copy; {new Date().getFullYear()} Andrea Mauri. Tutti i diritti
         riservati.
       </p>
     </footer>

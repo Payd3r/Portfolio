@@ -47,10 +47,15 @@ const ProjectGallery = () => {
   }, [filteredProjects])
 
   return (
-    <AnimatedPage className="container mx-auto py-16"
-      // @ts-ignore
-      ref={containerRef}>
-      <SEO title="Galleria Progetti" description="Esplora una selezione dei miei lavori più recenti, filtrabili per tecnologia." />
+    <AnimatedPage
+      className="container mx-auto py-16"
+      // @ts-expect-error AnimatedPage is not wrapped in forwardRef
+      ref={containerRef}
+    >
+      <SEO
+        title="Galleria Progetti"
+        description="Esplora una selezione dei miei lavori più recenti, filtrabili per tecnologia."
+      />
       <h2 className="text-3xl font-bold text-center text-neon-purple mb-12">
         I Miei Progetti
       </h2>

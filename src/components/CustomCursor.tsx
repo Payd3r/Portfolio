@@ -26,14 +26,15 @@ const CustomCursor: React.FC = () => {
   }, [isHovering])
 
   const styles: React.CSSProperties = {
-    transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
+    left: position.x,
+    top: position.y,
   }
 
   return (
     <div
       ref={cursorRef}
       style={styles}
-      className="fixed top-0 left-0 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2"
+      className="fixed pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2"
     >
       <div className="w-2 h-2 rounded-full bg-neon-cyan"></div>
       <div className="absolute top-1/2 left-1/2 w-8 h-8 rounded-full border-2 border-neon-cyan -translate-x-1/2 -translate-y-1/2"></div>
@@ -41,4 +42,4 @@ const CustomCursor: React.FC = () => {
   )
 }
 
-export default CustomCursor 
+export default CustomCursor

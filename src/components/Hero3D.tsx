@@ -3,13 +3,6 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { PerformanceMonitor } from '@react-three/drei'
 import { Mesh } from 'three'
 
-// Workaround for TypeScript linter errors
-const MeshComponent = 'mesh' as any
-const BoxGeometryComponent = 'boxGeometry' as any
-const MeshStandardMaterialComponent = 'meshStandardMaterial' as any
-const AmbientLightComponent = 'ambientLight' as any
-const PointLightComponent = 'pointLight' as any
-
 const SpinningBox = () => {
   const meshRef = useRef<Mesh>(null!)
 
@@ -21,15 +14,15 @@ const SpinningBox = () => {
   })
 
   return (
-    <MeshComponent ref={meshRef} scale={1.5}>
-      <BoxGeometryComponent args={[1, 1, 1]} />
-      <MeshStandardMaterialComponent
+    <mesh ref={meshRef} scale={1.5}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial
         color="#8A2BE2"
         emissive="#8A2BE2"
         emissiveIntensity={2}
         wireframe
       />
-    </MeshComponent>
+    </mesh>
   )
 }
 
@@ -37,18 +30,16 @@ const Hero3D = () => {
   const [perfDeclined, setPerfDeclined] = useState(false)
 
   if (perfDeclined) {
-    return (
-      <div className="absolute top-0 -z-10 w-full h-full bg-dark-base opacity-50" />
-    )
+    return <div className="absolute top-0 -z-10 w-full h-full bg-dark-base" />
   }
 
   return (
-    <div className="absolute top-0 -z-10 w-full h-full opacity-50">
+    <div className="absolute top-0 -z-10 w-full h-full">
       <Canvas camera={{ fov: 45, position: [0, 0, 5] }}>
         <PerformanceMonitor onDecline={() => setPerfDeclined(true)} />
-        <AmbientLightComponent intensity={0.5} />
-        <PointLightComponent position={[10, 10, 10]} color="#00FFFF" intensity={100} />
-        <PointLightComponent
+        <ambientLight intensity={0.5} />
+        <pointLight position={[10, 10, 10]} color="#00FFFF" intensity={100} />
+        <pointLight
           position={[-10, -10, -10]}
           color="#FF1493"
           intensity={100}
@@ -59,4 +50,4 @@ const Hero3D = () => {
   )
 }
 
-export default Hero3D 
+export default Hero3D

@@ -1,166 +1,175 @@
-import { useLayoutEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import Timeline from '@/components/Timeline';
-import LanguageCard from '@/components/LanguageCard';
-import { languages } from '@/utils/data';
-import SkillsRadarChart from '@/components/SkillsRadarChart';
-import GitHubStats from '@/components/GitHubStats';
-import HobbyCard from '@/components/HobbyCard';
-import { Dumbbell, Bike, Code } from 'lucide-react';
-import Hero3D from '@/components/Hero3D';
-import ContactForm from '@/components/ContactForm';
-import AnimatedPage from '@/components/AnimatedPage';
-import { Link } from 'react-router-dom';
-import SEO from '@/components/SEO';
-import DownloadButton from '@/components/DownloadButton';
+import { useLayoutEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import Timeline from '@/components/Timeline'
+import LanguageCard from '@/components/LanguageCard'
+import { languages } from '@/utils/data'
+import SkillsRadarChart from '@/components/SkillsRadarChart'
+import GitHubStats from '@/components/GitHubStats'
+import HobbyCard from '@/components/HobbyCard'
+import { Dumbbell, Bike, Code } from 'lucide-react'
+import Hero3D from '@/components/Hero3D'
+import AnimatedPage from '@/components/AnimatedPage'
+import { Link } from 'react-router-dom'
+import SEO from '@/components/SEO'
+import DownloadButton from '@/components/DownloadButton'
+import { projects } from '@/utils/projects'
+import ProjectCard from '@/components/ProjectCard'
 
 const HomePage = () => {
-  const mainRef = useRef(null);
+  const mainRef = useRef(null)
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const mm = gsap.matchMedia();
+      const mm = gsap.matchMedia()
 
-      mm.add('(min-width: 768px) and (prefers-reduced-motion: no-preference)', () => {
-        gsap.to('.hero-3d-container', {
-          y: '20vh',
-          scrollTrigger: {
-            trigger: document.body,
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true,
-          },
-        });
+      mm.add(
+        '(min-width: 768px) and (prefers-reduced-motion: no-preference)',
+        () => {
+          gsap.to('.hero-3d-container', {
+            y: '20vh',
+            scrollTrigger: {
+              trigger: document.body,
+              start: 'top top',
+              end: 'bottom top',
+              scrub: true,
+            },
+          })
 
-        const aboutSection = document.getElementById('about');
-        if (aboutSection) {
-          gsap.fromTo(
-            '.about-title',
-            { opacity: 0, y: 50 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 1,
+          const aboutSection = document.getElementById('about')
+          if (aboutSection) {
+            gsap.fromTo(
+              '.about-title',
+              { opacity: 0, y: 50 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                scrollTrigger: {
+                  trigger: aboutSection,
+                  start: 'top 80%',
+                  toggleActions: 'play none none none',
+                },
+              }
+            )
+            gsap.fromTo(
+              '.about-avatar',
+              { opacity: 0, x: -100 },
+              {
+                opacity: 1,
+                x: 0,
+                duration: 1,
+                delay: 0.2,
+                scrollTrigger: {
+                  trigger: aboutSection,
+                  start: 'top 70%',
+                  toggleActions: 'play none none none',
+                },
+              }
+            )
+            gsap.fromTo(
+              '.about-text',
+              { opacity: 0, x: 100 },
+              {
+                opacity: 1,
+                x: 0,
+                duration: 1,
+                delay: 0.2,
+                scrollTrigger: {
+                  trigger: aboutSection,
+                  start: 'top 70%',
+                  toggleActions: 'play none none none',
+                },
+              }
+            )
+          }
+
+          const timelineItems = gsap.utils.toArray('.timeline-item')
+          timelineItems.forEach((item) => {
+            const content = (item as Element).querySelector('.timeline-content')
+            const milestone = (item as Element).querySelector(
+              '.timeline-milestone'
+            )
+
+            const tl = gsap.timeline({
               scrollTrigger: {
-                trigger: aboutSection,
+                trigger: item as gsap.DOMTarget,
+                start: 'top 85%',
+                end: 'bottom 70%',
+                toggleActions: 'play none none none reverse',
+                scrub: 1,
+              },
+            })
+
+            const isEven = timelineItems.indexOf(item) % 2 === 0
+
+            tl.from(content, {
+              x: isEven ? -100 : 100,
+              opacity: 0,
+              duration: 1,
+              ease: 'power2.out',
+            }).from(
+              milestone,
+              {
+                scale: 0,
+                opacity: 0,
+                duration: 0.5,
+                ease: 'back.out(1.7)',
+              },
+              '-=0.8'
+            )
+          })
+
+          const skillsSection = document.getElementById('skills')
+          if (skillsSection) {
+            gsap.from('.skills-title', {
+              scrollTrigger: {
+                trigger: skillsSection,
                 start: 'top 80%',
                 toggleActions: 'play none none none',
               },
-            }
-          );
-          gsap.fromTo(
-            '.about-avatar',
-            { opacity: 0, x: -100 },
-            {
-              opacity: 1,
-              x: 0,
-              duration: 1,
-              delay: 0.2,
-              scrollTrigger: {
-                trigger: aboutSection,
-                start: 'top 70%',
-                toggleActions: 'play none none none',
-              },
-            }
-          );
-          gsap.fromTo(
-            '.about-text',
-            { opacity: 0, x: 100 },
-            {
-              opacity: 1,
-              x: 0,
-              duration: 1,
-              delay: 0.2,
-              scrollTrigger: {
-                trigger: aboutSection,
-                start: 'top 70%',
-                toggleActions: 'play none none none',
-              },
-            }
-          );
-        }
-
-        const timelineItems = gsap.utils.toArray('.timeline-item');
-        timelineItems.forEach((item) => {
-          const content = (item as Element).querySelector('.timeline-content');
-          const milestone = (item as Element).querySelector('.timeline-milestone');
-
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: item as gsap.DOMTarget,
-              start: 'top 85%',
-              end: 'bottom 70%',
-              toggleActions: 'play none none none reverse',
-              scrub: 1,
-            },
-          });
-
-          const isEven = timelineItems.indexOf(item) % 2 === 0;
-
-          tl.from(content, {
-            x: isEven ? -100 : 100,
-            opacity: 0,
-            duration: 1,
-            ease: 'power2.out',
-          }).from(
-            milestone,
-            {
-              scale: 0,
               opacity: 0,
+              y: 30,
+              duration: 0.8,
+              stagger: 0.3,
+            })
+
+            gsap.from('.skill-card', {
+              scrollTrigger: {
+                trigger: '.skills-grid-container',
+                start: 'top 80%',
+                toggleActions: 'play none none none',
+              },
+              opacity: 0,
+              scale: 0.9,
+              y: 50,
               duration: 0.5,
-              ease: 'back.out(1.7)',
-            },
-            '-=0.8'
-          );
-        });
+              stagger: 0.1,
+            })
 
-        const skillsSection = document.getElementById('skills');
-        if (skillsSection) {
-          gsap.from('.skills-title', {
-            scrollTrigger: {
-              trigger: skillsSection,
-              start: 'top 80%',
-              toggleActions: 'play none none none',
-            },
-            opacity: 0,
-            y: 30,
-            duration: 0.8,
-            stagger: 0.3,
-          });
-
-          gsap.from('.skill-card', {
-            scrollTrigger: {
-              trigger: '.skills-grid-container',
-              start: 'top 80%',
-              toggleActions: 'play none none none',
-            },
-            opacity: 0,
-            scale: 0.9,
-            y: 50,
-            duration: 0.5,
-            stagger: 0.1,
-          });
-
-          gsap.from('.radar-chart-container', {
-            scrollTrigger: {
-              trigger: '.radar-chart-container',
-              start: 'top 85%',
-              toggleActions: 'play none none none',
-            },
-            opacity: 0,
-            scale: 0.8,
-            duration: 1,
-            ease: 'power2.out',
-          });
+            gsap.from('.radar-chart-container', {
+              scrollTrigger: {
+                trigger: '.radar-chart-container',
+                start: 'top 85%',
+                toggleActions: 'play none none none',
+              },
+              opacity: 0,
+              scale: 0.8,
+              duration: 1,
+              ease: 'power2.out',
+            })
+          }
         }
-      });
-    }, mainRef);
-    return () => ctx.revert();
-  }, []);
+      )
+    }, mainRef)
+    return () => ctx.revert()
+  }, [])
 
   return (
     <AnimatedPage>
-      <SEO title="Home" description="Portfolio di uno sviluppatore software specializzato in React, TypeScript e soluzioni web innovative." />
+      <SEO
+        title="Home"
+        description="Portfolio di uno sviluppatore software specializzato in React, TypeScript e soluzioni web innovative."
+      />
       <main ref={mainRef}>
         <section
           id="home"
@@ -202,9 +211,9 @@ const HomePage = () => {
                   performanti e visivamente accattivanti.
                 </p>
                 <p className="mb-4">
-                  Specializzato nello stack MERN e con solide competenze in Java e
-                  C#, sono costantemente alla ricerca di nuove sfide per migliorare
-                  le mie abilità.
+                  Specializzato nello stack MERN e con solide competenze in Java
+                  e C#, sono costantemente alla ricerca di nuove sfide per
+                  migliorare le mie abilità.
                 </p>
                 <p>
                   Attualmente risiedo a [La tua città, Italia] e sono pronto a
@@ -222,8 +231,14 @@ const HomePage = () => {
             <h2 className="text-3xl font-bold text-neon-purple mb-12">
               I Miei Progetti
             </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {projects.slice(0, 3).map((project) => (
+                <ProjectCard key={project.id} {...project} />
+              ))}
+            </div>
             <p className="max-w-3xl mx-auto mb-8 text-gray-400">
-              Esplora una selezione dei miei lavori più recenti. Fai clic qui sotto per vedere la galleria completa.
+              Esplora una selezione dei miei lavori più recenti. Fai clic qui
+              sotto per vedere la galleria completa.
             </p>
             <Link
               to="/projects"
@@ -300,7 +315,7 @@ const HomePage = () => {
               Documenti
             </h2>
             <div className="flex justify-center gap-8">
-              <DownloadButton 
+              <DownloadButton
                 href="/CV-Placeholder.pdf"
                 fileName="CV_John_Doe.pdf"
                 buttonText="Scarica il mio CV"
@@ -308,17 +323,10 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <section id="contact" className="py-16 bg-dark-base">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold text-neon-purple mb-12">
-              Contattami
-            </h2>
-            <ContactForm />
-          </div>
-        </section>
+        {/* La sezione contatti è stata rimossa su richiesta */}
       </main>
     </AnimatedPage>
-  );
-};
+  )
+}
 
-export default HomePage; 
+export default HomePage

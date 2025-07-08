@@ -20,10 +20,11 @@ export const CursorProvider: React.FC<{ children: ReactNode }> = ({
   )
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useCursor = () => {
   const context = useContext(CursorContext)
   if (context === undefined) {
     throw new Error('useCursor must be used within a CursorProvider')
   }
   return context
-} 
+}
