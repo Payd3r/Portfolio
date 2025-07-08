@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <div className="flex flex-col rounded-lg bg-dark-surface shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-neon-purple/20">
-      <Link to={`/projects/${id}`} className="group block">
+      <Link to={`/project/${id}`} className="group block">
         <img
           src={imageUrl}
           alt={title}

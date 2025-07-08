@@ -12,8 +12,6 @@ import AnimatedPage from '@/components/AnimatedPage'
 import { Link } from 'react-router-dom'
 import SEO from '@/components/SEO'
 import DownloadButton from '@/components/DownloadButton'
-import { projects } from '@/utils/projects'
-import ProjectCard from '@/components/ProjectCard'
 
 const HomePage = () => {
   const mainRef = useRef(null)
@@ -180,10 +178,10 @@ const HomePage = () => {
           </div>
           <div className="relative z-10">
             <h1 className="text-4xl md:text-6xl font-bold text-cyan-400">
-              Benvenuto nel mio Portfolio Futuristico
+              Ciao, sono Andrea Mauri
             </h1>
             <p className="mt-4 text-lg md:text-xl text-gray-300">
-              Esplora i miei progetti e le mie competenze.
+              Web Developer specializzato in React e TypeScript
             </p>
           </div>
         </section>
@@ -203,21 +201,22 @@ const HomePage = () => {
               />
               <div className="max-w-xl text-left about-text">
                 <p className="mb-4">
-                  Sono un{' '}
+                  Sono{' '}
                   <span className="text-neon-green">
-                    sviluppatore software neolaureato (21 anni)
+                    Andrea Mauri, Web Developer
                   </span>{' '}
                   con una forte passione per la creazione di applicazioni web
                   performanti e visivamente accattivanti.
                 </p>
                 <p className="mb-4">
-                  Specializzato nello stack MERN e con solide competenze in Java
-                  e C#, sono costantemente alla ricerca di nuove sfide per
-                  migliorare le mie abilità.
+                  Laureato in Informatica e diplomato presso l'Istituto Tecnico
+                  Jean Monnet di Mariano Comense, specializzato nello stack
+                  moderno con React, TypeScript e tecnologie fullstack.
                 </p>
                 <p>
-                  Attualmente risiedo a [La tua città, Italia] e sono pronto a
-                  contribuire a progetti innovativi.
+                  Sono costantemente alla ricerca di nuove sfide tecniche e
+                  pronto a contribuire a progetti innovativi nel mondo dello
+                  sviluppo web.
                 </p>
               </div>
             </div>
@@ -226,23 +225,18 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <section id="projects" className="min-h-screen py-16 bg-dark-base">
+        <section id="projects" className="py-16 bg-dark-base">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold text-neon-purple mb-12">
               I Miei Progetti
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              {projects.slice(0, 3).map((project) => (
-                <ProjectCard key={project.id} {...project} />
-              ))}
-            </div>
             <p className="max-w-3xl mx-auto mb-8 text-gray-400">
               Esplora una selezione dei miei lavori più recenti. Fai clic qui
               sotto per vedere la galleria completa.
             </p>
             <Link
               to="/projects"
-              className="inline-block bg-neon-cyan text-dark-bg font-bold py-3 px-8 rounded-lg hover:bg-neon-purple transition-colors duration-300"
+              className="inline-block bg-neon-cyan text-dark-bg font-bold py-3 px-8 rounded-lg hover:bg-neon-purple transition-colors duration-300 shadow-lg shadow-neon-cyan/30"
             >
               Vai alla Galleria Progetti
             </Link>
@@ -323,7 +317,6 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        {/* La sezione contatti è stata rimossa su richiesta */}
       </main>
     </AnimatedPage>
   )

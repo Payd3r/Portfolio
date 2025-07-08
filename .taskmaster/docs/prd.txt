@@ -1,264 +1,82 @@
-# Portfolio Personale Futuristico - PRD Aggiornato
+# Portfolio di Andrea Mauri - Correzioni e Miglioramenti
 
-## Overview
-Portfolio personale moderno e futuristico per neolaureato in informatica, progettato per impressionare con grafica innovativa e presentare competenze, progetti e informazioni professionali. Il sito sarà una single-page application (SPA) ottimizzata per performance e SEO, deployabile tramite container Docker su server personale con Portainer.
+## Panoramica del Progetto
+Questo documento descrive i requisiti per correggere vari problemi tecnici e migliorare il portfolio personale di Andrea Mauri, includendo aggiornamenti dei dati personali, riorganizzazione dei contenuti e correzioni di bug.
 
-**Problema risolto**: Presentazione professionale efficace delle competenze e progetti in un formato visivamente accattivante e tecnicamente impressionante.
+## Problemi Tecnici da Risolvere
 
-**Target**: Recruiter, aziende, colleghi e potenziali clienti nel settore tech.
+### 1. Correzione Topbar nella Galleria Progetti
+**Problema**: La topbar non funziona più quando si naviga nella pagina della galleria progetti.
+**Requisito**: Ripristinare la funzionalità completa della topbar in tutte le pagine, inclusa la galleria progetti.
 
-**Valore**: Differenziazione attraverso design futuristico, dimostrando competenze frontend avanzate e attenzione ai dettagli.
+### 2. Ripristino Animazione 3D nella Homepage
+**Problema**: L'animazione 3D nella homepage non è più visibile.
+**Requisito**: Correggere e ripristinare l'animazione 3D nella sezione hero della homepage per renderla nuovamente funzionante.
 
-## Core Features
+### 3. Correzione Bug del Cursore
+**Problema**: Il cursore personalizzato a volte si sposta automaticamente in alto a sinistra, specialmente quando si passa sopra i bottoni.
+**Requisito**: Implementare una correzione per stabilizzare il comportamento del cursore personalizzato e prevenire il salto indesiderato.
 
-### 1. Homepage/About Me Integrata
-- **Cosa fa**: Sezione hero con presentazione personale, informazioni di base (età: 21 anni, neolaureato, residenza)
-- **Perché importante**: Prima impressione cruciale, deve catturare immediatamente l'attenzione
-- **Come funziona**: Animazioni 3D di ingresso, elementi interattivi, design dark mode con accenti neon
+### 4. Allineamento Timeline
+**Problema**: La linea della timeline non è allineata correttamente con i pallini indicatori.
+**Requisito**: Correggere l'allineamento CSS della timeline per garantire che la linea sia perfettamente centrata con i pallini.
 
-### 2. Timeline Carriera Interattiva
-- **Cosa fa**: Visualizzazione cronologica del percorso formativo e professionale
-- **Perché importante**: Mostra crescita e progressione nonostante la giovane età
-- **Come funziona**: Timeline verticale animata con punti interattivi per studi, tirocini, certificazioni
+## Aggiornamento Dati Personali
 
-### 3. Showcase Progetti (4 progetti principali)
-- **Cosa fa**: Galleria dettagliata dei progetti realizzati con demo, codice, spiegazioni tecniche
-- **Perché importante**: Dimostra capacità pratiche e diversità di competenze
-- **Come funziona**: 
-  - Gestionale calcio (PHP) - mockup e repository GitHub
-  - Sito React PWA con upload/notifiche - demo live e codice
-  - Gestionale ecommerce (Django+React+API) - demo e documentazione tecnica
-  - Galleria iPhone WIP - concept e roadmap
-- **Integrazione GitHub**: Per ogni progetto mostrare stats GitHub (commits, linguaggi, collaboratori), link diretto al repository, preview del README
+### 5. Informazioni Personali
+**Requisito**: Aggiornare tutte le occorrenze nel codice con i seguenti dati:
+- Nome: Andrea Mauri
+- Titolo professionale: Web Developer (o simile)
+- Istituto: Istituto Tecnico Jean Monnet a Mariano Comense
 
-### 4. Competenze Tecniche Visualizzate
-- **Cosa fa**: Rappresentazione grafica delle skill informatiche con livelli
-- **Perché importante**: Overview rapida delle competenze tecniche
-- **Come funziona**: 
-  - **Linguaggi di Programmazione**: Visualizzazione interattiva con icone animate e percentuali di competenza
-  - **Framework/Tecnologie**: Grid di badge con livelli di esperienza
-  - **Tools & Piattaforme**: Sezione dedicata con GitHub prominente
-  - **Stile Visivo**: Card fluttuanti con effetti hover, progress bars animate, skill radar chart
+### 6. Aggiornamento Timeline Educativa
+**Requisito**: Aggiungere alla timeline un tirocinio su Access e MySQL nel 2020, posizionandolo cronologicamente in modo appropriato.
 
-### 5. Sezione GitHub Dedicata
-- **Cosa fa**: Showcase dell'attività GitHub e contributi
-- **Perché importante**: Dimostra consistenza nello sviluppo e utilizzo delle best practices
-- **Come funziona**: 
-  - GitHub contribution graph integrato tramite API
-  - Statistiche live: total commits, repositories, contributions this year
-  - Most used languages da GitHub API
-  - Pinned repositories con descrizioni e tecnologie usate
-  - Badge GitHub profile con link al profilo completo
+## Rimozione e Pulizia
 
-### 6. Sezione Personale
-- **Cosa fa**: Breve insight su hobby e interessi (sport: palestra, tennis, ciclismo)
-- **Perché importante**: Umanizza il profilo, mostra personalità
-- **Come funziona**: Micro-animazioni, icone custom, balance lavoro-vita
+### 7. Rimozione Form Contatti
+**Requisito**: Rimuovere completamente il form contatti da tutte le pagine del portfolio, incluse eventuali importazioni e riferimenti nel codice.
 
-### 7. Tesi e Documenti
-- **Cosa fa**: Download tesi triennale e CV aggiornato
-- **Perché importante**: Documenti ufficiali per validazione competenze
-- **Come funziona**: Sezione downloads con preview e link diretti
+### 8. Correzione Spazio Vuoto Sezione Progetti
+**Problema**: Nella sezione "I Miei Progetti" c'è molto spazio vuoto senza contenuto apparente.
+**Requisito**: Investigare e correggere il layout della sezione progetti per eliminare spazi vuoti non necessari.
 
-### 8. Contatti e Social
-- **Cosa fa**: Collegamenti ai profili social e informazioni di contatto
-- **Perché importante**: Facilita networking e contatti professionali
-- **Come funziona**: Footer fisso o sidebar con icone animate, focus su GitHub, LinkedIn, email
+## Miglioramenti dei Contenuti
 
-## User Experience
+### 9. Aggiunta Link Social Instagram
+**Requisito**: Aggiungere Instagram ai link social esistenti nel footer e nelle sezioni appropriate.
 
-### User Personas
-- **Recruiter Tech**: Cerca competenze specifiche, portfolio progetti, CV, attività GitHub
-- **Hiring Manager**: Valuta fit culturale, personalità, approccio al lavoro, continuità sviluppo
-- **Peer Developer**: Interessato a dettagli tecnici, codice, architetture, contributi open source
+### 10. Riorganizzazione Progetti
+**Requisito**: Riorganizzare i progetti nel seguente ordine:
+1. WIP (Work in Progress)
+2. "Sore" (precedentemente "React PWA") - includere backend e fullstack
+3. E-commerce - includere sempre backend
+4. Gestionale - includere frontend
 
-### Key User Flows
-1. **Landing → Impression**: Animazione di ingresso → About me → Skills showcase → CTA progetti
-2. **Project Explorer**: Progetti → Dettagli tecnici → Repository GitHub → Demo
-3. **Skills Deep Dive**: Competenze → Linguaggi programmazione → GitHub activity → Progetti correlati
-4. **Professional Info**: Timeline → Skills → GitHub stats → CV/Tesi download
-5. **Contact**: Qualsiasi sezione → Footer contatti → Social links (GitHub prominente)
+## Miglioramenti Navigazione
 
-### UI/UX Considerations
-- **Mobile-first**: Responsive design ottimizzato per tutti i dispositivi
-- **Performance**: Lazy loading, ottimizzazione immagini, minimizzazione bundle
-- **Accessibility**: Contrast ratio, keyboard navigation, screen reader support
-- **Micro-interactions**: Hover effects, scroll animations, loading states eleganti
-- **GitHub Integration**: API calls ottimizzate con caching e fallback per rate limiting
+### 11. Navigazione Portfolio
+**Requisito**: Sostituire "Mio Portfolio" con "Andrea Mauri" e rendere questo elemento cliccabile per tornare alla homepage.
 
-## Technical Architecture
+### 12. Bottoni di Navigazione Progetti
+**Requisito**: Aggiungere bottoni di navigazione nelle pagine di dettaglio dei progetti per:
+- Tornare indietro alla galleria
+- Migliorare la navigazione generale
 
-### Frontend Stack
-- **Framework**: React 18+ con TypeScript per type safety
-- **Styling**: Tailwind CSS per utility-first approach + CSS modules per componenti complessi
-- **Animations**: GSAP (versione gratuita) per animazioni complesse
-- **3D Graphics**: Three.js per elementi 3D selezionati (hero section, accents)
-- **Icons**: Lucide React + custom SVG per skill badges
-- **GitHub Integration**: Octokit/rest.js per API calls ottimizzate
+### 13. Arricchimento Pagine Dettaglio Progetti
+**Requisito**: Riempire le pagine di dettaglio dei progetti con mockup e contenuti aggiuntivi per renderle più complete e interessanti.
 
-### API Integrations
-- **GitHub API v4 (GraphQL)**: Per statistiche avanzate e performance
-- **GitHub API v3 (REST)**: Per dati repository e contributi
-- **Caching Strategy**: LocalStorage/IndexedDB per dati GitHub con TTL
-- **Rate Limiting**: Implementazione backoff exponential per API calls
+### 14. Aggiornamento Footer
+**Requisito**: Aggiornare il footer con il nome e cognome corretti (Andrea Mauri) invece dei placeholder attuali.
 
-### Build & Development
-- **Bundler**: Vite per development veloce e ottimizzazioni build
-- **State Management**: Zustand per stato globale (GitHub data, theme, etc.)
-- **Data Fetching**: React Query per caching e sincronizzazione API
-- **Testing**: Jest + React Testing Library per unit tests
-- **Linting**: ESLint + Prettier per code quality
+## Requisiti Tecnici
 
-### Performance Optimization
-- **Code Splitting**: React.lazy per lazy loading componenti
-- **Image Optimization**: WebP format, responsive images, lazy loading
-- **SEO**: React Helmet per meta tags dinamici
-- **PWA**: Service Worker per caching offline
-- **GitHub API Optimization**: Request batching e selective field queries
+### 15. Hot Reload e Testing
+**Requisito**: Implementare hot reload per lo sviluppo e testare sistematicamente tutte le modifiche per garantire che ogni correzione funzioni effettivamente.
 
-### Deployment
-- **Containerization**: Docker con nginx ottimizzato per SPA
-- **CI/CD**: GitHub Actions con deploy automatico su commit
-- **Hosting**: Server personale con Portainer per container management
-- **Monitoring**: Performance tracking e error reporting
-
-## Development Roadmap
-
-### Phase 1: Foundation & Core Layout (Tasks 1-5)
-- Setup progetto React + TypeScript + Tailwind + Vite
-- Struttura componenti base (Header, Hero, Footer)
-- Sistema di routing interno (scroll-to-section)
-- Dark theme con CSS variables per neon/glow effects
-- Responsive layout mobile-first
-
-### Phase 2: Content & Data Structures (Tasks 6-12)
-- Sezione About Me con informazioni personali
-- Timeline carriera con dati strutturati
-- **Competenze tecniche con visualizzazione linguaggi programmazione**
-- **Sezione GitHub dedicata con API integration**
-- Sezione hobby/interessi personali
-- Setup asset management (immagini, documenti)
-- Data structures per progetti e skills
-
-### Phase 3: Projects Showcase & GitHub Integration (Tasks 13-18)
-- Galleria progetti con layout grid responsivo
-- Pagine dettagli progetti con GitHub integration
-- **GitHub API integration per repository stats**
-- **GitHub contribution graph e statistiche**
-- Sistema di filtri per tecnologie/categorie
-- Demo embed o link esterni progetti
-
-### Phase 4: Advanced Visualizations & Interactions (Tasks 19-25)
-- **Skill visualization con linguaggi programmazione animati**
-- **GitHub activity dashboard con charts interattivi**
-- Integrazione GSAP per animazioni complesse
-- Elementi 3D con Three.js (hero section, accents)
-- Micro-interactions per hover/click states
-- Scroll-triggered animations
-- Loading states e transizioni fluide
-
-### Phase 5: Performance & SEO (Tasks 26-30)
-- Ottimizzazione bundle size e code splitting
-- Lazy loading immagini e componenti
-- SEO meta tags e structured data
-- Ottimizzazione Core Web Vitals
-- Testing cross-browser e mobile
-
-### Phase 6: Deployment & Production (Tasks 31-35)
-- Configurazione Docker + nginx
-- Setup CI/CD pipeline con GitHub Actions
-- Monitoring e analytics
-- Testing performance production
-- Documentazione deployment per Portainer
-
-## Detailed Feature Specifications
-
-### Linguaggi di Programmazione Showcase
-- **Visualizzazione**: Grid interattiva con icone animate per ogni linguaggio
-- **Linguaggi da includere**: JavaScript/TypeScript, Python, PHP, Java, C#, SQL, HTML/CSS
-- **Interattività**: Hover reveal competency level, progetti correlati, tempo di esperienza
-- **Animazioni**: Floating cards, skill progress bars, competency radar chart
-- **Colori**: Accent colors matching ciascun linguaggio (es. blue per TypeScript, yellow per JavaScript)
-
-### GitHub Integration Avanzata
-- **Dashboard GitHub**: 
-  - Contribution heatmap dell'ultimo anno
-  - Total commits, repositories count, stars received
-  - Most used languages (da GitHub API)
-  - Recent activity feed
-- **Repository Showcase**:
-  - Top 4-6 repositories pinned con descrizioni
-  - Linguaggi utilizzati per repository
-  - Stars, forks, last update per repository
-  - Link diretti ai repository e live demos
-- **Profile Integration**:
-  - GitHub profile image come avatar
-  - Bio sincronizzata da GitHub
-  - Badge "Available for hire" se impostato su GitHub
-
-### Technical Implementation Details
-
-#### GitHub API Optimization
-```typescript
-// Struttura dati ottimizzata per ridurre API calls
-interface GitHubData {
-  profile: UserProfile;
-  repositories: Repository[];
-  contributions: ContributionData;
-  languages: LanguageStats;
-  lastFetched: timestamp;
-}
-
-// Caching strategy
-const CACHE_TTL = 1000 * 60 * 15; // 15 minuti
-const API_ENDPOINTS = {
-  graphql: '/graphql', // Per queries complesse
-  rest: '/users/:username', // Per dati semplici
-};
-```
-
-#### Skill Visualization Component Architecture
-```typescript
-// Componenti modulari per skills
-<SkillsSection>
-  <ProgrammingLanguages languages={languageData} />
-  <TechnicalSkills skills={skillsData} />
-  <GitHubIntegration github={githubData} />
-</SkillsSection>
-```
-
-## Risks and Mitigations
-
-### Technical Challenges
-- **Rischio**: GitHub API rate limiting
-- **Mitigazione**: Caching strategico, authenticated requests, fallback con dati statici
-
-- **Rischio**: Complessità animazioni linguaggi impatta performance
-- **Mitigazione**: Lazy loading animazioni, reduce motion preference, performance monitoring
-
-### Content & Design
-- **Rischio**: Over-engineering grafico a discapito usabilità
-- **Mitigazione**: User testing, focus su mobile experience, progressive enhancement
-
-### Deployment & Infrastructure
-- **Rischio**: Problemi CORS con GitHub API in production
-- **Mitigazione**: Proxy server configuration, environment-specific API handling
-
-## Success Metrics
-
-### Performance Targets
-- **Loading**: First Contentful Paint < 2s, Largest Contentful Paint < 3s
-- **GitHub API**: Response time < 1s, 99.9% uptime
-- **Animations**: 60fps per tutte le animazioni, no layout shifts
-
-### User Engagement
-- **Portfolio Views**: Tracking page views e session duration
-- **GitHub Clicks**: Click-through rate ai repository e profilo GitHub
-- **Skill Exploration**: Time spent nella sezione competenze e linguaggi
-
-### Technical Quality
-- **Lighthouse Score**: 95+ per Performance, Accessibility, SEO, Best Practices
-- **Cross-browser**: Supporto completo Chrome, Firefox, Safari, Edge ultimi 2 major versions
-- **Mobile Performance**: 90+ su Lighthouse mobile, touch-friendly interactions
-
-Questo PRD aggiornato include tutte le specifiche necessarie per creare un portfolio che metta in risalto le competenze di programmazione e l'attività GitHub in modo visivamente accattivante e tecnicamente solido. 
+## Criteri di Accettazione
+- Tutti i bug elencati devono essere risolti
+- I dati personali devono essere aggiornati in tutte le sezioni
+- La navigazione deve essere fluida e intuitiva
+- Il design deve rimanere coerente e professionale
+- Tutte le funzionalità devono essere testate e funzionanti 

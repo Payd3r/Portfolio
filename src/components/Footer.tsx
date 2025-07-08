@@ -1,21 +1,26 @@
 import React from 'react'
-import { Github, Linkedin, Instagram } from 'lucide-react'
+import { Github, Linkedin, Mail, Instagram } from 'lucide-react'
 
 const socialLinks = [
   {
     name: 'GitHub',
-    url: 'https://github.com/tuo-username', // Sostituire
+    url: 'https://github.com/Payd3r', // Account GitHub reale
     icon: Github,
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/tuo-profilo', // Sostituire
+    url: 'https://linkedin.com/in/andrea-mauri', // Placeholder LinkedIn
     icon: Linkedin,
   },
   {
     name: 'Instagram',
-    url: 'https://instagram.com/tuo-profilo', // Sostituire
+    url: 'https://instagram.com/andrea_mauri', // Placeholder Instagram
     icon: Instagram,
+  },
+  {
+    name: 'Email',
+    url: 'mailto:andrea.mauri@example.com', // Placeholder email
+    icon: Mail,
   },
 ]
 

@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import type { ProjectType } from '@/utils/projects'
 import { projects } from '@/utils/projects'
 import { useEffect, useState } from 'react'
@@ -32,7 +32,6 @@ interface AdvancedRepoStats {
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>()
-  const navigate = useNavigate()
   const [project, setProject] = useState<ProjectType | undefined>()
   const [repoStats, setRepoStats] = useState<RepoStats | null>(null)
   const [advancedStats, setAdvancedStats] = useState<AdvancedRepoStats | null>(
@@ -118,13 +117,22 @@ const ProjectDetail = () => {
         imageUrl={project.imageUrl}
         type="article"
       />
-      <button
-        onClick={() => navigate(-1)}
-        className="inline-flex items-center gap-2 text-neon-cyan mb-8 hover:underline"
-      >
-        <ArrowLeft size={20} />
-        Torna Indietro
-      </button>
+      <div className="flex flex-col sm:flex-row gap-4 mb-8">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 text-neon-cyan hover:underline"
+        >
+          <ArrowLeft size={20} />
+          Torna alla Home
+        </Link>
+        <Link
+          to="/projects"
+          className="inline-flex items-center gap-2 text-neon-purple hover:underline"
+        >
+          <ArrowLeft size={20} />
+          Torna alla Galleria
+        </Link>
+      </div>
       <div className="flex flex-col md:flex-row justify-between items-start mb-4">
         <h1 className="text-4xl font-bold text-neon-cyan mb-2 md:mb-0">
           {project.title}
@@ -200,22 +208,6 @@ const ProjectDetail = () => {
         ))}
       </div>
       <p className="text-lg leading-relaxed">{project.description}</p>
-
-      <div className="mt-12">
-        <h3 className="text-2xl font-bold text-neon-purple mb-6">Galleria</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <img
-            src="https://placehold.co/600x400/0D0221/39FF14?text=Mockup+1"
-            alt="Mockup 1"
-            className="rounded-lg shadow-lg"
-          />
-          <img
-            src="https://placehold.co/600x400/0D0221/00FFFF?text=Mockup+2"
-            alt="Mockup 2"
-            className="rounded-lg shadow-lg"
-          />
-        </div>
-      </div>
 
       {advancedStats && (
         <div className="mt-12">

@@ -49,7 +49,7 @@ const ProjectGallery = () => {
   return (
     <AnimatedPage
       className="container mx-auto py-16"
-      // @ts-expect-error AnimatedPage is not wrapped in forwardRef
+      // @ts-expect-error - AnimatedPage forward ref typing issue
       ref={containerRef}
     >
       <SEO
