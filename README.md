@@ -1,69 +1,83 @@
-# React + TypeScript + Vite
+# Portfolio Personale di Andrea Mauri
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ciao! 👋 Questo è il repository del mio portfolio personale, un progetto sviluppato per mostrare le mie competenze, i miei lavori e un po' della mia passione per lo sviluppo web.
 
-Currently, two official plugins are available:
+Questo non è solo un semplice sito vetrina, ma un vero e proprio "parco giochi" dove ho potuto sperimentare con animazioni, grafica 3D e le più recenti tecnologie frontend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Su di me
 
-## Expanding the ESLint configuration
+Sono Andrea Mauri, un Web Developer con una forte passione per la creazione di applicazioni web performanti, intuitive e visivamente accattivanti. Specializzato in **React** e **TypeScript**, mi piace esplorare tutto l'ecosistema full-stack per costruire soluzioni complete e innovative.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Puoi trovare i miei profili social e contattarmi tramite i link nel footer del sito.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ✨ Funzionalità del Portfolio
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Questo sito include diverse funzionalità interessanti:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+-   **Animazione 3D Interattiva:** La homepage ti accoglie con un cubo 3D animato, realizzato con `React Three Fiber`.
+-   **Navigazione Fluida e Animata:** Le transizioni tra le pagine sono gestite con `Framer Motion` e le animazioni degli elementi con `GSAP` per un'esperienza utente dinamica.
+-   **Cursore Personalizzato:** Un cursore interattivo che cambia aspetto quando si passa sopra elementi cliccabili.
+-   **Galleria Progetti Filtrabile:** Una galleria dove puoi esplorare i miei progetti e filtrarli per tecnologia.
+-   **Statistiche GitHub in tempo reale:** Una sezione che mostra le mie statistiche di GitHub, caricate dinamicamente tramite l'API di GitHub.
+-   **Timeline Educativa:** Un percorso visivo della mia formazione e delle mie esperienze.
+-   **Design Moderno e Responsive:** Realizzato con `TailwindCSS` per un'esperienza ottimale su qualsiasi dispositivo.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Stack Tecnologico
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+-   **Frontend:** [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/), [Vite](https://vitejs.dev/)
+-   **Styling:** [TailwindCSS](https://tailwindcss.com/)
+-   **Animazioni:** [GSAP (GreenSock)](https://gsap.com/), [Framer Motion](https://www.framer.com/motion/)
+-   **3D:** [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction), [Drei](https://github.com/pmndrs/drei)
+-   **Linting/Formatting:** [ESLint](https://eslint.org/), [Prettier](https://prettier.io/)
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ⚙️ Configurazione e Comandi Utili
+
+Questa sezione contiene le istruzioni per eseguire il progetto sia in un ambiente di sviluppo locale, sia tramite Docker.
+
+### Sviluppo Locale
+
+Per eseguire questo progetto in locale, segui questi passaggi:
+
+1.  **Clona il repository:**
+    ```bash
+    git clone https://github.com/Payd3r/Portfolio.git
+    cd Portfolio
+    ```
+
+2.  **Installa le dipendenze:**
+    ```bash
+    npm install
+    ```
+
+3.  **Avvia il server di sviluppo:**
+    Il sito sarà disponibile su `http://localhost:5173`.
+    ```bash
+    npm run dev
+    ```
+
+4.  **Build per la produzione:**
+    Crea una versione ottimizzata del sito nella cartella `dist/`.
+    ```bash
+    npm run build
+    ```
+
+### Utilizzo con Docker
+
+Per avviare il progetto utilizzando Docker e Docker Compose, assicurati di avere entrambi installati sulla tua macchina.
+
+1.  **Build e Avvio dei container:**
+    Esegui questo comando dalla root del progetto. Docker costruirà l'immagine e avvierà il container in background.
+    ```bash
+    docker-compose up -d --build
+    ```
+    Il sito sarà disponibile su `http://localhost:3020`.
+
+2.  **Fermare i container:**
+    Per fermare il servizio, esegui:
+    ```bash
+    docker-compose down
+    ```
+
+---
+
+Grazie per aver visitato il mio repository! Spero ti piaccia esplorare il mio lavoro.

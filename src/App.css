@@ -3,13 +3,6 @@
 @tailwind utilities;
 
 body {
-  @apply bg-dark-bg text-gray-300;
-  font-family: 'Inter', sans-serif;
-  cursor: none;
-}
-
-a,
-button,
-[role='button'] {
-  cursor: none;
+  @apply bg-background text-primary;
+  font-family: 'Poppins', sans-serif;
 }

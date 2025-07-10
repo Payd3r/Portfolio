@@ -1,17 +1,17 @@
 import { useLayoutEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import Timeline from '@/components/Timeline'
-import LanguageCard from '@/components/LanguageCard'
-import { languages } from '@/utils/data'
-import SkillsRadarChart from '@/components/SkillsRadarChart'
-import GitHubStats from '@/components/GitHubStats'
 import HobbyCard from '@/components/HobbyCard'
-import { Dumbbell, Bike, Code } from 'lucide-react'
-import Hero3D from '@/components/Hero3D'
+import { Dumbbell, Bike, Code, Github, Linkedin, Instagram } from 'lucide-react'
 import AnimatedPage from '@/components/AnimatedPage'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import SEO from '@/components/SEO'
 import DownloadButton from '@/components/DownloadButton'
+import profileImage from '@/assets/profile.png'
+import avatar from '../assets/avatar.jpg'
+import SkillsBentoGrid from '@/components/SkillsBentoGrid'
+import Button from '@/components/Button'
+import { Link as ScrollLink } from 'react-scroll'
 
 const HomePage = () => {
   const mainRef = useRef(null)
@@ -23,16 +23,6 @@ const HomePage = () => {
       mm.add(
         '(min-width: 768px) and (prefers-reduced-motion: no-preference)',
         () => {
-          gsap.to('.hero-3d-container', {
-            y: '20vh',
-            scrollTrigger: {
-              trigger: document.body,
-              start: 'top top',
-              end: 'bottom top',
-              scrub: true,
-            },
-          })
-
           const aboutSection = document.getElementById('about')
           if (aboutSection) {
             gsap.fromTo(
@@ -156,6 +146,34 @@ const HomePage = () => {
               ease: 'power2.out',
             })
           }
+
+          // Animazione per le statistiche GitHub
+          const githubSection = document.getElementById('github')
+          if (githubSection) {
+            gsap.from('.github-stats-title', {
+              scrollTrigger: {
+                trigger: githubSection,
+                start: 'top 80%',
+                toggleActions: 'play none none none',
+              },
+              opacity: 0,
+              y: 30,
+              duration: 0.8,
+            })
+
+            gsap.from('.github-stat-card', {
+              scrollTrigger: {
+                trigger: githubSection,
+                start: 'top 70%',
+                toggleActions: 'play none none none',
+              },
+              opacity: 0,
+              scale: 0.9,
+              y: 50,
+              duration: 0.6,
+              stagger: 0.1,
+            })
+          }
         }
       )
     }, mainRef)
@@ -171,52 +189,81 @@ const HomePage = () => {
       <main ref={mainRef}>
         <section
           id="home"
-          className="relative h-screen flex flex-col justify-center items-center text-center overflow-hidden"
+          className="relative h-screen flex items-center justify-center overflow-hidden"
         >
-          <div className="hero-3d-container absolute top-0 left-0 w-full h-full">
-            <Hero3D />
-          </div>
-          <div className="relative z-10">
-            <h1 className="text-4xl md:text-6xl font-bold text-cyan-400">
-              Ciao, sono Andrea Mauri
-            </h1>
-            <p className="mt-4 text-lg md:text-xl text-gray-300">
-              Web Developer specializzato in React e TypeScript
-            </p>
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            {/* Sezione Sinistra: Testo e Social */}
+            <div className="text-left relative z-10">
+              <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+                Hi, <br />
+                I'm <span className="text-accent">Andrea</span>
+                <br />
+                React.js Developer
+              </h1>
+              <ScrollLink
+                to="about"
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="mt-8 inline-block"
+              >
+                <Button>About Me</Button>
+              </ScrollLink>
+              <div className="flex gap-4 mt-8">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="w-8 h-8 hover:text-accent transition-colors" />
+                </a>
+                <a href="https://github.com/Andryuu03" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-8 h-8 hover:text-accent transition-colors" />
+                </a>
+                <a href="https://www.instagram.com/andryuu03" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="w-8 h-8 hover:text-accent transition-colors" />
+                </a>
+              </div>
+            </div>
+
+            {/* Sezione Destra: Immagine con forma */}
+            <div className="relative z-10 flex justify-center items-center md:-mt-20">
+              <div
+                className="w-100 h-100 md:w-116 md:h-116 bg-surface"
+                style={{
+                  clipPath:
+                    'polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%)',
+                }}
+              >
+                <img
+                  src={profileImage}
+                  alt="Andrea Mauri"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </div>
         </section>
         <section id="about" className="min-h-screen py-16">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold text-neon-purple mb-8 about-title">
-              About Me
-            </h2>
+          <div className="container mx-auto">
             <div className="flex flex-col md:flex-row items-center justify-center gap-10">
               <img
-                src="https://placehold.co/150x150/0D0221/00FFFF?text=Avatar"
-                alt="Mio Avatar"
-                className="w-40 h-40 rounded-full border-4 border-neon-cyan shadow-lg shadow-neon-cyan/20 about-avatar"
+                src={avatar}
+                alt="Andrea Mauri"
+                className="w-60 h-60 rounded-full border-4 border-accent shadow-lg shadow-accent/10 about-avatar object-cover"
                 loading="lazy"
                 width="150"
                 height="150"
               />
               <div className="max-w-xl text-left about-text">
-                <p className="mb-4">
-                  Sono{' '}
-                  <span className="text-neon-green">
-                    Andrea Mauri, Web Developer
-                  </span>{' '}
-                  con una forte passione per la creazione di applicazioni web
-                  performanti e visivamente accattivanti.
+                <h2 className="text-3xl font-bold text-primary mb-8 about-title">
+                  About Me
+                </h2>
+                <p className="mb-4 text-secondary">
+                  Sono <span className="text-accent font-semibold">Andrea Mauri, Web Developer</span> con una forte passione per la creazione di applicazioni web performanti e visivamente accattivanti.
                 </p>
-                <p className="mb-4">
-                  Laureato in Informatica e diplomato presso l'Istituto Tecnico
-                  Jean Monnet di Mariano Comense, specializzato nello stack
-                  moderno con React, TypeScript e tecnologie fullstack.
+                <p className="mb-4 text-secondary">
+                  Laureato in Informatica e diplomato presso l'Istituto Tecnico Jean Monnet di Mariano Comense, specializzato nello stack moderno con React, TypeScript e tecnologie fullstack.
                 </p>
-                <p>
-                  Sono costantemente alla ricerca di nuove sfide tecniche e
-                  pronto a contribuire a progetti innovativi nel mondo dello
-                  sviluppo web.
+                <p className="text-secondary">
+                  Sono costantemente alla ricerca di nuove sfide tecniche e pronto a contribuire a progetti innovativi nel mondo dello sviluppo web.
                 </p>
               </div>
             </div>
@@ -225,96 +272,23 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <section id="projects" className="py-16 bg-dark-base">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold text-neon-purple mb-12">
-              I Miei Progetti
+        <section id="skills" className="py-16">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold text-center text-primary mb-12">
+              Le Mie Competenze
             </h2>
-            <p className="max-w-3xl mx-auto mb-8 text-gray-400">
-              Esplora una selezione dei miei lavori più recenti. Fai clic qui
-              sotto per vedere la galleria completa.
+            <SkillsBentoGrid />
+          </div>
+        </section>
+        <section id="projects" className="py-20">
+          <div className="container mx-auto text-center">
+            <h2 className="text-3xl font-bold text-primary mb-12">I Miei Progetti</h2>
+            <p className="text-secondary mb-8 max-w-2xl mx-auto">
+              Una selezione di progetti che mostrano le mie competenze in azione.
             </p>
-            <Link
-              to="/projects"
-              className="inline-block bg-neon-cyan text-dark-bg font-bold py-3 px-8 rounded-lg hover:bg-neon-purple transition-colors duration-300 shadow-lg shadow-neon-cyan/30"
-            >
-              Vai alla Galleria Progetti
+            <Link to="/projects">
+              <Button>Vedi tutti i progetti</Button>
             </Link>
-          </div>
-        </section>
-        <section id="skills" className="min-h-screen py-16">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold text-neon-purple mb-12 skills-title">
-              Competenze
-            </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h3 className="text-2xl font-semibold mb-6 text-neon-green skills-title">
-                  Linguaggi & Framework
-                </h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 skills-grid-container">
-                  {languages.map(
-                    (lang: { name: string; level: string; icon: string }) => (
-                      <div className="skill-card" key={lang.name}>
-                        <LanguageCard {...lang} />
-                      </div>
-                    )
-                  )}
-                </div>
-              </div>
-              <div className="radar-chart-container">
-                <h3 className="text-2xl font-semibold mb-6 text-neon-green skills-title">
-                  Aree di Competenza
-                </h3>
-                <SkillsRadarChart />
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="github" className="py-16 bg-dark-base">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold text-neon-purple mb-12">
-              Statistiche GitHub
-            </h2>
-            <GitHubStats />
-          </div>
-        </section>
-        <section id="hobbies" className="py-16">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold text-neon-purple mb-12">
-              Hobby & Interessi
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <HobbyCard
-                icon={Dumbbell}
-                title="Palestra"
-                description="Mi alleno regolarmente per mantenermi in forma e disciplinato."
-              />
-              <HobbyCard
-                icon={Bike}
-                title="Ciclismo"
-                description="Esploro nuove strade e mi godo la natura in sella alla mia bici da corsa."
-              />
-              <HobbyCard
-                icon={Code}
-                title="Progetti Personali"
-                description="Amo sperimentare con nuove tecnologie e creare progetti stimolanti nel mio tempo libero."
-              />
-            </div>
-          </div>
-        </section>
-        <section id="documents" className="py-16">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold text-neon-purple mb-12">
-              Documenti
-            </h2>
-            <div className="flex justify-center gap-8">
-              <DownloadButton
-                href="/CV-Placeholder.pdf"
-                fileName="CV_John_Doe.pdf"
-                buttonText="Scarica il mio CV"
-              />
-            </div>
           </div>
         </section>
       </main>

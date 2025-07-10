@@ -1,70 +1,57 @@
 import React from 'react'
+import { timelineData } from '@/utils/data'
 
-const timelineData = [
-  {
-    year: '2024',
-    title: 'Laurea Triennale in Informatica',
-    description:
-      'Conseguita con lode, con una tesi sullo sviluppo di applicazioni web progressive.',
-  },
-  {
-    year: '2023',
-    title: 'Tirocinio Frontend Developer',
-    description:
-      'Esperienza formativa presso Tech Solutions S.R.L, lavorando su un progetto React e TypeScript.',
-  },
-  {
-    year: '2021',
-    title: 'Diploma di Perito Informatico',
-    description:
-      'Conseguito con il massimo dei voti presso Istituto Tecnico Jean Monnet a Mariano Comense.',
-  },
-  {
-    year: '2020',
-    title: 'Tirocinio su Database',
-    description:
-      'Esperienza formativa su Access e MySQL, apprendendo le basi della gestione e progettazione di database.',
-  },
-]
+interface TimelineItemProps {
+  item: typeof timelineData[0]
+  isLeft: boolean
+}
+
+const TimelineItem: React.FC<TimelineItemProps> = ({ item, isLeft }) => {
+  const CardContent = (
+    <>
+      <h3 className="text-xl font-bold text-primary">{item.title}</h3>
+      <p className="text-sm text-secondary mt-1">{item.date}</p>
+      <p className="text-secondary/80 mt-2">{item.description}</p>
+    </>
+  )
+
+  return (
+    <div className="relative mb-12">
+      {/* Dot in the middle */}
+      <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-surface border-2 border-accent rounded-full md:top-0 top-1"></div>
+
+      {/* Desktop view */}
+      <div className="hidden md:block">
+        <div className={`flex items-center ${isLeft ? 'flex-row-reverse' : ''}`}>
+          <div className="w-1/2"></div> {/* Spacer */}
+          <div
+            className={`w-1/2 rounded-lg bg-surface p-4 shadow-lg ${
+              isLeft ? 'pr-10 mr-10 text-right' : 'pl-10 ml-10 text-left'
+            }`}
+          >
+            {CardContent}
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile view */}
+      <div className="md:hidden ml-8 rounded-lg bg-surface p-4 shadow-lg">
+        {CardContent}
+      </div>
+    </div>
+  )
+}
 
 const Timeline: React.FC = () => {
   return (
-    <div className="relative mt-20 container mx-auto">
-      <div className="absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 bg-neon-purple/30 timeline-line"></div>
-      <div className="relative">
-        {timelineData.map((item, index) => (
-          <div
-            key={index}
-            className="relative mb-12 flex w-full items-center timeline-item"
-          >
-            {index % 2 === 0 ? (
-              <>
-                <div className="w-5/12 pr-8 text-right timeline-content">
-                  <p className="mb-2 text-sm text-neon-cyan">{item.year}</p>
-                  <h3 className="mb-2 font-bold text-lg">{item.title}</h3>
-                  <p className="text-sm text-gray-300">{item.description}</p>
-                </div>
-                <div className="z-10 flex h-8 w-8 items-center justify-center rounded-full bg-neon-purple text-white shadow-xl shadow-neon-purple/30 timeline-milestone relative left-1/2 -translate-x-1/2">
-                  {index + 1}
-                </div>
-                <div className="w-5/12"></div>
-              </>
-            ) : (
-              <>
-                <div className="w-5/12"></div>
-                <div className="z-10 flex h-8 w-8 items-center justify-center rounded-full bg-neon-purple text-white shadow-xl shadow-neon-purple/30 timeline-milestone relative left-1/2 -translate-x-1/2">
-                  {index + 1}
-                </div>
-                <div className="w-5/12 pl-8 text-left timeline-content">
-                  <p className="mb-2 text-sm text-neon-cyan">{item.year}</p>
-                  <h3 className="mb-2 font-bold text-lg">{item.title}</h3>
-                  <p className="text-sm text-gray-300">{item.description}</p>
-                </div>
-              </>
-            )}
-          </div>
-        ))}
-      </div>
+    <div className="relative container mx-auto px-4 py-8">
+      {/* Vertical Line */}
+      <div className="absolute h-full w-0.5 bg-secondary/30 left-1/2 -translate-x-1/2 hidden md:block"></div>
+      <div className="absolute h-full w-0.5 bg-secondary/30 left-[7px] md:hidden"></div>
+
+      {timelineData.map((item, index) => (
+        <TimelineItem key={item.id} item={item} isLeft={index % 2 === 0} />
+      ))}
     </div>
   )
 }

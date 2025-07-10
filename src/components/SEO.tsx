@@ -16,9 +16,9 @@ const SEO: React.FC<SEOProps> = ({
   type,
   imageUrl,
 }) => {
-  const defaultTitle = 'Portfolio | John Doe - Sviluppatore Software'; // Sostituire con il tuo nome
+  const defaultTitle = 'Portfolio | Andrea Mauri - Sviluppatore Software'; // Sostituire con il tuo nome
   const defaultDescription =
-    'Esplora il portfolio di John Doe, sviluppatore software specializzato in React, TypeScript e soluzioni web innovative.'; // Sostituire
+    'Esplora il portfolio di Andrea Mauri, sviluppatore software specializzato in React, TypeScript e soluzioni web innovative.'; // Sostituire
   const siteUrl = 'https://www.tuosito.com'; // Sostituire con il tuo URL
   const defaultImage = `${siteUrl}/og-image.png`; // Immagine di fallback per i social
 
