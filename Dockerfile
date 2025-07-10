@@ -1,11 +1,11 @@
 # Stage 1: Build the React/Vue/Vite application
-FROM node:18-alpine AS build
+FROM node:18-slim AS build
 
 WORKDIR /app
 
 # Copia i file di package e installa le dipendenze in modo affidabile
 COPY package*.json ./
-RUN npm ci --ignore-scripts
+RUN npm install --verbose
 
 # Copia il resto del codice sorgente
 COPY . .
