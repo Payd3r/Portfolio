@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Copia i file di package e installa le dipendenze in modo affidabile
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --ignore-scripts
 
 # Copia il resto del codice sorgente
 COPY . .
