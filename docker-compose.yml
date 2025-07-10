@@ -1,10 +1,9 @@
+version: '3.8'
+
 services:
   app:
+    # Il nome 'portfolio-app' è più descrittivo
+    container_name: portfolio
+    # Dice a Portainer di costruire l'immagine usando il Dockerfile
     build: .
-    ports:
-      - "3020:3020"
-    volumes:
-      - .:/app
-      - /app/node_modules
-    environment:
-      - NODE_ENV=development
+    restart: unless-stopped
