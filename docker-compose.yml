@@ -1,9 +1,6 @@
 version: '3.8'
-
 services:
   app:
-    # Il nome 'portfolio-app' è più descrittivo
     container_name: portfolio
-    # Dice a Portainer di costruire l'immagine usando il Dockerfile
     build: .
     restart: unless-stopped
