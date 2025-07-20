@@ -1,0 +1,5 @@
+export { default as ProjectScreenshots } from './ProjectScreenshots'
+export { default as ProjectTechStack } from './ProjectTechStack'
+export { default as ProjectTimeline } from './ProjectTimeline'
+export { default as ProjectWorkflow } from './ProjectWorkflow'
+export { default as ProjectMetrics } from './ProjectMetrics' 

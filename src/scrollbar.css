@@ -1,9 +1,3 @@
-/* Questo file è stato svuotato. Gli stili sono ora in App.css */
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* ===== SCROLLBAR PERSONALIZZATA - VERSIONE SEMPLIFICATA ===== */
 
 /* Firefox */
@@ -81,74 +75,11 @@
   height: 0 !important;
 }
 
-/* ===== STILI DI BASE ===== */
-body {
-  margin: 0;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: #0F172A;
-  color: #F8FAFC;
-  overflow-x: hidden;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-/* ===== VARIABILI CSS PERSONALIZZATE ===== */
-:root {
-  --accent-primary: #38BDF8;
-  --accent-hover: #7DD3FC;
-  --accent-active: #0EA5E9;
-  --background: #0F172A;
-  --surface: #1E293B;
-  --primary: #F8FAFC;
-  --secondary: #94A3B8;
-}
-
-/* ===== ANIMAZIONI PERSONALIZZATE ===== */
-@keyframes neon-pulse {
-  0%, 100% {
-    box-shadow: 0 0 5px rgba(56, 189, 248, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
-  }
-}
-
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* ===== EFFETTI HOVER GLOBALI ===== */
-.hover-neon:hover {
-  animation: neon-pulse 2s infinite;
-}
-
-/* ===== GRADIENTI PERSONALIZZATI ===== */
-.gradient-neon {
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-hover), var(--accent-active));
-  background-size: 200% 200%;
-  animation: gradient-shift 3s ease infinite;
-}
-
-/* ===== RESPONSIVE SCROLLBAR ===== */
+/* Responsive */
 @media (max-width: 768px) {
   *::-webkit-scrollbar { width: 8px !important; height: 8px !important; }
 }
 
 @media (max-width: 480px) {
   *::-webkit-scrollbar { width: 6px !important; height: 6px !important; }
-}
+} 

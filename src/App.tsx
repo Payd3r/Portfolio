@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { AnimatePresence } from 'framer-motion'
 import Layout from '@/components/Layout'
+import { ScrollbarFix } from '@/components/ScrollbarFix'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -21,17 +22,20 @@ function App() {
   const location = useLocation()
 
   return (
-    <Layout>
-      <Suspense fallback={<PageLoader />}>
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route index element={<HomePage />} />
-            <Route path="/projects" element={<ProjectGallery />} />
-            <Route path="/projects/:projectId" element={<ProjectDetail />} />
-          </Routes>
-        </AnimatePresence>
-      </Suspense>
-    </Layout>
+    <>
+      <ScrollbarFix />
+      <Layout>
+        <Suspense fallback={<PageLoader />}>
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route index element={<HomePage />} />
+              <Route path="/projects" element={<ProjectGallery />} />
+              <Route path="/projects/:projectId" element={<ProjectDetail />} />
+            </Routes>
+          </AnimatePresence>
+        </Suspense>
+      </Layout>
+    </>
   )
 }
 

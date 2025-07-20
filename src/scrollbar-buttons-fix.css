@@ -1,0 +1,184 @@
+/* ===== FIX DEFINITIVO PER NASCONDERE I PULSANTI DELLA SCROLLBAR ===== */
+
+/* Tecnica 1: Nascondi completamente i pulsanti */
+*::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  clip: rect(0, 0, 0, 0) !important;
+  overflow: hidden !important;
+  transform: scale(0) !important;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
+
+/* Tecnica 2: Nascondi tutti i tipi di pulsanti */
+*::-webkit-scrollbar-button:start,
+*::-webkit-scrollbar-button:end,
+*::-webkit-scrollbar-button:single-button,
+*::-webkit-scrollbar-button:double-button,
+*::-webkit-scrollbar-button:start:decrement,
+*::-webkit-scrollbar-button:end:increment,
+*::-webkit-scrollbar-button:start:increment,
+*::-webkit-scrollbar-button:end:decrement {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  clip: rect(0, 0, 0, 0) !important;
+  overflow: hidden !important;
+  transform: scale(0) !important;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
+
+/* Tecnica 3: Nascondi elementi specifici */
+html::-webkit-scrollbar-button,
+body::-webkit-scrollbar-button,
+#root::-webkit-scrollbar-button,
+div::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  clip: rect(0, 0, 0, 0) !important;
+  overflow: hidden !important;
+  transform: scale(0) !important;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
+
+/* Tecnica 4: Nascondi anche i corner */
+*::-webkit-scrollbar-corner {
+  background: #0F172A !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Tecnica 5: Usa pseudo-elementi per nascondere i pulsanti */
+*::-webkit-scrollbar-button::before,
+*::-webkit-scrollbar-button::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Tecnica 6: Forza la rimozione con CSS avanzato */
+*::-webkit-scrollbar-button {
+  all: unset !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  clip: rect(0, 0, 0, 0) !important;
+  overflow: hidden !important;
+  transform: scale(0) !important;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  box-sizing: border-box !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  text-indent: -9999px !important;
+  white-space: nowrap !important;
+  direction: ltr !important;
+  unicode-bidi: normal !important;
+  vertical-align: baseline !important;
+  text-align: left !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  word-wrap: normal !important;
+  word-break: normal !important;
+  tab-size: 0 !important;
+  hyphens: none !important;
+  quotes: none !important;
+  counter-reset: none !important;
+  counter-increment: none !important;
+  content: none !important;
+  cursor: default !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  outline: none !important;
+  resize: none !important;
+  overflow: hidden !important;
+  box-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  mix-blend-mode: normal !important;
+  isolation: auto !important;
+  contain: none !important;
+  contain-intrinsic-size: none !important;
+  contain-intrinsic-block-size: none !important;
+  contain-intrinsic-inline-size: none !important;
+  contain-layout: none !important;
+  contain-paint: none !important;
+  contain-style: none !important;
+  contain-size: none !important;
+  contain-inline-size: none !important;
+  contain-block-size: none !important;
+  contain-intrinsic-size: none !important;
+  contain-intrinsic-block-size: none !important;
+  contain-intrinsic-inline-size: none !important;
+  contain-layout: none !important;
+  contain-paint: none !important;
+  contain-style: none !important;
+  contain-size: none !important;
+  contain-inline-size: none !important;
+  contain-block-size: none !important;
+} 

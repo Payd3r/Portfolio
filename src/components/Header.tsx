@@ -6,10 +6,9 @@ import { Menu, X } from 'lucide-react'
 const navLinks = [
   { to: 'home', label: 'Home', isRoute: false },
   { to: 'about', label: 'About', isRoute: false },
-  { to: 'projects', label: 'Progetti', isRoute: false },
+  { to: 'timeline', label: 'Timeline', isRoute: false },
   { to: 'skills', label: 'Competenze', isRoute: false },
-  { to: 'github', label: 'GitHub', isRoute: false },
-  { to: '/projects', label: 'Galleria', isRoute: true },
+  { to: 'projects', label: 'Progetti', isRoute: false },
 ]
 
 const Header: React.FC = () => {
@@ -26,8 +25,20 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Chiudi il menu quando cambia la location
+  useEffect(() => {
+    setIsOpen(false)
+  }, [location])
+
   const toggleMenu = () => {
     setIsOpen(!isOpen)
+  }
+
+  const handleMobileLinkClick = () => {
+    // Chiudi il menu dopo un breve delay per permettere la navigazione
+    setTimeout(() => {
+      setIsOpen(false)
+    }, 100)
   }
 
   const renderNavLink = (link: (typeof navLinks)[0]) => {
@@ -64,10 +75,11 @@ const Header: React.FC = () => {
         to={link.to}
         spy={true}
         smooth={true}
-        offset={-70}
+        offset={-100}
         duration={500}
         className={`${baseClasses} ${isHomeAndAtTop ? activeClasses : ''}`}
         activeClass={activeClasses}
+        onClick={handleMobileLinkClick}
       >
         {link.label}
       </ScrollLink>
@@ -98,7 +110,7 @@ const Header: React.FC = () => {
         <nav className="mt-4 md:hidden">
           <ul className="flex flex-col items-center space-y-4">
             {navLinks.map((link) => (
-              <li key={link.to} onClick={toggleMenu}>
+              <li key={link.to}>
                 {renderNavLink(link)}
               </li>
             ))}

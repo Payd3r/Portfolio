@@ -1,11 +1,25 @@
 export const timelineData = [
   {
+    id: 5,
+    year: '2025',
+    title: 'Magistrale in Informatica',
+    date: '2025 - In corso',
+    description:
+      'Iniziata presso l\'Università degli Studi di Milano-Bicocca. Focus su Intelligenza Artificiale e Sistemi Distribuiti.',
+    institution: 'Università degli Studi di Milano-Bicocca',
+    location: 'Milano',
+    icon: '🎓',
+  },
+  {
     id: 4,
     year: '2024',
     title: 'Laurea Triennale in Informatica',
     date: '2024',
     description:
       'Conseguita con lode, con una tesi sullo sviluppo di applicazioni web progressive.',
+    institution: 'Università degli Studi di Milano-Bicocca',
+    location: 'Milano',
+    icon: '🎓',
   },
   {
     id: 3,
@@ -14,6 +28,9 @@ export const timelineData = [
     date: '2023',
     description:
       'Esperienza formativa presso Tech Solutions S.R.L, lavorando su un progetto React e TypeScript.',
+    institution: 'Tech Solutions S.R.L',
+    location: 'Milano',
+    icon: '💼',
   },
   {
     id: 2,
@@ -22,6 +39,9 @@ export const timelineData = [
     date: '2021',
     description:
       'Conseguito con il massimo dei voti presso Istituto Tecnico Jean Monnet a Mariano Comense.',
+    institution: 'Istituto Tecnico Jean Monnet',
+    location: 'Mariano Comense',
+    icon: '🎓',
   },
   {
     id: 1,
@@ -30,24 +50,21 @@ export const timelineData = [
     date: '2020',
     description:
       'Esperienza formativa su Access e MySQL, apprendendo le basi della gestione e progettazione di database.',
+    institution: 'Azienda locale',
+    location: 'Milano',
+    icon: '💼',
   },
 ]
 
 import {
   Code,
   Database,
-  GitBranch,
-  Cloud,
-  Palette,
   Component,
   AreaChart,
   Github,
   LayoutGrid,
   Laptop,
-  Paintbrush,
-  Server,
-  Wrench as Tool, // Alias Wrench as Tool
-  Cpu,
+  Paintbrush
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 

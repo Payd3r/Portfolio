@@ -6,6 +6,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Futuristico</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- SCROLLBAR PERSONALIZZATA - APPROCCIO RADICALE -->
+    <style>
+      /* Firefox */
+      * {
+        scrollbar-width: thin !important;
+        scrollbar-color: #38BDF8 #0F172A !important;
+      }
+      
+      /* Webkit - Scrollbar principale */
+      *::-webkit-scrollbar {
+        width: 10px !important;
+        height: 10px !important;
+      }
+      
+      *::-webkit-scrollbar-track {
+        background: #0F172A !important;
+        border-radius: 5px !important;
+      }
+      
+      *::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #38BDF8 0%, #7DD3FC 50%, #38BDF8 100%) !important;
+        border-radius: 5px !important;
+        transition: all 0.3s ease !important;
+      }
+      
+      *::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #7DD3FC 0%, #38BDF8 50%, #7DD3FC 100%) !important;
+        box-shadow: 0 0 8px rgba(56, 189, 248, 0.6) !important;
+      }
+      
+      /* APPROCCIO RADICALE PER NASCONDERE LE FRECCE */
+      *::-webkit-scrollbar-button {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        left: -9999px !important;
+        top: -9999px !important;
+      }
+      
+      /* Nascondi tutti i tipi di pulsanti */
+      *::-webkit-scrollbar-button:start,
+      *::-webkit-scrollbar-button:end,
+      *::-webkit-scrollbar-button:single-button,
+      *::-webkit-scrollbar-button:double-button,
+      *::-webkit-scrollbar-button:start:decrement,
+      *::-webkit-scrollbar-button:end:increment,
+      *::-webkit-scrollbar-button:start:increment,
+      *::-webkit-scrollbar-button:end:decrement {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        left: -9999px !important;
+        top: -9999px !important;
+      }
+      
+      /* Nascondi anche i corner */
+      *::-webkit-scrollbar-corner {
+        background: #0F172A !important;
+        display: none !important;
+      }
+      
+      /* Responsive */
+      @media (max-width: 768px) {
+        *::-webkit-scrollbar { width: 8px !important; height: 8px !important; }
+      }
+      
+      @media (max-width: 480px) {
+        *::-webkit-scrollbar { width: 6px !important; height: 6px !important; }
+      }
+    </style>
+    
+    <!-- SCRIPT PER FORZARE LA RIMOZIONE DELLE FRECCE -->
+    <script>
+      // Rimuovi le frecce della scrollbar con JavaScript
+      function removeScrollbarButtons() {
+        const style = document.createElement('style');
+        style.textContent = `
+          *::-webkit-scrollbar-button {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+            background: transparent !important;
+            border: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+            position: absolute !important;
+            left: -9999px !important;
+            top: -9999px !important;
+          }
+          
+          *::-webkit-scrollbar-button:start,
+          *::-webkit-scrollbar-button:end,
+          *::-webkit-scrollbar-button:single-button,
+          *::-webkit-scrollbar-button:double-button {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+            background: transparent !important;
+            border: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+            position: absolute !important;
+            left: -9999px !important;
+            top: -9999px !important;
+          }
+        `;
+        document.head.appendChild(style);
+      }
+      
+      // Esegui immediatamente e dopo il caricamento
+      removeScrollbarButtons();
+      document.addEventListener('DOMContentLoaded', removeScrollbarButtons);
+      window.addEventListener('load', removeScrollbarButtons);
+    </script>
   </head>
   <body>
     <div id="root"></div>
