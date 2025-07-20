@@ -11,15 +11,11 @@ import {
   GitCommit,
   Code,
   Github,
-  ExternalLink,
   Target,
   Lightbulb,
   BookOpen,
   MessageSquare,
   Play,
-  Calendar,
-  TrendingUp,
-  Zap,
   BarChart3,
 } from 'lucide-react'
 import AnimatedPage from '@/components/AnimatedPage'
@@ -29,7 +25,6 @@ import {
   ProjectScreenshots,
   ProjectTechStack,
   ProjectTimeline,
-  ProjectMetrics
 } from '@/components/project-details'
 
 const octokit = new Octokit()
