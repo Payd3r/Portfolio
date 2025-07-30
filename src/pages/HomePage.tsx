@@ -233,7 +233,7 @@ const HomePage = () => {
             {/* Sezione Destra: Immagine con forma */}
             <div className="relative z-10 flex justify-center items-center md:-mt-20">
               <div
-                className="w-100 h-100 md:w-116 md:h-116 bg-surface"
+                className="w-100 h-100 md:w-100 md:h-100 bg-surface"
                 style={{
                   clipPath:
                     'polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%)',
@@ -273,7 +273,7 @@ const HomePage = () => {
                 
                 {/* Image container */}
                 <div className="relative">
-                  <div className="relative w-80 h-80 mx-auto">
+                  <div className="relative w-96 h-96 mx-auto">
                     {/* Border animation */}
                     <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-accent via-accent-hover to-accent animate-spin-slow"></div>
                     <div className="absolute inset-1 rounded-3xl bg-dark-surface"></div>
@@ -387,7 +387,7 @@ const HomePage = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="mb-20"
+          className="my-20"
         >
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">

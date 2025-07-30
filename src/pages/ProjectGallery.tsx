@@ -133,11 +133,7 @@ const ProjectGallery = () => {
           </div>
 
           {/* Filtri categoria */}
-          <div>
-            <h3 className="text-lg font-semibold text-primary mb-3 flex items-center gap-2">
-              <Filter className="w-5 h-5" />
-              Categorie
-            </h3>
+          <div>            
             <div className="flex flex-wrap gap-3">
               {categories.map((category) => (
                 <button
