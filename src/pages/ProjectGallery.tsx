@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Search, Filter, X, ExternalLink, Github, Building, User, GraduationCap } from 'lucide-react'
+import { Search, X, ExternalLink, Github, Building, User, GraduationCap } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { getProjectsByCategory } from '@/utils/projects'
 
