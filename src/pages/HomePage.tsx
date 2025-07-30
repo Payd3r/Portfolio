@@ -1,18 +1,26 @@
 import { useLayoutEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import Timeline from '@/components/Timeline'
-import { Github, Linkedin, Instagram } from 'lucide-react'
+import { Github, Linkedin, Instagram, ExternalLink, User, Building } from 'lucide-react'
 import AnimatedPage from '@/components/AnimatedPage'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import SEO from '@/components/SEO'
-import profileImage from '@/assets/profile.png'
+import profileImage from '@/assets/profile.jpg'
 import avatar from '../assets/avatar.jpg'
 import SkillsBentoGrid from '@/components/SkillsBentoGrid'
 import Button from '@/components/Button'
 import { Link as ScrollLink } from 'react-scroll'
+import { motion } from 'framer-motion'
+import { useEffect } from 'react'
 
 const HomePage = () => {
   const mainRef = useRef(null)
+  const navigate = useNavigate()
+
+  // Scroll to top quando si apre la pagina
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -374,148 +382,297 @@ const HomePage = () => {
             <SkillsBentoGrid />
           </div>
         </section>
-        <section id="projects" className="min-h-screen py-20 pt-24">
-          <div className="container mx-auto">
-            {/* Section Header */}
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-3 mb-4">
-                <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-accent"></div>
-                <span className="text-accent font-semibold text-sm uppercase tracking-wider">Il Mio Lavoro</span>
-                <div className="w-8 h-0.5 bg-gradient-to-l from-transparent to-accent"></div>
-              </div>
-              <h2 className="text-5xl md:text-6xl font-bold text-primary mb-6">
-                I Miei <span className="text-accent">Progetti</span>
-              </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-accent to-transparent mx-auto"></div>
-            </div>
-
-            {/* Projects Preview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              {/* Project Preview Card 1 */}
-              <div className="group relative bg-gradient-to-br from-surface to-surface/80 rounded-2xl p-6 border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-xl hover:shadow-accent/10">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-gradient-to-br from-accent to-accent-hover rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-2">Portfolio Website</h3>
-                  <p className="text-secondary/80 text-sm mb-4">Sito portfolio moderno e responsive realizzato con React, TypeScript e Tailwind CSS</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">React</span>
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">TypeScript</span>
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">Tailwind</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project Preview Card 2 */}
-              <div className="group relative bg-gradient-to-br from-surface to-surface/80 rounded-2xl p-6 border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-xl hover:shadow-accent/10">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-gradient-to-br from-accent to-accent-hover rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-2">E-Commerce App</h3>
-                  <p className="text-secondary/80 text-sm mb-4">Applicazione e-commerce completa con carrello, pagamenti e gestione prodotti</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">Next.js</span>
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">Stripe</span>
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">MongoDB</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project Preview Card 3 */}
-              <div className="group relative bg-gradient-to-br from-surface to-surface/80 rounded-2xl p-6 border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-xl hover:shadow-accent/10">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-gradient-to-br from-accent to-accent-hover rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-2">Dashboard Analytics</h3>
-                  <p className="text-secondary/80 text-sm mb-4">Dashboard interattiva per visualizzazione dati con grafici e metriche in tempo reale</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">React</span>
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">D3.js</span>
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">Node.js</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project Preview Card 4 */}
-              <div className="group relative bg-gradient-to-br from-surface to-surface/80 rounded-2xl p-6 border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-xl hover:shadow-accent/10">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-gradient-to-br from-accent to-accent-hover rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-2">Blog Platform</h3>
-                  <p className="text-secondary/80 text-sm mb-4">Piattaforma blog moderna con sistema di gestione contenuti e editor markdown</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">Next.js</span>
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">Prisma</span>
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">PostgreSQL</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project Preview Card 5 */}
-              <div className="group relative bg-gradient-to-br from-surface to-surface/80 rounded-2xl p-6 border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-xl hover:shadow-accent/10">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-gradient-to-br from-accent to-accent-hover rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-2">Task Manager</h3>
-                  <p className="text-secondary/80 text-sm mb-4">App di gestione task con collaborazione in tempo reale e notifiche push</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">React</span>
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">Socket.io</span>
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">Express</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project Preview Card 6 */}
-              <div className="group relative bg-gradient-to-br from-surface to-surface/80 rounded-2xl p-6 border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:shadow-xl hover:shadow-accent/10">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="w-12 h-12 bg-gradient-to-br from-accent to-accent-hover rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-2">Crypto Tracker</h3>
-                  <p className="text-secondary/80 text-sm mb-4">App per tracciare prezzi crypto con grafici interattivi e alert personalizzati</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">Vue.js</span>
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">Chart.js</span>
-                    <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full">WebSocket</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Call to Action */}
-            <div className="text-center">
-              <Link to="/projects" className="inline-block">
-                <Button variant="outline" size="lg">
-                  Vedi tutti i progetti
-                </Button>
-              </Link>
-            </div>
+        {/* Migliori Progetti */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          className="mb-20"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+              Migliori Progetti
+            </h2>
+            <p className="text-secondary/80 text-lg max-w-2xl mx-auto">
+              Alcuni dei miei progetti più significativi, che mostrano diverse competenze e tecnologie
+            </p>
           </div>
-        </section>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Sore */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9 }}
+              className="group cursor-pointer"
+              onClick={() => navigate('/projects/sore')}
+            >
+              <div className="relative bg-surface/30 border border-accent/20 rounded-2xl p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg">
+                {/* Immagine progetto - aumentata altezza */}
+                <div className="w-full h-56 mb-4 rounded-xl overflow-hidden bg-gradient-to-br from-surface to-surface/80">
+                  <img
+                    src="/src/assets/projects/sore-main.jpg"
+                    alt="Sore"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <span className="px-2 py-1 bg-primary/20 text-primary text-xs font-medium rounded-full">
+                      2024
+                    </span>
+                    <div className="flex items-center gap-1 px-2 py-1 bg-purple-500/20 text-purple-500 text-xs font-medium rounded-full">
+                      <User className="w-3 h-3" />
+                      Personale
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors">
+                    Sore
+                  </h3>
+                  <div className="h-10 flex flex-col justify-center">
+                    <p className="text-secondary/80 text-sm leading-5">
+                      App per la gestione delle spese personali con analisi e grafici
+                    </p>
+                    <p className="text-secondary/80 text-sm leading-5 invisible">
+                      &nbsp;
+                    </p>
+                  </div>
+
+                  {/* Link */}
+                  <div className="flex gap-2 pt-2">
+                    <a
+                      href="https://github.com/lucacatt/sore"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-1 px-3 py-1 bg-black/50 hover:bg-black/70 text-white text-sm rounded-lg transition-colors"
+                    >
+                      <Github className="w-4 h-4" />
+                      GitHub
+                    </a>
+                    <a
+                      href="https://sore-app.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-1 px-3 py-1 bg-accent hover:bg-accent/90 text-white text-sm rounded-lg transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* RevAI */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.0 }}
+              className="group cursor-pointer"
+              onClick={() => navigate('/projects/revai')}
+            >
+              <div className="relative bg-surface/30 border border-accent/20 rounded-2xl p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg">
+                {/* Immagine progetto - aumentata altezza */}
+                <div className="w-full h-56 mb-4 rounded-xl overflow-hidden bg-gradient-to-br from-surface to-surface/80">
+                  <img
+                    src="/src/assets/projects/revai-main.jpg"
+                    alt="REVAI"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <span className="px-2 py-1 bg-primary/20 text-primary text-xs font-medium rounded-full">
+                      2024
+                    </span>
+                    <div className="flex items-center gap-1 px-2 py-1 bg-green-500/20 text-green-500 text-xs font-medium rounded-full">
+                      <Building className="w-3 h-3" />
+                      Lavoro
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors">
+                    REVAI
+                  </h3>
+                  <div className="h-10 flex flex-col justify-center">
+                    <p className="text-secondary/80 text-sm leading-5">
+                      Web-App per presentare il mio servizio di creazione langinpage
+                    </p>
+                    <p className="text-secondary/80 text-sm leading-5 invisible">
+                      &nbsp;
+                    </p>
+                  </div>
+
+                  {/* Link */}
+                  <div className="flex gap-2 pt-2">
+                    <a
+                      href="https://github.com/lucacatt/revai"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-1 px-3 py-1 bg-black/50 hover:bg-black/70 text-white text-sm rounded-lg transition-colors"
+                    >
+                      <Github className="w-4 h-4" />
+                      GitHub
+                    </a>
+                    <a
+                      href="https://revai-demo.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-1 px-3 py-1 bg-accent hover:bg-accent/90 text-white text-sm rounded-lg transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Tracking Spese */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.1 }}
+              className="group cursor-pointer"
+              onClick={() => navigate('/projects/tracking-spese')}
+            >
+              <div className="relative bg-surface/30 border border-accent/20 rounded-2xl p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg">
+                {/* Immagine progetto - aumentata altezza */}
+                <div className="w-full h-56 mb-4 rounded-xl overflow-hidden bg-gradient-to-br from-surface to-surface/80">
+                  <img
+                    src="/src/assets/projects/tracking-spese-main.jpg"
+                    alt="Tracking Spese"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <span className="px-2 py-1 bg-primary/20 text-primary text-xs font-medium rounded-full">
+                      2024
+                    </span>
+                    <div className="flex items-center gap-1 px-2 py-1 bg-purple-500/20 text-purple-500 text-xs font-medium rounded-full">
+                      <User className="w-3 h-3" />
+                      Personale
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors">
+                    Tracking Spese
+                  </h3>
+                  <div className="h-10 flex flex-col justify-center">
+                    <p className="text-secondary/80 text-sm leading-5">
+                      App per il monitoraggio delle spese personali
+                    </p>
+                    <p className="text-secondary/80 text-sm leading-5 invisible">
+                      &nbsp;
+                    </p>
+                  </div>                 
+
+                  {/* Link */}
+                  <div className="flex gap-2 pt-2">
+                    <a
+                      href="https://github.com/lucacatt/tracking-spese"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-1 px-3 py-1 bg-black/50 hover:bg-black/70 text-white text-sm rounded-lg transition-colors"
+                    >
+                      <Github className="w-4 h-4" />
+                      GitHub
+                    </a>
+                    <a
+                      href="https://tracking-spese.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-1 px-3 py-1 bg-accent hover:bg-accent/90 text-white text-sm rounded-lg transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Gestionale E-commerce */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2 }}
+              className="group cursor-pointer"
+              onClick={() => navigate('/projects/gestionale')}
+            >
+              <div className="relative bg-surface/30 border border-accent/20 rounded-2xl p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg">
+                {/* Immagine progetto - aumentata altezza */}
+                <div className="w-full h-56 mb-4 rounded-xl overflow-hidden bg-gradient-to-br from-surface to-surface/80">
+                  <img
+                    src="/src/assets/projects/gestionale-main.jpg"
+                    alt="Gestionale E-commerce"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <span className="px-2 py-1 bg-primary/20 text-primary text-xs font-medium rounded-full">
+                      2024
+                    </span>
+                    <div className="flex items-center gap-1 px-2 py-1 bg-green-500/20 text-green-500 text-xs font-medium rounded-full">
+                      <Building className="w-3 h-3" />
+                      Lavoro
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors">
+                    Gestionale E-commerce
+                  </h3>
+                  <div className="h-10 flex flex-col justify-center">
+                    <p className="text-secondary/80 text-sm leading-5">
+                      Sistema di gestione per e-commerce con Abbamoda
+                    </p>
+                    <p className="text-secondary/80 text-sm leading-5 invisible">
+                      &nbsp;
+                    </p>
+                  </div>                
+
+                  {/* Link */}
+                  <div className="flex gap-2 pt-2">
+                    <a
+                      href="https://github.com/lucacatt/gestionale-abbamoda"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-1 px-3 py-1 bg-black/50 hover:bg-black/70 text-white text-sm rounded-lg transition-colors"
+                    >
+                      <Github className="w-4 h-4" />
+                      GitHub
+                    </a>
+                    <a
+                      href="https://gestionale-abbamoda.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-1 px-3 py-1 bg-accent hover:bg-accent/90 text-white text-sm rounded-lg transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Demo
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </motion.section>
+
+        {/* Call to Action */}
+        <div className="text-center">
+          <Link to="/projects" className="inline-block">
+            <Button variant="outline" size="lg">
+              Vedi tutti i progetti
+            </Button>
+          </Link>
+        </div>
       </main>
     </AnimatedPage>
   )

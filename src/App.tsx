@@ -30,7 +30,7 @@ function App() {
             <Routes location={location} key={location.pathname}>
               <Route index element={<HomePage />} />
               <Route path="/projects" element={<ProjectGallery />} />
-              <Route path="/projects/:projectId" element={<ProjectDetail />} />
+              <Route path="/projects/:id" element={<ProjectDetail />} />
             </Routes>
           </AnimatePresence>
         </Suspense>
