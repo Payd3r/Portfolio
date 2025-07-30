@@ -231,12 +231,11 @@ const HomePage = () => {
             </div>
 
             {/* Sezione Destra: Immagine con forma */}
-            <div className="relative z-10 flex justify-center items-center md:-mt-20">
+            <div className="relative z-10 flex justify-center items-center md:-mt-10">
               <div
-                className="w-100 h-100 md:w-100 md:h-100 bg-surface"
+                className="w-96 h-96 md:w-[32rem] md:h-[32rem] lg:w-[36rem] lg:h-[36rem] bg-surface"
                 style={{
-                  clipPath:
-                    'polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%)',
+                  clipPath: 'polygon(45% 0%, 85% 15%, 100% 35%, 95% 65%, 75% 85%, 50% 100%, 25% 85%, 5% 65%, 0% 35%, 15% 15%)',
                 }}
               >
                 <img
