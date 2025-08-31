@@ -1,8 +1,144 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useCallback, memo } from 'react'
 import { motion } from 'framer-motion'
 import { Search, X, ExternalLink, Github, Building, User, GraduationCap, ChevronDown, ChevronUp, Filter } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { getProjectsByCategory } from '@/utils/projects'
+
+// Hook per debounce
+const useDebounce = (value: string, delay: number) => {
+  const [debouncedValue, setDebouncedValue] = useState(value)
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value)
+    }, delay)
+
+    return () => {
+      clearTimeout(handler)
+    }
+  }, [value, delay])
+
+  return debouncedValue
+}
+
+// Componente Card ottimizzato con memo
+const ProjectCard = memo(({ project, index, onClick }: {
+  project: any
+  index: number
+  onClick: (id: string) => void
+}) => {
+  const handleClick = useCallback(() => {
+    onClick(project.id)
+  }, [onClick, project.id])
+
+  const handleLinkClick = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation()
+  }, [])
+
+  return (
+    <motion.div
+      key={project.id}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1 }}
+      onClick={handleClick}
+      className="group cursor-pointer"
+    >
+      {/* Card del progetto */}
+      <div className="relative bg-surface/30 border border-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg h-[220px] sm:h-[280px] md:h-[380px] lg:h-[480px] flex flex-col">
+        {/* Immagine progetto con icone sovrapposte */}
+        <div className="relative w-full h-44 sm:h-48 md:h-60 lg:h-80 mb-2 sm:mb-3 md:mb-4 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-surface to-surface/80">
+          <img
+            src={project.imageUrl}
+            alt={project.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+            decoding="async"
+          />
+          
+          {/* Icone sovrapposte */}
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100">
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleLinkClick}
+                className="flex items-center justify-center p-1.5 sm:p-2 bg-black/50 hover:bg-black/70 text-white rounded-md transition-colors"
+              >
+                <Github className="w-3 h-3 sm:w-4 sm:h-4" />
+              </a>
+            )}
+            {project.demoUrl && (
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleLinkClick}
+                className="flex items-center justify-center p-1.5 sm:p-2 bg-accent hover:bg-accent/90 text-white rounded-md transition-colors"
+              >
+                <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
+              </a>
+            )}
+          </div>
+        </div>
+
+        {/* Contenuto */}
+        <div className="space-y-2 sm:space-y-3 flex-1 flex flex-col">
+          {/* Categoria e anno sopra al titolo */}
+          <div className="flex items-center gap-1 sm:gap-2 flex-wrap">
+            {project.context?.year && (
+              <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-primary/20 text-primary text-xs font-medium rounded-full">
+                {project.context.year}
+              </span>
+            )}
+            {project.context?.type && (
+              <div className={`flex items-center justify-center w-6 h-6 sm:w-auto sm:h-auto sm:gap-1 sm:px-2 sm:py-1 rounded-full ${
+                project.context.type === 'university' 
+                  ? 'bg-blue-500/20 text-blue-500'
+                  : project.context.type === 'work'
+                  ? 'bg-green-500/20 text-green-500'
+                  : 'bg-purple-500/20 text-purple-500'
+              }`}>
+                {project.context.type === 'university' && <GraduationCap className="w-3 h-3" />}
+                {project.context.type === 'work' && <Building className="w-3 h-3" />}
+                {project.context.type === 'personal' && <User className="w-3 h-3" />}
+                <span className="hidden sm:inline text-xs font-medium">
+                  {project.context.type === 'university' ? 'Università' : 
+                   project.context.type === 'work' ? 'Lavoro' : 'Personale'}
+                </span>
+              </div>
+            )}
+          </div>
+
+          {/* Titolo */}
+          <h3 className="text-sm sm:text-lg md:text-xl font-bold text-primary group-hover:text-accent transition-colors leading-tight">
+            {project.title}
+          </h3>
+
+          {/* Descrizione con altezza fissa - nascosta su mobile */}
+          <div className="hidden sm:flex flex-1 flex-col justify-center">
+            <p className="text-secondary/80 text-xs sm:text-sm leading-3 sm:leading-4 md:leading-5 line-clamp-2">
+              {project.description}
+            </p>
+          </div>
+          
+          {/* Tag tecnologici migliorati - nascosti su mobile */}
+          <div className="hidden sm:flex flex-wrap gap-1">
+            {project.tags.slice(0, 3).map((tag: string, tagIndex: number) => (
+              <span 
+                key={tagIndex}
+                className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-accent/20 text-accent text-xs font-medium rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  )
+})
 
 const ProjectGallery = () => {
   const [searchTerm, setSearchTerm] = useState('')
@@ -10,6 +146,9 @@ const ProjectGallery = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [filtersOpen, setFiltersOpen] = useState(false)
   const navigate = useNavigate()
+
+  // Debounce search per migliorare performance
+  const debouncedSearchTerm = useDebounce(searchTerm, 300)
 
   const { main, university, work, personal } = getProjectsByCategory()
   
@@ -61,13 +200,15 @@ const ProjectGallery = () => {
       }
     }
 
-    // Filtro per ricerca testuale
-    if (searchTerm) {
-      filtered = filtered.filter(project =>
-        project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        project.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-      )
+    // Filtro per ricerca testuale con debounce
+    if (debouncedSearchTerm) {
+      const searchLower = debouncedSearchTerm.toLowerCase()
+      filtered = filtered.filter(project => {
+        const titleMatch = project.title.toLowerCase().includes(searchLower)
+        const descMatch = project.description.toLowerCase().includes(searchLower)
+        const tagMatch = project.tags.some(tag => tag.toLowerCase().includes(searchLower))
+        return titleMatch || descMatch || tagMatch
+      })
     }
 
     // Filtro per tag
@@ -78,7 +219,7 @@ const ProjectGallery = () => {
     }
 
     return filtered
-  }, [allProjects, university, work, personal, selectedCategory, searchTerm, selectedTags])
+  }, [allProjects, university, work, personal, selectedCategory, debouncedSearchTerm, selectedTags])
 
   // Ottieni tutti i tag unici dai progetti
   const allTags = useMemo(() => {
@@ -89,15 +230,20 @@ const ProjectGallery = () => {
     return Array.from(tags).sort()
   }, [allProjects])
 
-  const clearFilters = () => {
+  // Funzioni memoizzate per migliori performance
+  const handleProjectClick = useCallback((projectId: string) => {
+    navigate(`/projects/${projectId}`)
+  }, [navigate])
+
+  const handleClearFilters = useCallback(() => {
     setSearchTerm('')
     setSelectedCategory('all')
     setSelectedTags([])
-  }
+  }, [])
 
-  const handleProjectClick = (projectId: string) => {
-    navigate(`/projects/${projectId}`)
-  }
+
+
+
 
   return (
     <div className="min-h-screen">
@@ -206,7 +352,7 @@ const ProjectGallery = () => {
               {(searchTerm || selectedCategory !== 'all' || selectedTags.length > 0) && (
                 <div>
                   <button
-                    onClick={clearFilters}
+                    onClick={handleClearFilters}
                     className="flex items-center gap-2 px-4 py-2 text-secondary hover:text-primary transition-colors"
                   >
                     <X className="w-4 h-4" />
@@ -243,7 +389,7 @@ const ProjectGallery = () => {
                 Prova a modificare i filtri o la ricerca
               </p>
               <button
-                onClick={clearFilters}
+                onClick={handleClearFilters}
                 className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
               >
                 Pulisci filtri
@@ -252,111 +398,12 @@ const ProjectGallery = () => {
           ) : (
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
               {filteredProjects.map((project, index) => (
-                <motion.div
+                <ProjectCard
                   key={project.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  onClick={() => handleProjectClick(project.id)}
-                  className="group cursor-pointer"
-                >
-                   {/* Card del progetto */}
-                                       <div className="relative bg-surface/30 border border-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg h-[220px] sm:h-[280px] md:h-[380px] lg:h-[480px] flex flex-col">
-                     {/* Immagine progetto con icone sovrapposte */}
-                     <div className="relative w-full h-44 sm:h-48 md:h-60 lg:h-80 mb-2 sm:mb-3 md:mb-4 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-surface to-surface/80">
-                       <img
-                         src={project.imageUrl}
-                         alt={project.title}
-                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                       />
-                       
-                       {/* Icone GitHub e Demo sovrapposte */}
-                       <div className="absolute top-2 sm:top-3 right-2 sm:right-3 flex items-center gap-1 sm:gap-2">
-                         {project.githubUrl && (
-                           <a
-                             href={project.githubUrl}
-                             target="_blank"
-                             rel="noopener noreferrer"
-                             className="p-1.5 sm:p-2 bg-black/70 hover:bg-black/90 text-white transition-colors rounded-md sm:rounded-lg backdrop-blur-sm"
-                             onClick={(e) => e.stopPropagation()}
-                           >
-                             <Github className="w-3 h-3 sm:w-4 sm:h-4" />
-                           </a>
-                         )}
-                         {project.demoUrl && (
-                           <a
-                             href={project.demoUrl}
-                             target="_blank"
-                             rel="noopener noreferrer"
-                             className="p-1.5 sm:p-2 bg-accent/90 hover:bg-accent text-white transition-colors rounded-md sm:rounded-lg backdrop-blur-sm"
-                             onClick={(e) => e.stopPropagation()}
-                           >
-                             <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
-                           </a>
-                         )}
-                       </div>
-                     </div>
-
-                     {/* Contenuto */}
-                     <div className="space-y-2 sm:space-y-3 flex-1 flex flex-col">
-                       {/* Categoria e anno sopra al titolo */}
-                       <div className="flex items-center gap-1 sm:gap-2 flex-wrap">
-                         {project.context?.year && (
-                           <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-primary/20 text-primary text-xs font-medium rounded-full">
-                             {project.context.year}
-                           </span>
-                         )}
-                         {project.context?.type && (
-                           <div className={`flex items-center justify-center w-6 h-6 sm:w-auto sm:h-auto sm:gap-1 sm:px-2 sm:py-1 rounded-full ${
-                             project.context.type === 'university' 
-                               ? 'bg-blue-500/20 text-blue-500'
-                               : project.context.type === 'work'
-                               ? 'bg-green-500/20 text-green-500'
-                               : 'bg-purple-500/20 text-purple-500'
-                           }`}>
-                             {project.context.type === 'university' && <GraduationCap className="w-3 h-3" />}
-                             {project.context.type === 'work' && <Building className="w-3 h-3" />}
-                             {project.context.type === 'personal' && <User className="w-3 h-3" />}
-                             <span className="hidden sm:inline text-xs font-medium">
-                               {project.context.type === 'university' ? 'Università' : 
-                                project.context.type === 'work' ? 'Lavoro' : 'Personale'}
-                             </span>
-                           </div>
-                         )}
-                       </div>
-
-                       {/* Titolo */}
-                       <h3 className="text-sm sm:text-lg md:text-xl font-bold text-primary group-hover:text-accent transition-colors leading-tight">
-                         {project.title}
-                       </h3>
-
-                       {/* Descrizione con altezza fissa - nascosta su mobile */}
-                       <div className="hidden sm:flex flex-1 flex-col justify-center">
-                         <p className="text-secondary/80 text-xs sm:text-sm leading-3 sm:leading-4 md:leading-5 line-clamp-2">
-                           {project.description}
-                         </p>
-                       </div>
-                       
-                       {/* Tag tecnologici migliorati - nascosti su mobile */}
-                       <div className="hidden sm:flex flex-wrap gap-1">
-                         {[
-                           project.techStack?.frontend,
-                           project.techStack?.backend,
-                           project.techStack?.database,
-                           project.techStack?.devops,
-                           project.techStack?.other
-                         ].filter(Boolean).slice(0, 3).map((tech, index) => (
-                           <span 
-                             key={index}
-                             className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-accent/20 text-accent text-xs font-medium rounded-full"
-                           >
-                             {tech}
-                           </span>
-                         ))}
-                       </div>
-                     </div>
-                   </div>
-                </motion.div>
+                  project={project}
+                  index={index}
+                  onClick={handleProjectClick}
+                />
               ))}
             </div>
           )}

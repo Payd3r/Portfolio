@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef, useCallback } from 'react'
 import { gsap } from 'gsap'
 import Timeline from '@/components/Timeline'
 import { Github, Linkedin, Instagram, ExternalLink, User, Building } from 'lucide-react'
@@ -21,6 +21,11 @@ const HomePage = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+  // Funzioni memoizzate per performance
+  const handleProjectClick = useCallback((projectId: string) => {
+    navigate(`/projects/${projectId}`)
+  }, [navigate])
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -403,10 +408,10 @@ const HomePage = () => {
             {/* Sore */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
+                        animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, ease: "easeOut" }}
               className="group cursor-pointer"
-              onClick={() => navigate('/projects/sore')}
+              onClick={() => handleProjectClick('sore')}
             >
               <div className="relative bg-surface/30 border border-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg h-[280px] sm:h-auto flex flex-col">
                 {/* Immagine progetto */}
@@ -415,6 +420,8 @@ const HomePage = () => {
                     src="/src/assets/projects/sore-main.jpg"
                     alt="Sore"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 flex-1 flex flex-col">
@@ -468,9 +475,9 @@ const HomePage = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.0 }}
+              transition={{ delay: 1.0, ease: "easeOut" }}
               className="group cursor-pointer"
-              onClick={() => navigate('/projects/revai')}
+              onClick={() => handleProjectClick('revai')}
             >
               <div className="relative bg-surface/30 border border-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg h-[280px] sm:h-auto flex flex-col">
                 {/* Immagine progetto */}
@@ -479,6 +486,8 @@ const HomePage = () => {
                     src="/src/assets/projects/revai-main.jpg"
                     alt="REVAI"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 flex-1 flex flex-col">
@@ -532,9 +541,9 @@ const HomePage = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.1 }}
+              transition={{ delay: 1.1, ease: "easeOut" }}
               className="group cursor-pointer"
-              onClick={() => navigate('/projects/tracking-spese')}
+              onClick={() => handleProjectClick('tracking-spese')}
             >
               <div className="relative bg-surface/30 border border-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg h-[280px] sm:h-auto flex flex-col">
                 {/* Immagine progetto */}
@@ -543,6 +552,8 @@ const HomePage = () => {
                     src="/src/assets/projects/tracking-spese-main.jpg"
                     alt="Tracking Spese"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 flex-1 flex flex-col">
@@ -596,9 +607,9 @@ const HomePage = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2 }}
+              transition={{ delay: 1.2, ease: "easeOut" }}
               className="group cursor-pointer"
-              onClick={() => navigate('/projects/gestionale')}
+              onClick={() => handleProjectClick('gestionale')}
             >
               <div className="relative bg-surface/30 border border-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg h-[280px] sm:h-auto flex flex-col">
                 {/* Immagine progetto */}
@@ -607,6 +618,8 @@ const HomePage = () => {
                     src="/src/assets/projects/gestionale-main.jpg"
                     alt="Gestionale E-commerce"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 flex-1 flex flex-col">
