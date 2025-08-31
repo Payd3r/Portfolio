@@ -26,12 +26,12 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
 
   return (
     <div 
-      className={`relative mb-0 transition-all duration-700 ease-out ${
+      className={`relative mb-8 sm:mb-12 md:mb-0 transition-all duration-700 ease-out ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       }`}
     >
       {/* Timeline dot with glow effect */}
-      <div className="absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-accent to-accent-hover rounded-full border-4 border-surface shadow-lg shadow-accent/30 z-10 group-hover:scale-125 transition-transform duration-300">
+      <div className="absolute left-1/2 md:left-1/2 left-3 -translate-x-1/2 md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-accent to-accent-hover rounded-full border-4 border-surface shadow-lg shadow-accent/30 z-10 group-hover:scale-125 transition-transform duration-300">
         <div className="absolute inset-0 bg-accent rounded-full animate-ping opacity-20"></div>
       </div>
 
@@ -95,37 +95,38 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
 
       {/* Mobile view */}
       <div className="md:hidden">
-        <div className="ml-12 group cursor-pointer">
+        <div className="ml-8 group cursor-pointer">
           <div className="relative">
-            <div className="bg-gradient-to-br from-surface to-surface/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-secondary/10 hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 hover:scale-105 group-hover:border-accent/30 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-surface to-surface/80 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-secondary/10 hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 group-hover:border-accent/30 relative overflow-hidden">
               {/* Icon and year badge */}
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-accent to-accent-hover rounded-full text-white shadow-lg">
-                  {getIconComponent()}
+              <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-accent to-accent-hover rounded-full text-white shadow-lg">
+                  {getIconComponent() && React.cloneElement(getIconComponent(), { className: 'w-4 h-4' })}
                 </div>
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-semibold border border-accent/20">
+                <span className="px-2.5 py-1 bg-accent/10 text-accent rounded-full text-xs font-semibold border border-accent/20">
                   {item.year}
                 </span>
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-300">
+              <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-300 leading-tight">
                 {item.title}
               </h3>
               
-              <div className="flex items-center gap-2 text-secondary/70 text-sm mb-2">
-                <Calendar className="w-4 h-4" />
-                <span>{item.date}</span>
+              <div className="flex items-center gap-1.5 text-secondary/70 text-xs mb-1.5">
+                <Calendar className="w-3 h-3 flex-shrink-0" />
+                <span className="truncate">{item.date}</span>
               </div>
 
-              <div className="flex items-center gap-2 text-secondary/70 text-sm mb-3">
-                <MapPin className="w-4 h-4" />
-                <span>{item.institution}</span>
-                <span className="text-accent">•</span>
-                <span>{item.location}</span>
+              <div className="flex items-start gap-1.5 text-secondary/70 text-xs mb-3">
+                <MapPin className="w-3 h-3 flex-shrink-0 mt-0.5" />
+                <div className="flex flex-col">
+                  <span className="leading-tight">{item.institution}</span>
+                  <span className="text-accent leading-tight">{item.location}</span>
+                </div>
               </div>
 
-              <p className="text-secondary/80 leading-relaxed">
+              <p className="text-secondary/80 leading-relaxed text-sm line-clamp-3">
                 {item.description}
               </p>
 
@@ -134,7 +135,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
             </div>
 
             {/* Connection line */}
-            <div className="absolute top-1/2 -translate-y-1/2 w-12 h-0.5 bg-gradient-to-r from-transparent to-accent left-0 -translate-x-full"></div>
+            <div className="absolute top-1/2 -translate-y-1/2 w-8 h-0.5 bg-gradient-to-r from-transparent to-accent left-0 -translate-x-full"></div>
           </div>
         </div>
       </div>
@@ -151,7 +152,7 @@ const Timeline: React.FC = () => {
       </div>
       
       {/* Mobile line */}
-      <div className="absolute h-full w-1 bg-gradient-to-b from-accent via-accent-hover to-accent left-[11px] md:hidden">
+      <div className="absolute h-full w-1 bg-gradient-to-b from-accent via-accent-hover to-accent left-3 md:hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-accent-hover animate-pulse"></div>
       </div>
 
