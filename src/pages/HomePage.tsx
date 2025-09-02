@@ -5,7 +5,7 @@ import { Github, Linkedin, Instagram, ExternalLink, User, Building } from 'lucid
 import AnimatedPage from '@/components/AnimatedPage'
 import { Link, useNavigate } from 'react-router-dom'
 import SEO from '@/components/SEO'
-import profileImage from '@/assets/profile.jpg'
+import profileImage from '@/assets/profile.jpeg'
 import avatar from '../assets/avatar.jpg'
 import SkillsBentoGrid from '@/components/SkillsBentoGrid'
 import Button from '@/components/Button'
