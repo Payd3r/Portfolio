@@ -206,67 +206,66 @@ export const projects: ProjectType[] = [
   },
   {
     id: 'pane-salame',
-    title: 'E-commerce Pane & Salame',
-    description: 'E-commerce completo per la gestione di vari negozi locali',
-    longDescription: 'E-commerce completo per la gestione di vari negozi locali con possibilità di utenti, artigiani e admin. Gestione di ordini, approvazione e spedizione con varie dashboard diverse per artigiani e admin. Prodotti, ordini, segnalazioni e categorie. Pagina di monitoring e dashboard per il sito principale su un altro IP.',
+    title: 'Pane e Salame - E-commerce Full-Stack',
+    description: 'Piattaforma e-commerce full-stack con architettura containerizzata (Docker), suite di testing completa e dashboard di monitoring in tempo reale.',
+    longDescription: 'Sviluppato per l\'esame di Tecnologie Innovative, "Pane e Salame" è un e-commerce completo che va oltre le funzionalità standard. L\'intera architettura è basata su microservizi containerizzati con Docker (frontend, backend, database, image server, monitoring), garantendo portabilità e un deploy semplificato. Il progetto include una suite di testing multi-livello (unit, integration, frontend, performance) e una dashboard di monitoring dedicata che traccia in tempo reale lo stato dei container, l\'utilizzo delle risorse di sistema (CPU, RAM) e offre un sistema di backup e ripristino. Le API sono documentate professionalmente con Swagger.',
     category: 'main',
     imageUrl: '/src/assets/projects/pane-salame-main.jpg',
     githubUrl: 'https://github.com/Payd3r/ecommerce',
     demoUrl: 'https://panesalame.andrea-mauri.duckdns.org/',
-    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe'],
+    tags: ['JavaScript', 'Node.js', 'Express', 'MySQL', 'Docker', 'Bootstrap', 'Stripe', 'Swagger', 'Testing'],
     status: 'done',
     priority: 'medium',
     context: {
       type: 'university',
-      course: 'Tecnologie innovative per lo sviluppo web',
+      course: 'Tecnologie Innovative per lo sviluppo web',
       year: '2023'
     },
-    problem: 'Creazione di un e-commerce per prodotti alimentari con gestione ordini',
-    solution: 'Piattaforma completa con sistema di pagamento integrato e dashboard multi-ruolo',
+    problem: 'Sviluppare una piattaforma e-commerce robusta, scalabile e production-ready che soddisfacesse requisiti avanzati di testing, monitoring e DevOps.',
+    solution: 'Una soluzione full-stack completamente containerizzata con Docker Compose. Il sistema include un backend Node.js, un frontend Vanilla JS modulare, un database MariaDB e un servizio di monitoring separato, il tutto supportato da una suite di test automatizzati per garantire affidabilità e manutenibilità.',
     features: [
-      'Catalogo prodotti',
-      'Carrello acquisti',
-      'Sistema pagamenti',
-      'Gestione ordini',
-      'Area amministratore',
-      'Dashboard artigiani',
-      'Sistema approvazioni',
-      'Monitoring separato'
+      'Architettura multi-container con Docker Compose',
+      'Dashboard di monitoring in tempo reale (CPU, RAM, container)',
+      'Sistema di Backup e Ripristino integrato (manuale e automatico)',
+      'Suite di testing completa (Unit, Integration, Frontend, Performance)',
+      'Documentazione API interattiva con Swagger',
+      'Sistema di pagamento sicuro con Stripe.js',
+      'Gestione multi-ruolo (Cliente, Artigiano, Admin) con dashboard dedicate',
+      'Gestione completa del ciclo di vendita: catalogo, carrello, ordini, segnalazioni'
     ],
     techStack: {
-      frontend: ['React', 'TypeScript', 'Tailwind CSS'],
-      backend: ['Node.js', 'Express'],
-      database: ['MongoDB'],
-      payments: ['Stripe']
+      frontend: ['HTML5', 'CSS3', 'JavaScript (modulare)', 'Bootstrap 5', 'Chart.js'],
+      backend: ['Node.js', 'Express.js'],
+      database: ['MariaDB/MySQL'],
+      payments: ['Stripe.js'],
+      devops: ['Docker', 'Docker Compose'],
+      apiDocumentation: ['Swagger'],
+      monitoring: ['Node.js', 'WebSocket', 'Chart.js'],
+      testing: ['Mocha', 'Chai', 'Selenium (presumed)']
     },
     screenshots: [
-      { imageUrl: '/src/assets/projects/pane-salame-screenshot-1.jpg', caption: 'Homepage' },
-      { imageUrl: '/src/assets/projects/pane-salame-screenshot-2.jpg', caption: 'Catalogo prodotti' },
-      { imageUrl: '/src/assets/projects/pane-salame-screenshot-3.jpg', caption: 'Checkout' }
+      { imageUrl: '/src/assets/projects/pane-salame-screenshot-1.jpg', caption: 'Homepage e catalogo prodotti' },
+      { imageUrl: '/src/assets/projects/pane-salame-screenshot-2.jpg', caption: 'Dashboard di monitoring in tempo reale' },
+      { imageUrl: '/src/assets/projects/pane-salame-screenshot-3.jpg', caption: 'Documentazione delle API con Swagger' }
     ],
     timeline: {
       startDate: '2023-10',
       endDate: '2023-12',
       duration: '3 mesi'
     },
-    metrics: {
-      products: '100+',
-      orders: '50+',
-      revenue: '€5k+'
-    },
     challenges: [
-      'Integrazione pagamenti',
-      'Gestione inventario',
-      'UX mobile',
-      'Dashboard multi-ruolo'
+      'Orchestrazione di un ambiente multi-container complesso con Docker Compose.',
+      'Sviluppo di una dashboard di monitoring in tempo reale da zero con WebSocket.',
+      'Creazione di una suite di testing multi-livello per coprire l\'intera applicazione.',
+      'Implementazione di un sistema di backup e ripristino affidabile.'
     ],
     learnings: [
-      'API Stripe',
-      'Gestione stato complesso',
-      'Design e-commerce',
-      'Role-based access'
+      'Principi di DevOps e containerizzazione con Docker.',
+      'Monitoraggio di applicazioni in produzione.',
+      'Strategie di testing software (TDD/BDD).',
+      'Progettazione e documentazione di API RESTful con Swagger.'
     ],
-    workflow: 'Design → Sviluppo → Testing → Deploy'
+    workflow: 'Architettura Docker → Sviluppo Backend & API → Sviluppo Frontend → Implementazione Testing & Monitoring → Deploy'
   },
   {
     id: 'fitness-bodybuilding',
@@ -769,7 +768,7 @@ export const projects: ProjectType[] = [
       'Email integration'
     ],
     workflow: 'Design → Sviluppo → Testing → Deploy'
-  },{
+  }, {
     id: 'lariana',
     title: 'La Lariana',
     description: 'Landing page per negozio di estetiste con possibilità di appuntamento e newsletter',

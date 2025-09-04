@@ -59,6 +59,9 @@ export interface ProjectType {
     ecommerce?: string[]
     deployment?: string[]
     apis?: string[]
+    apiDocumentation?: string[]
+    monitoring?: string[]
+    testing?: string[]
   }
   screenshots?: {
     imageUrl: string
