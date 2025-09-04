@@ -471,20 +471,20 @@ const HomePage = () => {
               </div>
             </motion.div>
 
-            {/* RevAI */}
+            {/* Ravai */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0, ease: "easeOut" }}
               className="group cursor-pointer"
-              onClick={() => handleProjectClick('revai')}
+              onClick={() => handleProjectClick('ravai')}
             >
               <div className="relative bg-surface/30 border border-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg h-[280px] sm:h-auto flex flex-col">
                 {/* Immagine progetto */}
                 <div className="w-full h-32 sm:h-40 lg:h-56 mb-2 sm:mb-3 lg:mb-4 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-surface to-surface/80">
                   <img
-                    src="/src/assets/projects/revai-main.jpg"
-                    alt="REVAI"
+                    src="/src/assets/projects/ravai-main.jpg"
+                    alt="RAVAI"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                     decoding="async"
@@ -501,7 +501,7 @@ const HomePage = () => {
                     </div>
                   </div>
                   <h3 className="text-sm sm:text-lg lg:text-xl font-bold text-primary group-hover:text-accent transition-colors leading-tight">
-                    REVAI
+                    RAVAI
                   </h3>
                   <div className="flex-1 flex flex-col justify-center">
                     <p className="text-secondary/80 text-xs sm:text-sm leading-3 sm:leading-4 lg:leading-5 line-clamp-2">
@@ -512,7 +512,7 @@ const HomePage = () => {
                   {/* Link - nascosti su mobile */}
                   <div className="hidden sm:flex gap-1 sm:gap-1.5 lg:gap-2 pt-1 sm:pt-2">
                     <a
-                      href="https://github.com/lucacatt/revai"
+                      href="https://github.com/lucacatt/ravai"
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
@@ -523,7 +523,7 @@ const HomePage = () => {
                       <span className="lg:hidden">Git</span>
                     </a>
                     <a
-                      href="https://revai-demo.vercel.app"
+                      href="https://ravai.it"
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}

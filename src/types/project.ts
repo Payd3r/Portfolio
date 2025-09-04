@@ -58,6 +58,7 @@ export interface ProjectType {
     newsletter?: string[]
     ecommerce?: string[]
     deployment?: string[]
+    apis?: string[]
   }
   screenshots?: {
     imageUrl: string
@@ -101,6 +102,7 @@ export interface ProjectType {
     matches?: string | number
     teams?: string | number
     auctions?: string | number
+    seo?: string | number
   }
   challenges?: string[]
   learnings?: string[]

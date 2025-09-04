@@ -31,9 +31,8 @@ const ProjectDetail = () => {
     )
   }
 
-  // Prepara le immagini per il carosello
+  // Prepara le immagini per il carosello (solo screenshots, senza l'immagine di copertina)
   const carouselImages = []
-  if (project.imageUrl) carouselImages.push(project.imageUrl)
   if (project.screenshots) {
     project.screenshots.forEach(screenshot => {
       carouselImages.push(screenshot.imageUrl)

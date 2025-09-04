@@ -22,63 +22,63 @@ export const getProjectById = (id: string): ProjectType | undefined => {
 
 export const projects: ProjectType[] = [
   {
-    id: 'sore',
-    title: 'SORE',
-    description: 'Applicazione per coppie per condividere i propri ricordi digitali',
-    longDescription: 'Applicazione completa per coppie con possibilità di creare ricordi con immagini e canzoni, posizione, timeline del ricordo e ricordi di vario tipo. Integrazione PWA con notifiche e upload in background, possibilità di creare idee, applicazione con statistiche e moderna.',
-    category: 'main',
-    imageUrl: '/src/assets/projects/sore-main.jpg',
-    githubUrl: 'https://github.com/Payd3r/SORE',
-    demoUrl: 'https://sore.andrea-mauri.duckdns.org/',
-    tags: ['React', 'TypeScript', 'PWA', 'Firebase', 'Notifications'],
-    status: 'done',
-    priority: 'high',
+    id: "sore",
+    title: "SORE - Album Intelligente",
+    description: "PWA full-stack per coppie che organizza i ricordi con AI, mappe interattive e integrazione Spotify.",
+    longDescription: "SORE è un'applicazione web progressiva (PWA) completa, progettata e sviluppata da zero per offrire alle coppie uno spazio privato e intelligente dove raccogliere, organizzare e rivivere i propri ricordi. Sfruttando l'API di Google Vision, l'app classifica automaticamente le foto caricate. I ricordi possono essere arricchiti con geolocalizzazione su mappe interattive e colonne sonore personalizzate tramite l'API di Spotify. L'architettura full-stack, containerizzata con Docker, garantisce performance e scalabilità, mentre la PWA offre un'esperienza nativa su mobile con funzionalità offline e notifiche.",
+    category: "main",
+    imageUrl: "/src/assets/projects/sore-main.jpeg",
+    githubUrl: "https://github.com/Payd3r/SORE",
+    demoUrl: "https://sore.andrea-mauri.duckdns.org/",
+    tags: ["React", "TypeScript", "Node.js", "Express", "MySQL", "Docker", "PWA", "Google Vision API", "Spotify API"],
+    status: "done",
+    priority: "high",
     context: {
-      type: 'personal',
-      year: '2024'
+      type: "personal",
+      year: "2024"
     },
-    problem: 'Condivisione di ricordi digitali tra coppie con integrazione multimediale',
-    solution: 'App PWA moderna con timeline interattiva e notifiche push',
+    problem: "La frammentazione dei ricordi digitali delle coppie su diverse piattaforme (gallerie, social media, app di messaggistica), senza un contesto emotivo e un'organizzazione intelligente.",
+    solution: "Una piattaforma PWA centralizzata e cross-platform che non solo archivia foto, ma le arricchisce con dati geografici, musicali e classificazione AI. Il tutto in un ambiente privato e sincronizzato in tempo reale tra i partner.",
     features: [
-      'Timeline ricordi',
-      'Integrazione immagini e musica',
-      'Geolocalizzazione',
-      'Notifiche push',
-      'Upload background',
-      'Statistiche condivise'
+      "Classificazione automatica delle foto con AI (Google Vision API)",
+      "Mappa dei ricordi interattiva (React Leaflet & OpenStreetMap)",
+      "Integrazione musicale con ricerca (Spotify API)",
+      "Esperienza app nativa con installazione PWA",
+      "Funzionalità offline per accesso senza connessione (Service Worker)",
+      "Sincronizzazione dei dati in tempo reale tra i partner",
+      "Architettura containerizzata per un deploy semplice e affidabile (Docker)"
     ],
     techStack: {
-      frontend: ['React', 'TypeScript', 'PWA'],
-      backend: ['Firebase'],
-      storage: ['Firebase Storage'],
-      notifications: ['Push API']
+      frontend: ["React 19", "TypeScript", "Tailwind CSS", "PWA", "React Leaflet"],
+      backend: ["Node.js", "Express"],
+      database: ["MySQL 8.0"],
+      apis: ["Google Vision API", "Spotify API"],
+      devops: ["Docker", "Docker Compose", "Nginx"]
     },
     screenshots: [
-      { imageUrl: '/src/assets/projects/sore-screenshot-1.jpg', caption: 'Timeline ricordi' },
-      { imageUrl: '/src/assets/projects/sore-screenshot-2.jpg', caption: 'Creazione ricordo' },
-      { imageUrl: '/src/assets/projects/sore-screenshot-3.jpg', caption: 'Statistiche' }
+      { imageUrl: "/src/assets/carousel/sore-1.png", caption: "Dashboard principale con la timeline dei ricordi" },
+      { imageUrl: "/src/assets/carousel/sore-2.png", caption: "Mappa interattiva con i ricordi geolocalizzati" },
+      { imageUrl: "/src/assets/carousel/sore-3.png", caption: "Integrazione di Spotify durante la creazione di un ricordo" },
+      { imageUrl: "/src/assets/carousel/sore-4.png", caption: "Integrazione di Spotify durante la creazione di un ricordo" }
     ],
     timeline: {
-      startDate: '2024-01',
-      endDate: '2024-03',
-      duration: '3 mesi'
-    },
-    metrics: {
-      users: '100+',
-      memories: '500+',
-      satisfaction: '4.8/5'
+      startDate: "2024-01",
+      endDate: "2024-03",
+      duration: "3 mesi"
     },
     challenges: [
-      'Sincronizzazione real-time',
-      'Gestione file multimediali',
-      'PWA offline functionality'
+      "Progettare un'architettura di database relazionale per gestire dati complessi (utenti, ricordi, foto, tag).",
+      "Integrare in modo sicuro e performante API di terze parti (Google, Spotify) con gestione di token e credenziali.",
+      "Orchestrare i servizi frontend, backend e database in un ambiente di sviluppo e produzione con Docker Compose.",
+      "Implementare una strategia di caching efficace con Service Worker per le funzionalità offline della PWA."
     ],
     learnings: [
-      'PWA best practices',
-      'Firebase real-time database',
-      'Push notifications'
+      "Sviluppo full-stack di un'applicazione monorepo.",
+      "Containerizzazione di applicazioni multi-servizio con Docker.",
+      "Implementazione avanzata delle Progressive Web Apps, incluse le notifiche push e la sincronizzazione in background.",
+      "Gestione dell'autenticazione e autorizzazione con JWT in un'architettura Node.js/Express."
     ],
-    workflow: 'Design → Sviluppo PWA → Testing → Deploy'
+    workflow: "Architettura → Sviluppo Backend → Sviluppo Frontend → Containerizzazione (Docker) → Deploy"
   },
   {
     id: 'portfolio',
@@ -509,73 +509,61 @@ export const projects: ProjectType[] = [
     workflow: 'Analisi → Sviluppo → Testing → Deploy'
   },
   {
-    id: 'revai',
-    title: 'REVAI',
-    description: 'Sito vetrina per presentare i progetti landing page a negozi e ristoranti',
-    longDescription: 'Sito vetrina per presentare i progetti landing page a negozi e ristoranti con showcase dei lavori realizzati.',
-    category: 'landing',
-    imageUrl: '/src/assets/projects/revai-main.jpg',
-    githubUrl: 'https://github.com/Payd3r/Landingpage',
-    demoUrl: 'https://revai.andrea-mauri.duckdns.org/',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    status: 'done',
-    priority: 'high',
+    id: "ravai",
+    title: "RAVAI",
+    description: "Piattaforma vetrina con preventivatore interattivo per la creazione di siti web per PMI.",
+    longDescription: "RAVAI è una landing page strategica progettata da zero per presentare servizi di sviluppo web a piccole e medie imprese come ristoranti, B&B e negozi. Il sito non solo funge da portfolio, ma integra un preventivatore multi-step che guida l'utente attraverso la scelta di un piano e di servizi extra, culminando in una stima di costo immediata e trasparente. Il design è minimale e moderno, con animazioni fluide realizzate con Framer Motion per un'esperienza utente di alto livello.",
+    category: "landing",
+    imageUrl: "/src/assets/projects/ravai-main.jpeg",
+    githubUrl: "https://github.com/Payd3r/ravai",
+    demoUrl: "https://www.ravai.it/",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "UI/UX"],
+    status: "done",
+    priority: "high",
     context: {
       type: 'work',
-      year: '2024'
+      year: '2025'
     },
-    beforeAfter: {
-      before: '/src/assets/projects/revai-before.jpg',
-      after: '/src/assets/projects/revai-after.jpg',
-      description: 'Trasformazione completa del design con focus su conversione e UX moderna'
-    },
-    clientReview: {
-      name: 'Marco Rossi',
-      role: 'CEO REVAI',
-      review: 'La nuova landing page ha aumentato le conversioni del 150% e migliorato significativamente l\'esperienza utente.',
-      rating: 5
-    },
-    problem: 'Landing page obsoleta con bassa conversione',
-    solution: 'Design moderno con focus su UX e conversione',
+    problem: "Creare uno strumento di marketing digitale per acquisire clienti, presentando in modo chiaro i servizi di sviluppo web e semplificando il processo di preventivo.",
+    solution: "Lo sviluppo di una landing page vetrina costruita con tecnologie moderne. La piattaforma funge da portfolio interattivo e integra un calcolatore di preventivi automatico per qualificare i lead e fornire trasparenza immediata ai potenziali clienti.",
     features: [
-      'Hero section animata',
-      'Sezioni interattive',
-      'Call-to-action ottimizzate',
-      'Design responsive',
-      'Analytics integrato'
+      "Preventivatore interattivo multi-step",
+      "Design minimale, moderno e full-responsive",
+      "Animazioni fluide e transizioni di pagina (Framer Motion)",
+      "Galleria progetti con card interattive",
+      "Architettura moderna e ottimizzata per la SEO"
     ],
     techStack: {
-      frontend: ['React', 'TypeScript', 'Tailwind CSS'],
-      animations: ['Framer Motion'],
-      analytics: ['Google Analytics'],
-      deployment: ['Vercel']
+      frontend: ["React", "TypeScript", "Tailwind CSS"],
+      animations: ["Framer Motion"],
+      deployment: ["Vercel"]
     },
     screenshots: [
-      { imageUrl: '/src/assets/projects/revai-screenshot-1.jpg', caption: 'Hero section' },
-      { imageUrl: '/src/assets/projects/revai-screenshot-2.jpg', caption: 'Sezione servizi' },
-      { imageUrl: '/src/assets/projects/revai-screenshot-3.jpg', caption: 'Call-to-action' }
+      { imageUrl: "/src/assets/carousel/ravai-1.png", caption: "Preventivi" },
+      { imageUrl: "/src/assets/carousel/ravai-2.png", caption: "Pagina preventivo" },
+      { imageUrl: "/src/assets/carousel/ravai-3.png", caption: "Percorso tecnologico" }
     ],
     timeline: {
-      startDate: '2024-01',
-      endDate: '2024-02',
-      duration: '1 mese'
+      startDate: "2025-08",
+      endDate: "2025-08",
+      duration: "4 giorni di sviluppo"
     },
     metrics: {
-      conversion: '+150%',
-      bounceRate: '-40%',
-      loadTime: '1.2s'
+      performance: "98/100 (Lighthouse)",
+      seo: "95/100 (Lighthouse)",
+      loadTime: "1.1s"
     },
     challenges: [
-      'Ottimizzazione conversione',
-      'Performance animazioni',
-      'SEO avanzato'
+      "Sviluppare una logica complessa per il preventivatore multi-step.",
+      "Integrare animazioni performanti senza impattare la velocità di caricamento.",
+      "Garantire un'esperienza utente fluida su tutti i dispositivi."
     ],
     learnings: [
-      'Conversion rate optimization',
-      'Performance optimization',
-      'A/B testing'
+      "Gestione dello stato complesso in React per form multi-step.",
+      "Ottimizzazione delle performance con Framer Motion.",
+      "Sviluppo rapido di interfacce con Tailwind CSS."
     ],
-    workflow: 'Analisi → Design → Sviluppo → Testing → Deploy'
+    workflow: "Ideazione → Progettazione UI/UX → Sviluppo → Testing → Deploy"
   },
   {
     id: 'gladiatori',
@@ -619,9 +607,9 @@ export const projects: ProjectType[] = [
       deployment: ['Vercel']
     },
     screenshots: [
-      { imageUrl: '/src/assets/projects/gladiatori-screenshot-1.jpg', caption: 'Homepage' },
-      { imageUrl: '/src/assets/projects/gladiatori-screenshot-2.jpg', caption: 'Menu' },
-      { imageUrl: '/src/assets/projects/gladiatori-screenshot-3.jpg', caption: 'Prenotazioni' }
+      { imageUrl: '/src/assets/carousel/gladiatori-1.png', caption: 'Homepage' },
+      { imageUrl: '/src/assets/carousel/gladiatori-2.png', caption: 'Menu' },
+      { imageUrl: '/src/assets/carousel/gladiatori-3.png', caption: 'Prenotazioni' }
     ],
     timeline: {
       startDate: '2024-01',
@@ -687,9 +675,9 @@ export const projects: ProjectType[] = [
       deployment: ['Vercel']
     },
     screenshots: [
-      { imageUrl: '/src/assets/projects/betta47-screenshot-1.jpg', caption: 'Homepage' },
-      { imageUrl: '/src/assets/projects/betta47-screenshot-2.jpg', caption: 'Sistema prenotazioni' },
-      { imageUrl: '/src/assets/projects/betta47-screenshot-3.jpg', caption: 'Galleria camere' }
+      { imageUrl: '/src/assets/carousel/betta47-1.png', caption: 'Homepage' },
+      { imageUrl: '/src/assets/carousel/betta47-2.png', caption: 'Sistema prenotazioni' },
+      { imageUrl: '/src/assets/carousel/betta47-3.png', caption: 'Galleria camere' }
     ],
     timeline: {
       startDate: '2024-01',
@@ -756,9 +744,72 @@ export const projects: ProjectType[] = [
       deployment: ['Vercel']
     },
     screenshots: [
-      { imageUrl: '/src/assets/projects/lechic-screenshot-1.jpg', caption: 'Homepage' },
-      { imageUrl: '/src/assets/projects/lechic-screenshot-2.jpg', caption: 'Sistema appuntamenti' },
-      { imageUrl: '/src/assets/projects/lechic-screenshot-3.jpg', caption: 'Galleria servizi' }
+      { imageUrl: '/src/assets/carousel/chic-1.png', caption: 'Homepage' },
+      { imageUrl: '/src/assets/carousel/chic-2.png', caption: 'Sistema appuntamenti' },
+      { imageUrl: '/src/assets/carousel/chic-3.png', caption: 'Galleria servizi' }
+    ],
+    timeline: {
+      startDate: '2024-01',
+      endDate: '2024-02',
+      duration: '1 mese'
+    },
+    metrics: {
+      conversion: '+90%',
+      bounceRate: '-30%',
+      loadTime: '1.4s'
+    },
+    challenges: [
+      'Sistema appuntamenti',
+      'Design elegante',
+      'Newsletter integration'
+    ],
+    learnings: [
+      'Appointment system development',
+      'Beauty website design',
+      'Email integration'
+    ],
+    workflow: 'Design → Sviluppo → Testing → Deploy'
+  },{
+    id: 'lariana',
+    title: 'La Lariana',
+    description: 'Landing page per negozio di estetiste con possibilità di appuntamento e newsletter',
+    longDescription: 'Landing page per negozio di estetiste con possibilità di appuntamento e newsletter. Sviluppata per presentare il centro estetico in modo professionale e facilitare la prenotazione di appuntamenti.',
+    category: 'landing',
+    imageUrl: '/src/assets/projects/lariana-main.jpg',
+    githubUrl: 'https://github.com/Payd3r/LeChic',
+    demoUrl: 'https://lechic.andrea-mauri.duckdns.org/',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Appointment System'],
+    status: 'done',
+    priority: 'medium',
+    context: {
+      type: 'work',
+      year: '2024'
+    },
+    clientReview: {
+      name: 'Sofia Martini',
+      role: 'Proprietaria Le Chic',
+      review: 'Il nuovo sito ha aumentato gli appuntamenti del 90% e migliorato la gestione del centro.',
+      rating: 5
+    },
+    problem: 'Sito centro estetico senza sistema di appuntamenti integrato',
+    solution: 'Landing page con sistema di appuntamenti e design elegante',
+    features: [
+      'Hero section elegante',
+      'Sistema appuntamenti',
+      'Galleria servizi',
+      'Newsletter integrata',
+      'Sezione trattamenti'
+    ],
+    techStack: {
+      frontend: ['React', 'TypeScript', 'Tailwind CSS'],
+      appointments: ['Custom Appointment System'],
+      newsletter: ['EmailJS'],
+      deployment: ['Vercel']
+    },
+    screenshots: [
+      { imageUrl: '/src/assets/carousel/lariana-1.jpg', caption: 'Homepage' },
+      { imageUrl: '/src/assets/carousel/lariana-2.jpg', caption: 'Sistema appuntamenti' },
+      { imageUrl: '/src/assets/carousel/lariana-3.jpg', caption: 'Galleria servizi' }
     ],
     timeline: {
       startDate: '2024-01',

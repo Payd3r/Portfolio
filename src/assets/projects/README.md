@@ -28,7 +28,7 @@ Per ogni progetto, creare le seguenti immagini:
 5. `fitness-app-main.jpg` - Fitness & Bodybuilding App
 6. `tracking-spese-main.jpg` - Tracking Spese
 7. `gestionale-calcio-main.jpg` - Gestionale Calcio
-8. `revai-main.jpg` - REVAI
+8. `ravai-main.jpg` - RAVAI
 
 ### Landing Page
 1. `i-gladiatori-main.jpg` - I Gladiatori
