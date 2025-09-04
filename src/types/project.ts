@@ -38,6 +38,8 @@ export interface ProjectType {
   solution?: string
   features?: string[]
   techStack?: {
+    cache_taskQueue?: string[]
+    ecommerce_apis?: string[]
     frontend?: string[]
     backend?: string[]
     database?: string[]
@@ -62,6 +64,7 @@ export interface ProjectType {
     apiDocumentation?: string[]
     monitoring?: string[]
     testing?: string[]
+    graphics_3d?: string[]
   }
   screenshots?: {
     imageUrl: string
@@ -106,6 +109,9 @@ export interface ProjectType {
     teams?: string | number
     auctions?: string | number
     seo?: string | number
+    productsManaged?: string | number
+    automatedTests?: string | number
+    apiEndpoints?: string | number
   }
   challenges?: string[]
   learnings?: string[]

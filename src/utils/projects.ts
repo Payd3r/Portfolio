@@ -82,103 +82,102 @@ export const projects: ProjectType[] = [
   },
   {
     id: 'portfolio',
-    title: 'Portfolio',
-    description: 'Portfolio moderno per presentarmi e far vedere i miei progetti',
-    longDescription: 'Portfolio personale moderno sviluppato con React e TypeScript, featuring animazioni fluide e design moderno per presentare i progetti e le competenze.',
+    title: 'Portfolio ',
+    description: 'Portfolio personale che funge da "parco giochi" per tecnologie avanzate come React Three Fiber, GSAP e Framer Motion.',
+    longDescription: 'Questo non è un semplice sito vetrina, ma una web application dinamica progettata per dimostrare competenze avanzate. La homepage presenta un cubo 3D interattivo (React Three Fiber), mentre la navigazione e le micro-interazioni sono gestite con animazioni complesse (Framer Motion, GSAP). Il sito integra un cursore personalizzato, una galleria progetti filtrabile e una sezione che carica dinamicamente le statistiche da GitHub, mostrando un\'applicazione pratica delle API.',
     category: 'main',
-    imageUrl: '/src/assets/projects/portfolio-main.jpg',
+    imageUrl: '/src/assets/projects/portfolio-main.jpeg',
     githubUrl: 'https://github.com/Payd3r/Portfolio',
     demoUrl: 'https://portfolio.andrea-mauri.duckdns.org/',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'GSAP'],
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'GSAP', 'React Three Fiber', 'Docker'],
     status: 'done',
     priority: 'high',
     context: {
       type: 'personal',
       year: '2024'
     },
-    problem: 'Necessità di un portfolio professionale per mostrare competenze e progetti',
-    solution: 'Sito web moderno con animazioni fluide e design responsive',
+    problem: 'Creare un portfolio che non solo elenchi i progetti, ma che sia esso stesso una dimostrazione di competenze tecniche avanzate, in particolare nell\'ambito delle animazioni e della grafica 3D sul web.',
+    solution: 'Lo sviluppo di una Single Page Application interattiva con React e TypeScript, utilizzando librerie all\'avanguardia come React Three Fiber per la grafica 3D e GSAP/Framer Motion per animazioni complesse. L\'architettura è containerizzata con Docker per una facile esecuzione locale.',
     features: [
-      'Design responsive',
-      'Animazioni fluide',
-      'Galleria progetti',
-      'Sezione contatti',
-      'Dark/Light mode'
+      'Cubo 3D interattivo in homepage (React Three Fiber)',
+      'Animazioni di transizione di pagina (Framer Motion)',
+      'Micro-animazioni su elementi UI (GSAP)',
+      'Cursore personalizzato e interattivo',
+      'Galleria progetti con filtri dinamici',
+      'Integrazione API di GitHub per statistiche in tempo reale'
     ],
     techStack: {
-      frontend: ['React', 'TypeScript', 'Tailwind CSS'],
+      frontend: ['React', 'TypeScript', 'Vite', 'Tailwind CSS'],
       animations: ['Framer Motion', 'GSAP'],
-      deployment: ['Vercel']
+      graphics_3d: ['React Three Fiber', 'Drei'],
+      deployment: ['Docker', 'Vercel']
     },
     screenshots: [
-      { imageUrl: '/src/assets/projects/portfolio-screenshot-1.jpg', caption: 'Homepage' },
-      { imageUrl: '/src/assets/projects/portfolio-screenshot-2.jpg', caption: 'Galleria progetti' },
-      { imageUrl: '/src/assets/projects/portfolio-screenshot-3.jpg', caption: 'Dettaglio progetto' }
+      { imageUrl: '/src/assets/projects/portfolio-screenshot-1.jpg', caption: 'Homepage con cubo 3D interattivo' },
+      { imageUrl: '/src/assets/projects/portfolio-screenshot-2.jpg', caption: 'Galleria progetti con filtri' },
+      { imageUrl: '/src/assets/projects/portfolio-screenshot-3.jpg', caption: 'Dettaglio di un progetto' }
     ],
     timeline: {
       startDate: '2024-02',
       endDate: '2024-03',
       duration: '1 mese'
     },
-    metrics: {
-      visitors: '1000+',
-      projects: '10+',
-      performance: '95/100'
-    },
     challenges: [
-      'Ottimizzazione animazioni',
-      'SEO e performance',
-      'Design system coerente'
+      'Integrare rendering 3D (React Three Fiber) in un\'applicazione React mantenendo alte performance.',
+      'Orchestrazione di più librerie di animazione (GSAP, Framer Motion) senza conflitti.',
+      'Garantire che le animazioni complesse e gli effetti grafici siano fluidi su tutti i dispositivi.'
     ],
     learnings: [
-      'Pattern di animazione avanzati',
-      'Ottimizzazione bundle size',
-      'Best practices SEO'
+      'Sviluppo di scene 3D interattive nel DOM con React Three Fiber.',
+      'Gestione avanzata dello stato di animazioni complesse.',
+      'Ottimizzazione delle performance di rendering per applicazioni web graficamente intensive.'
     ],
-    workflow: 'Design → Sviluppo → Ottimizzazione → Deploy'
+    workflow: 'Concept & Design → Sviluppo Componenti → Integrazione 3D & Animazioni → Ottimizzazione Performance → Deploy'
   },
   {
     id: 'gestionale',
-    title: 'E-commerce Gestionale',
-    description: 'Applicazione web per gestire un magazzino locale, un negozio fisico e vari store online',
-    longDescription: 'Sistema gestionale completo sviluppato per Abbamoda, utilizzato in produzione per la gestione del negozio fisico e online. Gestione di due negozi Shopify, uno eBay e uno Amazon con sincronizzazioni settimanali, cassa per negozio tramite webapp, editing di immagini e gestione delle info sui vari canali.',
+    title: 'AbbaModa - Sistema Gestionale Multi-Canale',
+    description: 'Sistema gestionale full-stack (Django/React) con architettura containerizzata (Docker), code asincrone (Celery/Redis) e sincronizzazione e-commerce.',
+    longDescription: 'Sviluppato come progetto di tesi e utilizzato in produzione da Abbamoda, questo sistema è una soluzione software completa per la gestione di un business multi-canale. L\'architettura, interamente containerizzata con Docker, si basa su un backend Python/Django REST Framework e un frontend React. Utilizza Celery e Redis per gestire operazioni asincrone complesse come la sincronizzazione dell\'inventario con Shopify ed eBay. Include un sistema cassa (POS), CRM, gestione magazzino, un sistema di backup automatico su SFTP, e una suite di testing con oltre 200 test. Il progetto ha anche incluso la migrazione completa da un database legacy MariaDB a PostgreSQL.',
     category: 'main',
     imageUrl: '/src/assets/projects/gestionale-main.jpg',
     githubUrl: 'https://github.com/lucacatt/gestionale',
     demoUrl: 'https://gestionale-abbamoda.vercel.app',
-    tags: ['React', 'Node.js', 'Express', 'MySQL', 'Docker', 'Nginx', 'Shopify', 'Amazon', 'eBay'],
+    tags: ['Django', 'Python', 'PostgreSQL', 'React', 'Redis', 'Celery', 'Docker', 'Shopify API', 'eBay API'],
     status: 'done',
     priority: 'high',
     context: {
       type: 'work',
       company: 'Abbamoda',
-      duration: '6+ mesi',
+      duration: '7+ mesi',
       thesis: '/src/assets/documents/tesi-abbamoda.pdf',
-      year: '2023'
+      year: '2023-2024'
     },
-    problem: 'Gestione complessa di inventario, vendite e clienti per negozio fisico e online',
-    solution: 'Sistema integrato per gestione completa del business multi-canale',
+    problem: 'Centralizzare e automatizzare la gestione di magazzino, vendite (fisiche e online) e clienti, sostituendo processi manuali e sistemi legacy con una soluzione unificata, scalabile e affidabile.',
+    solution: 'Un\'architettura full-stack containerizzata con Docker. Il backend Django gestisce la logica di business e le API, mentre React offre un\'interfaccia reattiva. L\'uso di Celery e Redis permette di eseguire in background operazioni pesanti e sincronizzazioni con API esterne (Shopify, eBay) senza bloccare l\'interfaccia utente.',
     features: [
-      'Gestione inventario',
-      'Sistema vendite',
-      'Gestione clienti',
-      'Report analytics',
-      'Integrazione POS',
-      'Sincronizzazione multi-canale',
-      'Cassa webapp',
-      'Editing immagini'
+      'Gestione Magazzino (Prodotti, Varianti, Inventario, Barcode)',
+      'Sistema Cassa (POS) per vendite in negozio con stampa scontrini',
+      'Sincronizzazione E-commerce Multi-canale (Shopify, eBay)',
+      'Sistema di Code Asincrone (Celery & Redis) per operazioni in background',
+      'Sistema di Quantità Avanzato con ricalcolo automatico e validazione',
+      'Suite di Testing Completa (213+ test automatizzati)',
+      'Sistema di Backup/Ripristino automatico del database su server SFTP',
+      'Migrazione Dati da un sistema legacy (MariaDB a PostgreSQL)'
     ],
     techStack: {
-      frontend: ['React', 'TypeScript', 'Tailwind CSS'],
-      backend: ['Node.js', 'Express'],
-      database: ['MySQL'],
-      ecommerce: ['Shopify', 'Amazon API', 'eBay API'],
-      deployment: ['Docker', 'Nginx', 'PM2']
+      frontend: ['React 18', 'Bootstrap 5'],
+      backend: ['Django REST Framework', 'Python'],
+      database: ['PostgreSQL'],
+      cache_taskQueue: ['Redis', 'Celery'],
+      devops: ['Docker', 'Docker Compose'],
+      ecommerce_apis: ['Shopify API', 'eBay API'],
+      testing: ['Python Unittest Framework']
     },
     screenshots: [
-      { imageUrl: '/src/assets/projects/gestionale-screenshot-1.jpg', caption: 'Dashboard vendite' },
-      { imageUrl: '/src/assets/projects/gestionale-screenshot-2.jpg', caption: 'Gestione inventario' },
-      { imageUrl: '/src/assets/projects/gestionale-screenshot-3.jpg', caption: 'Report analytics' }
+      { imageUrl: '/src/assets/projects/gestionale-screenshot-1.jpg', caption: 'Dashboard principale con analytics vendite' },
+      { imageUrl: '/src/assets/projects/gestionale-screenshot-2.jpg', caption: 'Interfaccia del Sistema Cassa (POS)' },
+      { imageUrl: '/src/assets/projects/gestionale-screenshot-3.jpg', caption: 'Gestione avanzata dei prodotti con varianti e barcode' }
     ],
     timeline: {
       startDate: '2023-06',
@@ -186,27 +185,27 @@ export const projects: ProjectType[] = [
       duration: '7 mesi'
     },
     metrics: {
-      transactions: '1000+',
-      products: '500+',
-      revenue: '€50k+'
+      productsManaged: '10,000+',
+      automatedTests: '213/213 passed',
+      apiEndpoints: '50+'
     },
     challenges: [
-      'Integrazione sistemi legacy',
-      'Gestione concorrenza database',
-      'Sicurezza dati sensibili',
-      'Sincronizzazione multi-canale'
+      'Progettare e implementare un sistema di code asincrone per gestire migliaia di aggiornamenti di inventario su piattaforme esterne senza errori.',
+      'Orchestrare un ambiente di sviluppo e produzione complesso con Docker, includendo servizi di debug come VSCode Server e Adminer.',
+      'Eseguire una migrazione dati complessa da un database MariaDB legacy a PostgreSQL, preservando l\'integrità dei dati.',
+      'Creare una suite di test estensiva per garantire l\'affidabilità delle API critiche per il business.'
     ],
     learnings: [
-      'Architettura microservizi',
-      'Ottimizzazione database',
-      'Sicurezza applicazioni',
-      'API integration'
+      'Architettura di sistemi software complessi e manutenibili con Django.',
+      'Gestione di task asincroni e code di messaggi con Celery e Redis.',
+      'Principi avanzati di DevOps, containerizzazione e gestione di ambienti multi-container.',
+      'Strategie di integrazione profonda con API e-commerce di terze parti.'
     ],
-    workflow: 'Analisi → Sviluppo → Testing → Deploy → Manutenzione'
+    workflow: 'Analisi requisiti → Architettura (Django/Celery) → Sviluppo API → Sviluppo Frontend (React) → Testing → Containerizzazione (Docker) → Manutenzione'
   },
   {
     id: 'pane-salame',
-    title: 'Pane e Salame - E-commerce Full-Stack',
+    title: 'Pane e Salame',
     description: 'Piattaforma e-commerce full-stack con architettura containerizzata (Docker), suite di testing completa e dashboard di monitoring in tempo reale.',
     longDescription: 'Sviluppato per l\'esame di Tecnologie Innovative, "Pane e Salame" è un e-commerce completo che va oltre le funzionalità standard. L\'intera architettura è basata su microservizi containerizzati con Docker (frontend, backend, database, image server, monitoring), garantendo portabilità e un deploy semplificato. Il progetto include una suite di testing multi-livello (unit, integration, frontend, performance) e una dashboard di monitoring dedicata che traccia in tempo reale lo stato dei container, l\'utilizzo delle risorse di sistema (CPU, RAM) e offre un sistema di backup e ripristino. Le API sono documentate professionalmente con Swagger.',
     category: 'main',
@@ -244,9 +243,9 @@ export const projects: ProjectType[] = [
       testing: ['Mocha', 'Chai', 'Selenium (presumed)']
     },
     screenshots: [
-      { imageUrl: '/src/assets/projects/pane-salame-screenshot-1.jpg', caption: 'Homepage e catalogo prodotti' },
-      { imageUrl: '/src/assets/projects/pane-salame-screenshot-2.jpg', caption: 'Dashboard di monitoring in tempo reale' },
-      { imageUrl: '/src/assets/projects/pane-salame-screenshot-3.jpg', caption: 'Documentazione delle API con Swagger' }
+      { imageUrl: '/src/assets/carousel/pane-salame-1.png', caption: 'Homepage e catalogo prodotti' },
+      { imageUrl: '/src/assets/carousel/pane-salame-2.jpg', caption: 'Dashboard di monitoring in tempo reale' },
+      { imageUrl: '/src/assets/carousel/pane-salame-3.jpg', caption: 'Documentazione delle API con Swagger' }
     ],
     timeline: {
       startDate: '2023-10',
