@@ -27,7 +27,7 @@ export const projects: ProjectType[] = [
     description: "PWA full-stack per coppie che organizza i ricordi con AI, mappe interattive e integrazione Spotify.",
     longDescription: "SORE è un'applicazione web progressiva (PWA) completa, progettata e sviluppata da zero per offrire alle coppie uno spazio privato e intelligente dove raccogliere, organizzare e rivivere i propri ricordi. Sfruttando l'API di Google Vision, l'app classifica automaticamente le foto caricate. I ricordi possono essere arricchiti con geolocalizzazione su mappe interattive e colonne sonore personalizzate tramite l'API di Spotify. L'architettura full-stack, containerizzata con Docker, garantisce performance e scalabilità, mentre la PWA offre un'esperienza nativa su mobile con funzionalità offline e notifiche.",
     category: "main",
-    imageUrl: "/src/assets/projects/sore-main.jpeg",
+    imageUrl: "/assets/projects/sore-main.jpeg",
     githubUrl: "https://github.com/Payd3r/SORE",
     demoUrl: "https://sore.andrea-mauri.duckdns.org/",
     tags: ["React", "TypeScript", "Node.js", "Express", "MySQL", "Docker", "PWA", "Google Vision API", "Spotify API"],
@@ -56,10 +56,10 @@ export const projects: ProjectType[] = [
       devops: ["Docker", "Docker Compose", "Nginx"]
     },
     screenshots: [
-      { imageUrl: "/src/assets/carousel/sore-1.png", caption: "Dashboard principale con la timeline dei ricordi" },
-      { imageUrl: "/src/assets/carousel/sore-2.png", caption: "Mappa interattiva con i ricordi geolocalizzati" },
-      { imageUrl: "/src/assets/carousel/sore-3.png", caption: "Integrazione di Spotify durante la creazione di un ricordo" },
-      { imageUrl: "/src/assets/carousel/sore-4.png", caption: "Integrazione di Spotify durante la creazione di un ricordo" }
+      { imageUrl: "/assets/carousel/sore-1.png", caption: "Dashboard principale con la timeline dei ricordi" },
+      { imageUrl: "/assets/carousel/sore-2.png", caption: "Mappa interattiva con i ricordi geolocalizzati" },
+      { imageUrl: "/assets/carousel/sore-3.png", caption: "Integrazione di Spotify durante la creazione di un ricordo" },
+      { imageUrl: "/assets/carousel/sore-4.png", caption: "Integrazione di Spotify durante la creazione di un ricordo" }
     ],
     timeline: {
       startDate: "2024-01",
@@ -86,7 +86,7 @@ export const projects: ProjectType[] = [
     description: 'Portfolio personale che funge da "parco giochi" per tecnologie avanzate come React Three Fiber, GSAP e Framer Motion.',
     longDescription: 'Questo non è un semplice sito vetrina, ma una web application dinamica progettata per dimostrare competenze avanzate. La homepage presenta un cubo 3D interattivo (React Three Fiber), mentre la navigazione e le micro-interazioni sono gestite con animazioni complesse (Framer Motion, GSAP). Il sito integra un cursore personalizzato, una galleria progetti filtrabile e una sezione che carica dinamicamente le statistiche da GitHub, mostrando un\'applicazione pratica delle API.',
     category: 'main',
-    imageUrl: '/src/assets/projects/portfolio-main.jpeg',
+    imageUrl: '/assets/projects/portfolio-main.jpeg',
     githubUrl: 'https://github.com/Payd3r/Portfolio',
     demoUrl: 'https://portfolio.andrea-mauri.duckdns.org/',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'GSAP', 'React Three Fiber', 'Docker'],
@@ -113,9 +113,9 @@ export const projects: ProjectType[] = [
       deployment: ['Docker', 'Vercel']
     },
     screenshots: [
-      { imageUrl: '/src/assets/projects/portfolio-screenshot-1.jpg', caption: 'Homepage con cubo 3D interattivo' },
-      { imageUrl: '/src/assets/projects/portfolio-screenshot-2.jpg', caption: 'Galleria progetti con filtri' },
-      { imageUrl: '/src/assets/projects/portfolio-screenshot-3.jpg', caption: 'Dettaglio di un progetto' }
+      { imageUrl: '/assets/projects/portfolio-screenshot-1.jpg', caption: 'Homepage con cubo 3D interattivo' },
+      { imageUrl: '/assets/projects/portfolio-screenshot-2.jpg', caption: 'Galleria progetti con filtri' },
+      { imageUrl: '/assets/projects/portfolio-screenshot-3.jpg', caption: 'Dettaglio di un progetto' }
     ],
     timeline: {
       startDate: '2024-02',
@@ -140,7 +140,7 @@ export const projects: ProjectType[] = [
     description: 'Sistema gestionale full-stack (Django/React) con architettura containerizzata (Docker), code asincrone (Celery/Redis) e sincronizzazione e-commerce.',
     longDescription: 'Sviluppato come progetto di tesi e utilizzato in produzione da Abbamoda, questo sistema è una soluzione software completa per la gestione di un business multi-canale. L\'architettura, interamente containerizzata con Docker, si basa su un backend Python/Django REST Framework e un frontend React. Utilizza Celery e Redis per gestire operazioni asincrone complesse come la sincronizzazione dell\'inventario con Shopify ed eBay. Include un sistema cassa (POS), CRM, gestione magazzino, un sistema di backup automatico su SFTP, e una suite di testing con oltre 200 test. Il progetto ha anche incluso la migrazione completa da un database legacy MariaDB a PostgreSQL.',
     category: 'main',
-    imageUrl: '/src/assets/projects/gestionale-main.jpg',
+    imageUrl: '/assets/projects/gestionale-main.jpg',
     githubUrl: 'https://github.com/lucacatt/gestionale',
     demoUrl: 'https://gestionale-abbamoda.vercel.app',
     tags: ['Django', 'Python', 'PostgreSQL', 'React', 'Redis', 'Celery', 'Docker', 'Shopify API', 'eBay API'],
@@ -150,7 +150,7 @@ export const projects: ProjectType[] = [
       type: 'work',
       company: 'Abbamoda',
       duration: '7+ mesi',
-      thesis: '/src/assets/documents/tesi-abbamoda.pdf',
+      thesis: '/assets/documents/tesi-abbamoda.pdf',
       year: '2023-2024'
     },
     problem: 'Centralizzare e automatizzare la gestione di magazzino, vendite (fisiche e online) e clienti, sostituendo processi manuali e sistemi legacy con una soluzione unificata, scalabile e affidabile.',
@@ -175,9 +175,9 @@ export const projects: ProjectType[] = [
       testing: ['Python Unittest Framework']
     },
     screenshots: [
-      { imageUrl: '/src/assets/projects/gestionale-screenshot-1.jpg', caption: 'Dashboard principale con analytics vendite' },
-      { imageUrl: '/src/assets/projects/gestionale-screenshot-2.jpg', caption: 'Interfaccia del Sistema Cassa (POS)' },
-      { imageUrl: '/src/assets/projects/gestionale-screenshot-3.jpg', caption: 'Gestione avanzata dei prodotti con varianti e barcode' }
+      { imageUrl: '/assets/projects/gestionale-screenshot-1.jpg', caption: 'Dashboard principale con analytics vendite' },
+      { imageUrl: '/assets/projects/gestionale-screenshot-2.jpg', caption: 'Interfaccia del Sistema Cassa (POS)' },
+      { imageUrl: '/assets/projects/gestionale-screenshot-3.jpg', caption: 'Gestione avanzata dei prodotti con varianti e barcode' }
     ],
     timeline: {
       startDate: '2023-06',
@@ -209,7 +209,7 @@ export const projects: ProjectType[] = [
     description: 'Piattaforma e-commerce full-stack con architettura containerizzata (Docker), suite di testing completa e dashboard di monitoring in tempo reale.',
     longDescription: 'Sviluppato per l\'esame di Tecnologie Innovative, "Pane e Salame" è un e-commerce completo che va oltre le funzionalità standard. L\'intera architettura è basata su microservizi containerizzati con Docker (frontend, backend, database, image server, monitoring), garantendo portabilità e un deploy semplificato. Il progetto include una suite di testing multi-livello (unit, integration, frontend, performance) e una dashboard di monitoring dedicata che traccia in tempo reale lo stato dei container, l\'utilizzo delle risorse di sistema (CPU, RAM) e offre un sistema di backup e ripristino. Le API sono documentate professionalmente con Swagger.',
     category: 'main',
-    imageUrl: '/src/assets/projects/pane-salame-main.jpg',
+    imageUrl: '/assets/projects/pane-salame-main.jpg',
     githubUrl: 'https://github.com/Payd3r/ecommerce',
     demoUrl: 'https://panesalame.andrea-mauri.duckdns.org/',
     tags: ['JavaScript', 'Node.js', 'Express', 'MySQL', 'Docker', 'Bootstrap', 'Stripe', 'Swagger', 'Testing'],
@@ -243,9 +243,9 @@ export const projects: ProjectType[] = [
       testing: ['Mocha', 'Chai', 'Selenium (presumed)']
     },
     screenshots: [
-      { imageUrl: '/src/assets/carousel/pane-salame-1.png', caption: 'Homepage e catalogo prodotti' },
-      { imageUrl: '/src/assets/carousel/pane-salame-2.jpg', caption: 'Dashboard di monitoring in tempo reale' },
-      { imageUrl: '/src/assets/carousel/pane-salame-3.jpg', caption: 'Documentazione delle API con Swagger' }
+      { imageUrl: '/assets/carousel/pane-salame-1.png', caption: 'Homepage e catalogo prodotti' },
+      { imageUrl: '/assets/carousel/pane-salame-2.jpg', caption: 'Dashboard di monitoring in tempo reale' },
+      { imageUrl: '/assets/carousel/pane-salame-3.jpg', caption: 'Documentazione delle API con Swagger' }
     ],
     timeline: {
       startDate: '2023-10',
@@ -272,7 +272,7 @@ export const projects: ProjectType[] = [
     description: 'Applicazione in Kotlin per smartphone per tener traccia dell\'allenamento',
     longDescription: 'Applicazione in Kotlin per smartphone per tener traccia dell\'allenamento con schede, utenti e allenamenti custom. Possibilità di far partire l\'attività e tener traccia dei progressi.',
     category: 'main',
-    imageUrl: '/src/assets/projects/fitness-main.jpg',
+    imageUrl: '/assets/projects/fitness-main.jpg',
     githubUrl: 'https://github.com/lucacatt/Fitness_and_Bodybuilding',
     demoUrl: 'https://fitness-app.vercel.app',
     tags: ['Kotlin', 'Android', 'SQLite', 'Material Design'],
@@ -299,9 +299,9 @@ export const projects: ProjectType[] = [
       deployment: ['Google Play Store']
     },
     screenshots: [
-      { imageUrl: '/src/assets/projects/fitness-screenshot-1.jpg', caption: 'Dashboard allenamenti' },
-      { imageUrl: '/src/assets/projects/fitness-screenshot-2.jpg', caption: 'Tracking esercizi' },
-      { imageUrl: '/src/assets/projects/fitness-screenshot-3.jpg', caption: 'Statistiche progressi' }
+      { imageUrl: '/assets/projects/fitness-screenshot-1.jpg', caption: 'Dashboard allenamenti' },
+      { imageUrl: '/assets/projects/fitness-screenshot-2.jpg', caption: 'Tracking esercizi' },
+      { imageUrl: '/assets/projects/fitness-screenshot-3.jpg', caption: 'Statistiche progressi' }
     ],
     timeline: {
       startDate: '2023-09',
@@ -331,7 +331,7 @@ export const projects: ProjectType[] = [
     description: 'Applicazione web con PWA e integrazione per iPhone per il controllo spese',
     longDescription: 'Applicazione web con PWA e integrazione per iPhone per il controllo spese con gestione di conti, categorie. Possibilità di tener traccia delle spese giornaliere con statistiche sui lunghi periodi con design futuristico e minimale.',
     category: 'main',
-    imageUrl: '/src/assets/projects/tracking-spese-main.jpg',
+    imageUrl: '/assets/projects/tracking-spese-main.jpg',
     githubUrl: 'https://github.com/Payd3r/Tracking_Spese',
     demoUrl: 'https://spese.andrea-mauri.duckdns.org/',
     tags: ['React', 'TypeScript', 'PWA', 'Firebase', 'Chart.js'],
@@ -359,9 +359,9 @@ export const projects: ProjectType[] = [
       deployment: ['Vercel']
     },
     screenshots: [
-      { imageUrl: '/src/assets/projects/tracking-spese-screenshot-1.jpg', caption: 'Dashboard spese' },
-      { imageUrl: '/src/assets/projects/tracking-spese-screenshot-2.jpg', caption: 'Aggiunta spesa' },
-      { imageUrl: '/src/assets/projects/tracking-spese-screenshot-3.jpg', caption: 'Report mensili' }
+      { imageUrl: '/assets/projects/tracking-spese-screenshot-1.jpg', caption: 'Dashboard spese' },
+      { imageUrl: '/assets/projects/tracking-spese-screenshot-2.jpg', caption: 'Aggiunta spesa' },
+      { imageUrl: '/assets/projects/tracking-spese-screenshot-3.jpg', caption: 'Report mensili' }
     ],
     timeline: {
       startDate: '2024-01',
@@ -393,7 +393,7 @@ export const projects: ProjectType[] = [
     description: 'Sito completamente realizzato in PHP per gestire una società calcistica',
     longDescription: 'Sito completamente realizzato in PHP per gestire una società calcistica con possibilità di creare squadre, giocatori e gestire il materiale e organizzare il calendario degli eventi con una galleria e la possibilità di creare locandine.',
     category: 'main',
-    imageUrl: '/src/assets/projects/gestionale-calcio-main.jpg',
+    imageUrl: '/assets/projects/gestionale-calcio-main.jpg',
     githubUrl: 'https://github.com/GerosaSimone/GestioneProgetto',
     demoUrl: 'https://gestionale-calcio.vercel.app',
     tags: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
@@ -421,9 +421,9 @@ export const projects: ProjectType[] = [
       deployment: ['Apache']
     },
     screenshots: [
-      { imageUrl: '/src/assets/projects/gestionale-calcio-screenshot-1.jpg', caption: 'Dashboard squadra' },
-      { imageUrl: '/src/assets/projects/gestionale-calcio-screenshot-2.jpg', caption: 'Gestione giocatori' },
-      { imageUrl: '/src/assets/projects/gestionale-calcio-screenshot-3.jpg', caption: 'Statistiche partite' }
+      { imageUrl: '/assets/projects/gestionale-calcio-screenshot-1.jpg', caption: 'Dashboard squadra' },
+      { imageUrl: '/assets/projects/gestionale-calcio-screenshot-2.jpg', caption: 'Gestione giocatori' },
+      { imageUrl: '/assets/projects/gestionale-calcio-screenshot-3.jpg', caption: 'Statistiche partite' }
     ],
     timeline: {
       startDate: '2023-03',
@@ -453,7 +453,7 @@ export const projects: ProjectType[] = [
     description: 'Sito per aste auto online',
     longDescription: 'Partecipazione in un team Fiverr per un\'app di aste auto. Gestione di problemi di pagamento e grafici sulla homepage.',
     category: 'main',
-    imageUrl: '/src/assets/projects/car-to-auction-main.jpg',
+    imageUrl: '/assets/projects/car-to-auction-main.jpg',
     githubUrl: 'https://github.com/teamicon/car-to-auction',
     demoUrl: 'https://car-to-auction.vercel.app',
     tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe', 'WebSocket'],
@@ -480,9 +480,9 @@ export const projects: ProjectType[] = [
       realtime: ['WebSocket']
     },
     screenshots: [
-      { imageUrl: '/src/assets/projects/car-to-auction-screenshot-1.jpg', caption: 'Homepage' },
-      { imageUrl: '/src/assets/projects/car-to-auction-screenshot-2.jpg', caption: 'Asta in corso' },
-      { imageUrl: '/src/assets/projects/car-to-auction-screenshot-3.jpg', caption: 'Gestione garage' }
+      { imageUrl: '/assets/projects/car-to-auction-screenshot-1.jpg', caption: 'Homepage' },
+      { imageUrl: '/assets/projects/car-to-auction-screenshot-2.jpg', caption: 'Asta in corso' },
+      { imageUrl: '/assets/projects/car-to-auction-screenshot-3.jpg', caption: 'Gestione garage' }
     ],
     timeline: {
       startDate: '2024-02',
@@ -512,7 +512,7 @@ export const projects: ProjectType[] = [
     description: "Piattaforma vetrina con preventivatore interattivo per la creazione di siti web per PMI.",
     longDescription: "RAVAI è una landing page strategica progettata da zero per presentare servizi di sviluppo web a piccole e medie imprese come ristoranti, B&B e negozi. Il sito non solo funge da portfolio, ma integra un preventivatore multi-step che guida l'utente attraverso la scelta di un piano e di servizi extra, culminando in una stima di costo immediata e trasparente. Il design è minimale e moderno, con animazioni fluide realizzate con Framer Motion per un'esperienza utente di alto livello.",
     category: "landing",
-    imageUrl: "/src/assets/projects/ravai-main.jpeg",
+    imageUrl: "/assets/projects/ravai-main.jpeg",
     githubUrl: "https://github.com/Payd3r/ravai",
     demoUrl: "https://www.ravai.it/",
     tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "UI/UX"],
@@ -537,9 +537,9 @@ export const projects: ProjectType[] = [
       deployment: ["Vercel"]
     },
     screenshots: [
-      { imageUrl: "/src/assets/carousel/ravai-1.png", caption: "Preventivi" },
-      { imageUrl: "/src/assets/carousel/ravai-2.png", caption: "Pagina preventivo" },
-      { imageUrl: "/src/assets/carousel/ravai-3.png", caption: "Percorso tecnologico" }
+      { imageUrl: "/assets/carousel/ravai-1.png", caption: "Preventivi" },
+      { imageUrl: "/assets/carousel/ravai-2.png", caption: "Pagina preventivo" },
+      { imageUrl: "/assets/carousel/ravai-3.png", caption: "Percorso tecnologico" }
     ],
     timeline: {
       startDate: "2025-08",
@@ -569,7 +569,7 @@ export const projects: ProjectType[] = [
     description: 'Landing page per ristorante pizzeria con 5 pagine e design moderno',
     longDescription: 'Landing page per ristorante pizzeria con 5 pagine e design moderno. Sviluppata per presentare il ristorante in modo professionale e accattivante.',
     category: 'landing',
-    imageUrl: '/src/assets/projects/gladiatori-main.jpg',
+    imageUrl: '/assets/projects/gladiatori-main.jpg',
     githubUrl: 'https://github.com/Payd3r/I-Gladiatori',
     demoUrl: 'https://gladiatori.andrea-mauri.duckdns.org/',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
@@ -580,8 +580,8 @@ export const projects: ProjectType[] = [
       year: '2024'
     },
     beforeAfter: {
-      before: '/src/assets/projects/gladiatori-before.jpg',
-      after: '/src/assets/projects/gladiatori-after.jpg',
+      before: '/assets/projects/gladiatori-before.jpg',
+      after: '/assets/projects/gladiatori-after.jpg',
       description: 'Trasformazione del sito ristorante con design moderno e UX ottimizzata'
     },
     clientReview: {
@@ -605,9 +605,9 @@ export const projects: ProjectType[] = [
       deployment: ['Vercel']
     },
     screenshots: [
-      { imageUrl: '/src/assets/carousel/gladiatori-1.png', caption: 'Homepage' },
-      { imageUrl: '/src/assets/carousel/gladiatori-2.png', caption: 'Menu' },
-      { imageUrl: '/src/assets/carousel/gladiatori-3.png', caption: 'Prenotazioni' }
+      { imageUrl: '/assets/carousel/gladiatori-1.png', caption: 'Homepage' },
+      { imageUrl: '/assets/carousel/gladiatori-2.png', caption: 'Menu' },
+      { imageUrl: '/assets/carousel/gladiatori-3.png', caption: 'Prenotazioni' }
     ],
     timeline: {
       startDate: '2024-01',
@@ -637,7 +637,7 @@ export const projects: ProjectType[] = [
     description: 'Landing page per B&B con possibilità di prenotazione del sito',
     longDescription: 'Landing page per B&B con possibilità di prenotazione del sito. Sviluppata per presentare il bed and breakfast in modo professionale e facilitare le prenotazioni.',
     category: 'landing',
-    imageUrl: '/src/assets/projects/betta47-main.jpg',
+    imageUrl: '/assets/projects/betta47-main.jpg',
     githubUrl: 'https://github.com/Payd3r/Betta47',
     demoUrl: 'https://betta47.andrea-mauri.duckdns.org/',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Booking System'],
@@ -648,8 +648,8 @@ export const projects: ProjectType[] = [
       year: '2024'
     },
     beforeAfter: {
-      before: '/src/assets/projects/betta47-before.jpg',
-      after: '/src/assets/projects/betta47-after.jpg',
+      before: '/assets/projects/betta47-before.jpg',
+      after: '/assets/projects/betta47-after.jpg',
       description: 'Trasformazione del sito B&B con sistema di prenotazione integrato'
     },
     clientReview: {
@@ -673,9 +673,9 @@ export const projects: ProjectType[] = [
       deployment: ['Vercel']
     },
     screenshots: [
-      { imageUrl: '/src/assets/carousel/betta47-1.png', caption: 'Homepage' },
-      { imageUrl: '/src/assets/carousel/betta47-2.png', caption: 'Sistema prenotazioni' },
-      { imageUrl: '/src/assets/carousel/betta47-3.png', caption: 'Galleria camere' }
+      { imageUrl: '/assets/carousel/betta47-1.png', caption: 'Homepage' },
+      { imageUrl: '/assets/carousel/betta47-2.png', caption: 'Sistema prenotazioni' },
+      { imageUrl: '/assets/carousel/betta47-3.png', caption: 'Galleria camere' }
     ],
     timeline: {
       startDate: '2024-01',
@@ -705,7 +705,7 @@ export const projects: ProjectType[] = [
     description: 'Landing page per negozio di estetiste con possibilità di appuntamento e newsletter',
     longDescription: 'Landing page per negozio di estetiste con possibilità di appuntamento e newsletter. Sviluppata per presentare il centro estetico in modo professionale e facilitare la prenotazione di appuntamenti.',
     category: 'landing',
-    imageUrl: '/src/assets/projects/lechic-main.jpg',
+    imageUrl: '/assets/projects/lechic-main.jpg',
     githubUrl: 'https://github.com/Payd3r/LeChic',
     demoUrl: 'https://lechic.andrea-mauri.duckdns.org/',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Appointment System'],
@@ -716,8 +716,8 @@ export const projects: ProjectType[] = [
       year: '2024'
     },
     beforeAfter: {
-      before: '/src/assets/projects/lechic-before.jpg',
-      after: '/src/assets/projects/lechic-after.jpg',
+      before: '/assets/projects/lechic-before.jpg',
+      after: '/assets/projects/lechic-after.jpg',
       description: 'Trasformazione del sito centro estetico con sistema di appuntamenti integrato'
     },
     clientReview: {
@@ -742,9 +742,9 @@ export const projects: ProjectType[] = [
       deployment: ['Vercel']
     },
     screenshots: [
-      { imageUrl: '/src/assets/carousel/chic-1.png', caption: 'Homepage' },
-      { imageUrl: '/src/assets/carousel/chic-2.png', caption: 'Sistema appuntamenti' },
-      { imageUrl: '/src/assets/carousel/chic-3.png', caption: 'Galleria servizi' }
+      { imageUrl: '/assets/carousel/chic-1.png', caption: 'Homepage' },
+      { imageUrl: '/assets/carousel/chic-2.png', caption: 'Sistema appuntamenti' },
+      { imageUrl: '/assets/carousel/chic-3.png', caption: 'Galleria servizi' }
     ],
     timeline: {
       startDate: '2024-01',
@@ -773,7 +773,7 @@ export const projects: ProjectType[] = [
     description: 'Landing page per negozio di estetiste con possibilità di appuntamento e newsletter',
     longDescription: 'Landing page per negozio di estetiste con possibilità di appuntamento e newsletter. Sviluppata per presentare il centro estetico in modo professionale e facilitare la prenotazione di appuntamenti.',
     category: 'landing',
-    imageUrl: '/src/assets/projects/lariana-main.jpg',
+    imageUrl: '/assets/projects/lariana-main.jpg',
     githubUrl: 'https://github.com/Payd3r/LeChic',
     demoUrl: 'https://lechic.andrea-mauri.duckdns.org/',
     tags: ['React', 'TypeScript', 'Tailwind CSS', 'Appointment System'],
@@ -805,9 +805,9 @@ export const projects: ProjectType[] = [
       deployment: ['Vercel']
     },
     screenshots: [
-      { imageUrl: '/src/assets/carousel/lariana-1.jpg', caption: 'Homepage' },
-      { imageUrl: '/src/assets/carousel/lariana-2.jpg', caption: 'Sistema appuntamenti' },
-      { imageUrl: '/src/assets/carousel/lariana-3.jpg', caption: 'Galleria servizi' }
+      { imageUrl: '/assets/carousel/lariana-1.jpg', caption: 'Homepage' },
+      { imageUrl: '/assets/carousel/lariana-2.jpg', caption: 'Sistema appuntamenti' },
+      { imageUrl: '/assets/carousel/lariana-3.jpg', caption: 'Galleria servizi' }
     ],
     timeline: {
       startDate: '2024-01',
