@@ -35,7 +35,7 @@ export const projects: ProjectType[] = [
     priority: "high",
     context: {
       type: "personal",
-      year: "2024"
+      year: "2025"
     },
     problem: "La frammentazione dei ricordi digitali delle coppie su diverse piattaforme (gallerie, social media, app di messaggistica), senza un contesto emotivo e un'organizzazione intelligente.",
     solution: "Una piattaforma PWA centralizzata e cross-platform che non solo archivia foto, ma le arricchisce con dati geografici, musicali e classificazione AI. Il tutto in un ambiente privato e sincronizzato in tempo reale tra i partner.",
@@ -62,8 +62,8 @@ export const projects: ProjectType[] = [
       { imageUrl: "/assets/carousel/sore-4.png", caption: "Integrazione di Spotify durante la creazione di un ricordo" }
     ],
     timeline: {
-      startDate: "2024-01",
-      endDate: "2024-03",
+      startDate: "gennaio 2025",
+      endDate: "marzo 2025",
       duration: "3 mesi"
     },
     challenges: [
@@ -136,11 +136,11 @@ export const projects: ProjectType[] = [
   },
   {
     id: 'gestionale',
-    title: 'AbbaModa - Sistema Gestionale Multi-Canale',
+    title: 'AbbaModa - Sistema Gestionale',
     description: 'Sistema gestionale full-stack (Django/React) con architettura containerizzata (Docker), code asincrone (Celery/Redis) e sincronizzazione e-commerce.',
     longDescription: 'Sviluppato come progetto di tesi e utilizzato in produzione da Abbamoda, questo sistema è una soluzione software completa per la gestione di un business multi-canale. L\'architettura, interamente containerizzata con Docker, si basa su un backend Python/Django REST Framework e un frontend React. Utilizza Celery e Redis per gestire operazioni asincrone complesse come la sincronizzazione dell\'inventario con Shopify ed eBay. Include un sistema cassa (POS), CRM, gestione magazzino, un sistema di backup automatico su SFTP, e una suite di testing con oltre 200 test. Il progetto ha anche incluso la migrazione completa da un database legacy MariaDB a PostgreSQL.',
     category: 'main',
-    imageUrl: '/assets/projects/gestionale-main.jpg',
+    imageUrl: '/assets/projects/gestionale-main.png',
     githubUrl: 'https://github.com/lucacatt/gestionale',
     demoUrl: 'https://gestionale-abbamoda.vercel.app',
     tags: ['Django', 'Python', 'PostgreSQL', 'React', 'Redis', 'Celery', 'Docker', 'Shopify API', 'eBay API'],
@@ -175,9 +175,11 @@ export const projects: ProjectType[] = [
       testing: ['Python Unittest Framework']
     },
     screenshots: [
-      { imageUrl: '/assets/projects/gestionale-screenshot-1.jpg', caption: 'Dashboard principale con analytics vendite' },
-      { imageUrl: '/assets/projects/gestionale-screenshot-2.jpg', caption: 'Interfaccia del Sistema Cassa (POS)' },
-      { imageUrl: '/assets/projects/gestionale-screenshot-3.jpg', caption: 'Gestione avanzata dei prodotti con varianti e barcode' }
+      { imageUrl: '/assets/carousel/gestionale-1.png', caption: 'Dashboard principale con analytics vendite' },
+      { imageUrl: '/assets/carousel/gestionale-2.png', caption: 'Interfaccia del Sistema Cassa (POS)' },
+      { imageUrl: '/assets/carousel/gestionale-3.png', caption: 'Gestione avanzata dei prodotti con varianti e barcode' },
+      { imageUrl: '/assets/carousel/gestionale-4.png', caption: 'Gestione avanzata dei prodotti con varianti e barcode' },
+      { imageUrl: '/assets/carousel/gestionale-5.png', caption: 'Gestione avanzata dei prodotti con varianti e barcode' }
     ],
     timeline: {
       startDate: '2023-06',
@@ -331,7 +333,7 @@ export const projects: ProjectType[] = [
     description: 'Applicazione web con PWA e integrazione per iPhone per il controllo spese',
     longDescription: 'Applicazione web con PWA e integrazione per iPhone per il controllo spese con gestione di conti, categorie. Possibilità di tener traccia delle spese giornaliere con statistiche sui lunghi periodi con design futuristico e minimale.',
     category: 'main',
-    imageUrl: '/assets/projects/tracking-spese-main.jpg',
+    imageUrl: '/assets/projects/spese-main.png',
     githubUrl: 'https://github.com/Payd3r/Tracking_Spese',
     demoUrl: 'https://spese.andrea-mauri.duckdns.org/',
     tags: ['React', 'TypeScript', 'PWA', 'Firebase', 'Chart.js'],

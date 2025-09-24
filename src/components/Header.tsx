@@ -43,7 +43,7 @@ const Header: React.FC = () => {
 
   const renderNavLink = (link: (typeof navLinks)[0]) => {
     const baseClasses =
-      'cursor-pointer transition-colors hover:text-accent-hover text-lg'
+      'cursor-pointer transition-colors hover:text-accent-hover text-nav-mobile md:text-nav-desktop'
     const activeClasses = 'text-accent font-bold'
     const isHomeAndAtTop = isHomePage && link.to === 'home' && isAtTop
 
@@ -87,7 +87,7 @@ const Header: React.FC = () => {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-dark-surface/80 p-6 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 bg-dark-surface/80 p-3 sm:p-4 md:p-6 backdrop-blur-sm">
       <div className="container mx-auto flex items-center justify-between">
         <div className="w-10 h-10" /> {/* Spazio vuoto per il logo */}
         {/* Desktop Navigation */}
@@ -107,8 +107,8 @@ const Header: React.FC = () => {
       </div>
       {/* Mobile Menu */}
       {isOpen && (
-        <nav className="mt-4 md:hidden">
-          <ul className="flex flex-col items-center space-y-4">
+        <nav className="mt-2 sm:mt-3 md:hidden">
+          <ul className="flex flex-col items-center space-y-2 sm:space-y-3">
             {navLinks.map((link) => (
               <li key={link.to}>
                 {renderNavLink(link)}

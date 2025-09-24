@@ -11,6 +11,14 @@ interface ProjectCarouselProps {
 const ProjectCarousel = ({ images, title, interval = 10000 }: ProjectCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
 
+  // Preload delle immagini per evitare il resize
+  useEffect(() => {
+    images.forEach((imageSrc) => {
+      const img = new Image()
+      img.src = imageSrc
+    })
+  }, [images])
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length)
@@ -33,27 +41,53 @@ const ProjectCarousel = ({ images, title, interval = 10000 }: ProjectCarouselPro
 
   if (!images || images.length === 0) {
     return (
-      <div className="w-full h-100 md:h-100 bg-gradient-to-br from-surface to-surface/80 rounded-2xl border border-accent/20 flex items-center justify-center">
+      <div className="w-full h-96 md:h-[500px] bg-gradient-to-br from-surface to-surface/80 rounded-2xl border border-accent/20 flex items-center justify-center">
         <p className="text-secondary/70">Nessuna immagine disponibile</p>
       </div>
     )
   }
 
   return (
-    <div className="relative w-full h-100 md:h-100 rounded-2xl overflow-hidden group">
-      {/* Immagine principale */}
-      <AnimatePresence mode="wait">
-        <motion.img
-          key={currentIndex}
-          src={images[currentIndex]}
-          alt={`${title} - Immagine ${currentIndex + 1}`}
-          className="w-full h-full object-cover"
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          transition={{ duration: 0.5 }}
-        />
-      </AnimatePresence>
+    <div className="relative w-full h-96 md:h-[500px] rounded-2xl overflow-hidden group">
+      {/* Immagine di background per evitare gap */}
+      <img
+        src={images[currentIndex]}
+        alt={`${title} - Immagine ${currentIndex + 1}`}
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ 
+          width: '100%', 
+          height: '100%', 
+          objectFit: 'cover',
+          objectPosition: 'center'
+        }}
+      />
+      
+      {/* Immagine principale con transizione */}
+      <div className="relative w-full h-full">
+        <AnimatePresence mode="popLayout">
+          <motion.img
+            key={currentIndex}
+            src={images[currentIndex]}
+            alt={`${title} - Immagine ${currentIndex + 1}`}
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ 
+              duration: 0.4, 
+              ease: "easeInOut",
+              opacity: { duration: 0.3 },
+              scale: { duration: 0.4 }
+            }}
+            style={{ 
+              width: '100%', 
+              height: '100%', 
+              objectFit: 'cover',
+              objectPosition: 'center'
+            }}
+          />
+        </AnimatePresence>
+      </div>
 
       {/* Overlay con titolo */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">

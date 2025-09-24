@@ -88,7 +88,7 @@ const ProjectCard = memo(({ project, index, onClick }: {
           {/* Categoria e anno sopra al titolo */}
           <div className="flex items-center gap-1 sm:gap-2 flex-wrap">
             {project.context?.year && (
-              <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-primary/20 text-primary text-xs font-medium rounded-full">
+              <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-primary/20 text-primary text-small-mobile md:text-small-desktop font-medium rounded-full">
                 {project.context.year}
               </span>
             )}
@@ -103,7 +103,7 @@ const ProjectCard = memo(({ project, index, onClick }: {
                 {project.context.type === 'university' && <GraduationCap className="w-3 h-3" />}
                 {project.context.type === 'work' && <Building className="w-3 h-3" />}
                 {project.context.type === 'personal' && <User className="w-3 h-3" />}
-                <span className="hidden sm:inline text-xs font-medium">
+                <span className="hidden sm:inline text-small-mobile md:text-small-desktop font-medium">
                   {project.context.type === 'university' ? 'Università' : 
                    project.context.type === 'work' ? 'Lavoro' : 'Personale'}
                 </span>
@@ -112,13 +112,13 @@ const ProjectCard = memo(({ project, index, onClick }: {
           </div>
 
           {/* Titolo */}
-          <h3 className="text-sm sm:text-lg md:text-xl font-bold text-primary group-hover:text-accent transition-colors leading-tight">
+          <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary group-hover:text-accent transition-colors leading-tight">
             {project.title}
           </h3>
 
           {/* Descrizione con altezza fissa - nascosta su mobile */}
           <div className="hidden sm:flex flex-1 flex-col justify-center">
-            <p className="text-secondary/80 text-xs sm:text-sm leading-3 sm:leading-4 md:leading-5 line-clamp-2">
+            <p className="text-secondary/80 text-small-mobile md:text-small-desktop leading-3 sm:leading-4 md:leading-5 line-clamp-2">
               {project.description}
             </p>
           </div>
@@ -128,7 +128,7 @@ const ProjectCard = memo(({ project, index, onClick }: {
             {project.tags.slice(0, 3).map((tag: string, tagIndex: number) => (
               <span 
                 key={tagIndex}
-                className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-accent/20 text-accent text-xs font-medium rounded-full"
+                className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-accent/20 text-accent text-small-mobile md:text-small-desktop font-medium rounded-full"
               >
                 {tag}
               </span>
@@ -247,15 +247,15 @@ const ProjectGallery = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-8"
+          className="mb-4 sm:mb-6 md:mb-8"
         >
-          <h1 className="text-4xl font-bold text-primary mb-4">Galleria Progetti</h1>
-          <p className="text-secondary/80 text-lg">
+          <h1 className="text-section-mobile md:text-section-desktop font-bold text-primary mb-2 sm:mb-3 md:mb-4">Galleria Progetti</h1>
+          <p className="text-secondary/80 text-body-mobile md:text-body-desktop">
             Esplora tutti i miei progetti, filtrati per categoria e tecnologia
           </p>
         </motion.div>
@@ -265,7 +265,7 @@ const ProjectGallery = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="mb-8 space-y-4"
+          className="mb-4 sm:mb-6 md:mb-8 space-y-4"
         >
           {/* Barra di ricerca e bottone filtri */}
           <div className="flex gap-3">
@@ -302,7 +302,7 @@ const ProjectGallery = () => {
             <div className="space-y-6 pt-4 border-t border-accent/20">
               {/* Filtri categoria */}
               <div>
-                <h3 className="text-lg font-semibold text-primary mb-3">Categorie</h3>            
+                <h3 className="text-subtitle-mobile md:text-subtitle-desktop font-semibold text-primary mb-3">Categorie</h3>            
                 <div className="flex flex-wrap gap-3">
                   {categories.map((category) => (
                     <button
@@ -323,7 +323,7 @@ const ProjectGallery = () => {
               {/* Filtri tag */}
               {allTags.length > 0 && (
                 <div>
-                  <h3 className="text-lg font-semibold text-primary mb-3">Tecnologie</h3>
+                  <h3 className="text-subtitle-mobile md:text-subtitle-desktop font-semibold text-primary mb-3">Tecnologie</h3>
                   <div className="flex flex-wrap gap-2">
                     {allTags.map((tag) => (
                       <button
@@ -335,7 +335,7 @@ const ProjectGallery = () => {
                               : [...prev, tag]
                           )
                         }}
-                        className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 ${
+                        className={`px-3 py-1 rounded-full text-small-mobile md:text-small-desktop font-medium transition-all duration-200 ${
                           selectedTags.includes(tag)
                             ? 'bg-accent text-white'
                             : 'bg-surface/50 text-secondary hover:bg-surface/80 border border-accent/20'
@@ -371,7 +371,7 @@ const ProjectGallery = () => {
           transition={{ delay: 0.2 }}
         >
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-primary">
+            <h2 className="text-card-mobile md:text-card-desktop font-bold text-primary">
               {filteredProjects.length === 1 
                 ? `${filteredProjects.length} progetto trovato`
                 : `${filteredProjects.length} progetti trovati`
@@ -384,7 +384,7 @@ const ProjectGallery = () => {
               <div className="text-secondary/50 mb-4">
                 <Search className="w-16 h-16 mx-auto" />
               </div>
-              <h3 className="text-xl font-semibold text-primary mb-2">Nessun progetto trovato</h3>
+              <h3 className="text-card-mobile md:text-card-desktop font-semibold text-primary mb-2">Nessun progetto trovato</h3>
               <p className="text-secondary/80 mb-6">
                 Prova a modificare i filtri o la ricerca
               </p>

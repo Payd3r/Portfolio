@@ -31,7 +31,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
       }`}
     >
       {/* Timeline dot with glow effect */}
-      <div className="absolute left-1/2 md:left-1/2 left-3 -translate-x-1/2 md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-accent to-accent-hover rounded-full border-4 border-surface shadow-lg shadow-accent/30 z-10 group-hover:scale-125 transition-transform duration-300">
+      <div className="absolute left-1/2 md:left-1/2 left-3 -translate-x-1/2 md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-accent to-accent-hover rounded-full border-4 border-surface shadow-lg shadow-accent/30 z-30 group-hover:scale-125 transition-transform duration-300">
         <div className="absolute inset-0 bg-accent rounded-full animate-ping opacity-20"></div>
       </div>
 
@@ -40,41 +40,43 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
         <div className={`flex items-center ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}>
           <div className="w-1/2"></div>
           <div
-            className={`w-1/2 group cursor-pointer ${
-              index % 2 === 0 ? 'pr-12 mr-12 text-right' : 'pl-12 ml-12 text-left'
+            className={`w-1/2 group cursor-pointer relative z-50 ${
+              index % 2 === 0 ? 'pr-12 mr-12' : 'pl-12 ml-12'
             }`}
           >
             <div className="relative">
               {/* Card with modern design */}
-              <div className="bg-gradient-to-br from-surface to-surface/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-secondary/10 hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 hover:scale-105 group-hover:border-accent/30 relative overflow-hidden">
+              <div className={`bg-gradient-to-br from-surface to-surface/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-secondary/10 hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 hover:scale-105 group-hover:border-accent/30 relative overflow-hidden z-50 ${
+                index % 2 === 0 ? 'text-left' : 'text-right'
+              }`}>
                 {/* Icon and year badge */}
-                <div className={`flex items-center gap-3 mb-4 ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
+                <div className={`flex items-center gap-3 mb-4 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
                   <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-accent to-accent-hover rounded-full text-white shadow-lg">
                     {getIconComponent()}
                   </div>
-                  <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-semibold border border-accent/20">
+                  <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-small-mobile md:text-small-desktop font-semibold border border-accent/20">
                     {item.year}
                   </span>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-300">
+                <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-300">
                   {item.title}
                 </h3>
                 
-                <div className="flex items-center gap-2 text-secondary/70 text-sm mb-2">
+                <div className={`flex items-center gap-2 text-secondary/70 text-small-mobile md:text-small-desktop mb-2 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
                   <Calendar className="w-4 h-4" />
                   <span>{item.date}</span>
                 </div>
 
-                <div className="flex items-center gap-2 text-secondary/70 text-sm mb-3">
+                <div className={`flex items-center gap-2 text-secondary/70 text-small-mobile md:text-small-desktop mb-3 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
                   <MapPin className="w-4 h-4" />
                   <span>{item.institution}</span>
                   <span className="text-accent">•</span>
                   <span>{item.location}</span>
                 </div>
 
-                <p className="text-secondary/80 leading-relaxed">
+                <p className="text-secondary/80 leading-relaxed text-body-mobile md:text-body-desktop">
                   {item.description}
                 </p>
 
@@ -95,7 +97,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
 
       {/* Mobile view */}
       <div className="md:hidden">
-        <div className="ml-8 group cursor-pointer">
+        <div className="ml-8 group cursor-pointer relative z-50">
           <div className="relative">
             <div className="bg-gradient-to-br from-surface to-surface/80 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-secondary/10 hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 group-hover:border-accent/30 relative overflow-hidden">
               {/* Icon and year badge */}
@@ -103,22 +105,22 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
                 <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-accent to-accent-hover rounded-full text-white shadow-lg">
                   {getIconComponent() && React.cloneElement(getIconComponent(), { className: 'w-4 h-4' })}
                 </div>
-                <span className="px-2.5 py-1 bg-accent/10 text-accent rounded-full text-xs font-semibold border border-accent/20">
+                <span className="px-2.5 py-1 bg-accent/10 text-accent rounded-full text-small-mobile md:text-small-desktop font-semibold border border-accent/20">
                   {item.year}
                 </span>
               </div>
 
               {/* Content */}
-              <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-300 leading-tight">
+              <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-300 leading-tight">
                 {item.title}
               </h3>
               
-              <div className="flex items-center gap-1.5 text-secondary/70 text-xs mb-1.5">
+              <div className="flex items-center gap-1.5 text-secondary/70 text-small-mobile md:text-small-desktop mb-1.5">
                 <Calendar className="w-3 h-3 flex-shrink-0" />
                 <span className="truncate">{item.date}</span>
               </div>
 
-              <div className="flex items-start gap-1.5 text-secondary/70 text-xs mb-3">
+              <div className="flex items-start gap-1.5 text-secondary/70 text-small-mobile md:text-small-desktop mb-3">
                 <MapPin className="w-3 h-3 flex-shrink-0 mt-0.5" />
                 <div className="flex flex-col">
                   <span className="leading-tight">{item.institution}</span>
@@ -126,7 +128,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
                 </div>
               </div>
 
-              <p className="text-secondary/80 leading-relaxed text-sm line-clamp-3">
+              <p className="text-secondary/80 leading-relaxed text-body-mobile md:text-body-desktop line-clamp-3">
                 {item.description}
               </p>
 
@@ -147,25 +149,25 @@ const Timeline: React.FC = () => {
   return (
     <div className="relative">
       {/* Animated vertical line */}
-      <div className="absolute h-full w-1 bg-gradient-to-b from-accent via-accent-hover to-accent left-1/2 -translate-x-1/2 hidden md:block">
+      <div className="absolute h-full w-1 bg-gradient-to-b from-accent via-accent-hover to-accent left-1/2 -translate-x-1/2 hidden md:block z-0">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-accent-hover animate-pulse"></div>
       </div>
       
       {/* Mobile line */}
-      <div className="absolute h-full w-1 bg-gradient-to-b from-accent via-accent-hover to-accent left-3 md:hidden">
+      <div className="absolute h-full w-1 bg-gradient-to-b from-accent via-accent-hover to-accent left-3 md:hidden z-0">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-accent-hover animate-pulse"></div>
       </div>
 
       {/* Timeline items */}
-      <div className="relative z-10">
+      <div className="relative z-50">
         {timelineData.map((item, index) => (
           <TimelineItem key={item.id} item={item} index={index} />
         ))}
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-accent rounded-full shadow-lg shadow-accent/50 hidden md:block"></div>
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-accent rounded-full shadow-lg shadow-accent/50 hidden md:block"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-accent rounded-full shadow-lg shadow-accent/50 hidden md:block z-30"></div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-accent rounded-full shadow-lg shadow-accent/50 hidden md:block z-30"></div>
     </div>
   )
 }

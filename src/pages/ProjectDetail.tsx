@@ -19,7 +19,7 @@ const ProjectDetail = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-primary mb-4">Progetto non trovato</h1>
+          <h1 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-4">Progetto non trovato</h1>
           <button
             onClick={() => navigate('/projects')}
             className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
@@ -41,39 +41,39 @@ const ProjectDetail = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-2 sm:px-0">
         {/* Header con breadcrumb */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-8"
+          className="mb-4 sm:mb-6 md:mb-8"
         >
           <button
             onClick={() => navigate('/projects')}
-            className="flex items-center gap-2 text-secondary hover:text-primary transition-colors mb-4"
+            className="flex items-center gap-2 text-secondary hover:text-primary transition-colors mb-2 sm:mb-3 md:mb-4"
           >
             <ArrowLeft className="w-4 h-4" />
             Torna alla galleria
           </button>
-          
-          <h1 className="text-4xl font-bold text-primary mb-2">{project.title}</h1>
-          <p className="text-secondary/80 text-lg">{project.description}</p>
+
+          <h1 className="text-section-mobile md:text-section-desktop font-bold text-primary mb-2">{project.title}</h1>
+          <p className="text-secondary/80 text-body-mobile md:text-body-desktop">{project.description}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {/* Contenuto principale */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="lg:col-span-2 space-y-8"
+            className="lg:col-span-2 space-y-4 sm:space-y-6 md:space-y-8"
           >
             {/* Carosello immagini */}
             {carouselImages.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mb-8"
+                className="mb-4 sm:mb-6 md:mb-8"
               >
                 <ProjectCarousel
                   images={carouselImages}
@@ -91,7 +91,7 @@ const ProjectDetail = () => {
                 transition={{ delay: 0.2 }}
                 className="prose prose-invert max-w-none"
               >
-                <h2 className="text-2xl font-bold text-primary mb-4">Descrizione</h2>
+                <h2 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-4">Descrizione</h2>
                 <p className="text-secondary/80 leading-relaxed">{project.longDescription}</p>
               </motion.div>
             )}
@@ -105,15 +105,15 @@ const ProjectDetail = () => {
                 className="space-y-6"
               >
                 <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-6">
-                  <h3 className="text-xl font-semibold text-red-400 mb-3 flex items-center gap-2">
+                  <h3 className="text-card-mobile md:text-card-desktop font-semibold text-red-400 mb-3 flex items-center gap-2">
                     <span className="w-2 h-2 bg-red-400 rounded-full"></span>
                     Problema
                   </h3>
                   <p className="text-secondary/80">{project.problem}</p>
                 </div>
-                
+
                 <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-6">
-                  <h3 className="text-xl font-semibold text-green-400 mb-3 flex items-center gap-2">
+                  <h3 className="text-card-mobile md:text-card-desktop font-semibold text-green-400 mb-3 flex items-center gap-2">
                     <span className="w-2 h-2 bg-green-400 rounded-full"></span>
                     Soluzione
                   </h3>
@@ -129,7 +129,7 @@ const ProjectDetail = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                <h2 className="text-2xl font-bold text-primary mb-4">Funzionalità</h2>
+                <h2 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-4">Funzionalità</h2>
                 <ul className="space-y-2">
                   {project.features.map((feature, index) => (
                     <li key={index} className="flex items-start gap-3">
@@ -149,11 +149,11 @@ const ProjectDetail = () => {
                 transition={{ delay: 0.5 }}
                 className="space-y-4"
               >
-                <h2 className="text-2xl font-bold text-primary mb-4">Prima e Dopo</h2>
+                <h2 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-4">Prima e Dopo</h2>
                 <p className="text-secondary/80 mb-4">{project.beforeAfter.description}</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <h4 className="text-lg font-semibold text-red-400 mb-2">Prima</h4>
+                    <h4 className="text-subtitle-mobile md:text-subtitle-desktop font-semibold text-red-400 mb-2">Prima</h4>
                     <img
                       src={project.beforeAfter.before}
                       alt="Prima"
@@ -161,7 +161,7 @@ const ProjectDetail = () => {
                     />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-green-400 mb-2">Dopo</h4>
+                    <h4 className="text-subtitle-mobile md:text-subtitle-desktop font-semibold text-green-400 mb-2">Dopo</h4>
                     <img
                       src={project.beforeAfter.after}
                       alt="Dopo"
@@ -180,7 +180,7 @@ const ProjectDetail = () => {
                 transition={{ delay: 0.6 }}
                 className="bg-gradient-to-r from-accent/10 to-primary/10 border border-accent/20 rounded-xl p-6"
               >
-                <h2 className="text-2xl font-bold text-primary mb-4">Recensione Cliente</h2>
+                <h2 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-4">Recensione Cliente</h2>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
@@ -188,18 +188,17 @@ const ProjectDetail = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-primary">{project.clientReview.name}</h4>
-                      <p className="text-secondary/60 text-sm">{project.clientReview.role}</p>
+                      <p className="text-secondary/60 text-small-mobile md:text-small-desktop">{project.clientReview.role}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-1 mb-3">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className={`w-5 h-5 ${
-                          i < project.clientReview.rating
+                        className={`w-5 h-5 ${i < project.clientReview.rating
                             ? 'text-yellow-400 fill-current'
                             : 'text-secondary/30'
-                        }`}
+                          }`}
                       />
                     ))}
                   </div>
@@ -221,7 +220,7 @@ const ProjectDetail = () => {
             {/* Informazioni contesto */}
             {project.context && (
               <div className="bg-surface/30 border border-accent/20 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-primary mb-4">Contesto</h3>
+                <h3 className="text-subtitle-mobile md:text-subtitle-desktop font-semibold text-primary mb-4">Contesto</h3>
                 <div className="space-y-3">
                   {project.context.type === 'university' && (
                     <div className="flex items-center gap-2 text-blue-400">
@@ -241,7 +240,7 @@ const ProjectDetail = () => {
                       <span>Progetto personale</span>
                     </div>
                   )}
-                  
+
                   {project.context.course && (
                     <div className="text-secondary/80">
                       <strong>Corso:</strong> {project.context.course}
@@ -276,12 +275,12 @@ const ProjectDetail = () => {
 
             {/* Tecnologie */}
             <div className="bg-surface/30 border border-accent/20 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-primary mb-4">Tecnologie</h3>
+              <h3 className="text-subtitle-mobile md:text-subtitle-desktop font-semibold text-primary mb-4">Tecnologie</h3>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 bg-accent/20 text-accent text-sm rounded-full"
+                    className="px-3 py-1 bg-accent/20 text-accent text-small-mobile md:text-small-desktop rounded-full"
                   >
                     {tag}
                   </span>
@@ -292,7 +291,7 @@ const ProjectDetail = () => {
             {/* Timeline */}
             {project.timeline && (
               <div className="bg-surface/30 border border-accent/20 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
+                <h3 className="text-subtitle-mobile md:text-subtitle-desktop font-semibold text-primary mb-4 flex items-center gap-2">
                   <Clock className="w-5 h-5" />
                   Timeline
                 </h3>
@@ -312,7 +311,7 @@ const ProjectDetail = () => {
             {/* Metriche */}
             {project.metrics && (
               <div className="bg-surface/30 border border-accent/20 rounded-xl p-6">
-                <h3 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
+                <h3 className="text-subtitle-mobile md:text-subtitle-desktop font-semibold text-primary mb-4 flex items-center gap-2">
                   <TrendingUp className="w-5 h-5" />
                   Metriche
                 </h3>
@@ -328,7 +327,7 @@ const ProjectDetail = () => {
 
             {/* Link */}
             <div className="bg-surface/30 border border-accent/20 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-primary mb-4">Link</h3>
+              <h3 className="text-subtitle-mobile md:text-subtitle-desktop font-semibold text-primary mb-4">Link</h3>
               <div className="space-y-3">
                 {project.githubUrl && (
                   <a
