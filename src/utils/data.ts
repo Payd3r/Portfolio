@@ -9,6 +9,7 @@ export const timelineData = [
     institution: 'Università degli Studi di Milano-Bicocca',
     location: 'Milano',
     icon: '🎓',
+    importance: 'large',
   },
   {
     id: 4,
@@ -20,6 +21,7 @@ export const timelineData = [
     institution: 'Università degli Studi di Milano-Bicocca',
     location: 'Milano',
     icon: '🎓',
+    importance: 'medium',
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ export const timelineData = [
     institution: 'Tech Solutions S.R.L',
     location: 'Milano',
     icon: '💼',
+    importance: 'medium',
   },
   {
     id: 2,
@@ -42,6 +45,7 @@ export const timelineData = [
     institution: 'Istituto Tecnico Jean Monnet',
     location: 'Mariano Comense',
     icon: '🎓',
+    importance: 'small',
   },
   {
     id: 1,
@@ -53,6 +57,31 @@ export const timelineData = [
     institution: 'Azienda locale',
     location: 'Milano',
     icon: '💼',
+    importance: 'small',
+  },
+  {
+    id: 0,
+    year: '2018',
+    title: 'Workshop Innovazione Digitale',
+    date: '2018',
+    description:
+      'Partecipazione a un bootcamp intensivo su design thinking e prototipazione rapida.',
+    institution: 'Innovation Hub',
+    location: 'Milano',
+    icon: '💡',
+    importance: 'medium',
+  },
+  {
+    id: -1,
+    year: '2016',
+    title: 'Progetto Personale Placeholder',
+    date: '2016',
+    description:
+      'Concept project in fase di ideazione per esplorare nuove tecnologie web emergenti.',
+    institution: 'Side Project Lab',
+    location: 'Remote',
+    icon: '🚀',
+    importance: 'large',
   },
 ]
 
