@@ -38,6 +38,7 @@ export interface ProjectType {
   solution?: string
   features?: string[]
   techStack?: {
+    imageProcessing?: string[]
     cache_taskQueue?: string[]
     ecommerce_apis?: string[]
     frontend?: string[]

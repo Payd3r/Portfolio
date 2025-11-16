@@ -99,10 +99,8 @@ export const projects: ProjectType[] = [
     problem: 'Creare un portfolio che non solo elenchi i progetti, ma che sia esso stesso una dimostrazione di competenze tecniche avanzate, in particolare nell\'ambito delle animazioni e della grafica 3D sul web.',
     solution: 'Lo sviluppo di una Single Page Application interattiva con React e TypeScript, utilizzando librerie all\'avanguardia come React Three Fiber per la grafica 3D e GSAP/Framer Motion per animazioni complesse. L\'architettura è containerizzata con Docker per una facile esecuzione locale.',
     features: [
-      'Cubo 3D interattivo in homepage (React Three Fiber)',
       'Animazioni di transizione di pagina (Framer Motion)',
       'Micro-animazioni su elementi UI (GSAP)',
-      'Cursore personalizzato e interattivo',
       'Galleria progetti con filtri dinamici',
       'Integrazione API di GitHub per statistiche in tempo reale'
     ],
@@ -149,9 +147,9 @@ export const projects: ProjectType[] = [
     context: {
       type: 'work',
       company: 'Abbamoda',
-      duration: '7+ mesi',
+      duration: '9+ mesi',
       thesis: '/assets/documents/tesi-abbamoda.pdf',
-      year: '2023-2024'
+      year: '2025'
     },
     problem: 'Centralizzare e automatizzare la gestione di magazzino, vendite (fisiche e online) e clienti, sostituendo processi manuali e sistemi legacy con una soluzione unificata, scalabile e affidabile.',
     solution: 'Un\'architettura full-stack containerizzata con Docker. Il backend Django gestisce la logica di business e le API, mentre React offre un\'interfaccia reattiva. L\'uso di Celery e Redis permette di eseguire in background operazioni pesanti e sincronizzazioni con API esterne (Shopify, eBay) senza bloccare l\'interfaccia utente.',
@@ -182,9 +180,9 @@ export const projects: ProjectType[] = [
       { imageUrl: '/assets/carousel/gestionale-5.png', caption: 'Gestione avanzata dei prodotti con varianti e barcode' }
     ],
     timeline: {
-      startDate: '2023-06',
-      endDate: '2024-01',
-      duration: '7 mesi'
+      startDate: 'gennaio 2025',
+      endDate: 'settembre 2025',
+      duration: '8 mesi'
     },
     metrics: {
       productsManaged: '10,000+',
@@ -206,12 +204,67 @@ export const projects: ProjectType[] = [
     workflow: 'Analisi requisiti → Architettura (Django/Celery) → Sviluppo API → Sviluppo Frontend (React) → Testing → Containerizzazione (Docker) → Manutenzione'
   },
   {
+    id: "insidefaraostudio",
+    title: "InsideFaraoStudio",
+    description: "Sito web su misura per fotografo con gestione progetti, galleria e pagina admin per upload e gestione contenuti.",
+    longDescription: "InsideFaraoStudio è un sito web personalizzato creato per un fotografo professionista per presentare il proprio portfolio online in modo elegante e funzionale. Il sito include pagine dedicate come Home, Galleria, Progetti e una pagina Admin personalizzata per il caricamento di nuovi progetti, gestione delle foto in evidenza per la Home e la Galleria. È stata posta particolare attenzione all’ottimizzazione delle immagini, preservando l’alta qualità degli originali e offrendo diverse versioni ottimizzate (thumbnail e conversioni in formati più efficienti) per garantire una navigazione fluida e veloce. Inoltre, è disponibile la possibilità di scaricare gratuitamente le immagini originali, offrendo così una migliore esperienza sia per il fotografo che per i visitatori.",
+    category: "main",
+    imageUrl: "/assets/projects/insidefaraostudio-main.png",
+    githubUrl: "https://github.com/Payd3r/rafa", 
+    demoUrl: "https://faraostudio.andrea-mauri.duckdns.org/",
+    tags: ["React", "Node.js", "Express", "Image Optimization", "Admin Panel", "Photography Website"],
+    status: "done",
+    priority: "medium",
+    context: {
+      type: "work",
+      year: "2025"
+    },
+    problem: "Necessità di un sito personalizzato per presentare professionalmente il sito web fotografico, con gestione efficiente di contenuti e immagini ad alta qualità.",
+    solution: "Sviluppo di un sito su misura con pagine dedicate, gestione contenuti e ottimizzazione delle immagini che coniuga alta qualità e performance.",
+    features: [
+      "Gestione personalizzata dei progetti con video, foto e descrizioni",
+      "Pagina Admin su misura per upload e gestione contenuti",
+      "Ottimizzazione immagini con diversi formati e thumbnail",
+      "Possibilità di download gratuito delle foto originali",
+      "Interfaccia utente veloce e responsive"
+    ],
+    techStack: {
+      frontend: ["React", "Tailwind CSS"],
+      backend: ["Node.js", "Express"],
+      database: ["PostgreSQL"],
+      imageProcessing: ["Sharp", "imagemin"],
+      devops: ["Docker", "NGINX"]
+    },
+    screenshots: [
+      { imageUrl: "/assets/carousel/rafa-1.png", caption: "Homepage con le foto in evidenza e presentazione" },
+      { imageUrl: "/assets/carousel/rafa-2.png", caption: "Interfaccia Admin personalizzata per gestione contenuti " },
+      { imageUrl: "/assets/carousel/rafa-3.png", caption: "Pagina Progetti con video e descrizioni dettagliate" },
+      { imageUrl: "/assets/carousel/rafa-4.png", caption: "Galleria con foto in evidenza" }
+    ],
+    timeline: {
+      startDate: "marzo 2025",
+      endDate: "giugno 2025",
+      duration: "4 mesi"
+    },
+    challenges: [
+      "Garantire la massima qualità delle immagini originali mantenendo la fluidità del sito tramite ottimizzazione intelligente",
+      "Costruire un pannello admin intuitivo e funzionale su misura per le esigenze del fotografo",
+      "Gestire video e immagini in modo efficiente mantenendo performance elevate"
+    ],
+    learnings: [
+      "Ottimizzazione delle immagini per siti fotografici",
+      "Sviluppo di interfacce personalizzate e pannelli di amministrazione",
+      "Bilanciamento tra qualità visiva e prestazioni web"
+    ],
+    workflow: "Progettazione UI/UX → Sviluppo Backend → Implementazione Frontend → Ottimizzazione Media → Testing e Deploy"
+  },
+  {
     id: 'pane-salame',
     title: 'Pane e Salame',
     description: 'Piattaforma e-commerce full-stack con architettura containerizzata (Docker), suite di testing completa e dashboard di monitoring in tempo reale.',
     longDescription: 'Sviluppato per l\'esame di Tecnologie Innovative, "Pane e Salame" è un e-commerce completo che va oltre le funzionalità standard. L\'intera architettura è basata su microservizi containerizzati con Docker (frontend, backend, database, image server, monitoring), garantendo portabilità e un deploy semplificato. Il progetto include una suite di testing multi-livello (unit, integration, frontend, performance) e una dashboard di monitoring dedicata che traccia in tempo reale lo stato dei container, l\'utilizzo delle risorse di sistema (CPU, RAM) e offre un sistema di backup e ripristino. Le API sono documentate professionalmente con Swagger.',
     category: 'main',
-    imageUrl: '/assets/projects/pane-salame-main.jpg',
+    imageUrl: '/assets/projects/pane-salame-main.png',
     githubUrl: 'https://github.com/Payd3r/ecommerce',
     demoUrl: 'https://panesalame.andrea-mauri.duckdns.org/',
     tags: ['JavaScript', 'Node.js', 'Express', 'MySQL', 'Docker', 'Bootstrap', 'Stripe', 'Swagger', 'Testing'],
@@ -220,7 +273,7 @@ export const projects: ProjectType[] = [
     context: {
       type: 'university',
       course: 'Tecnologie Innovative per lo sviluppo web',
-      year: '2023'
+      year: '2024'
     },
     problem: 'Sviluppare una piattaforma e-commerce robusta, scalabile e production-ready che soddisfacesse requisiti avanzati di testing, monitoring e DevOps.',
     solution: 'Una soluzione full-stack completamente containerizzata con Docker Compose. Il sistema include un backend Node.js, un frontend Vanilla JS modulare, un database MariaDB e un servizio di monitoring separato, il tutto supportato da una suite di test automatizzati per garantire affidabilità e manutenibilità.',
@@ -246,12 +299,12 @@ export const projects: ProjectType[] = [
     },
     screenshots: [
       { imageUrl: '/assets/carousel/pane-salame-1.png', caption: 'Homepage e catalogo prodotti' },
-      { imageUrl: '/assets/carousel/pane-salame-2.jpg', caption: 'Dashboard di monitoring in tempo reale' },
-      { imageUrl: '/assets/carousel/pane-salame-3.jpg', caption: 'Documentazione delle API con Swagger' }
+      { imageUrl: '/assets/carousel/pane-salame-2.png', caption: 'Pagine per gli utenti' },
+      { imageUrl: '/assets/carousel/pane-salame-3.png', caption: 'Dashboard di monitoring in tempo reale' }
     ],
     timeline: {
-      startDate: '2023-10',
-      endDate: '2023-12',
+      startDate: 'Ottobre 2024',
+      endDate: 'Dicembre 2024',
       duration: '3 mesi'
     },
     challenges: [
@@ -274,9 +327,9 @@ export const projects: ProjectType[] = [
     description: 'Applicazione in Kotlin per smartphone per tener traccia dell\'allenamento',
     longDescription: 'Applicazione in Kotlin per smartphone per tener traccia dell\'allenamento con schede, utenti e allenamenti custom. Possibilità di far partire l\'attività e tener traccia dei progressi.',
     category: 'main',
-    imageUrl: '/assets/projects/fitness-main.jpg',
+    imageUrl: '/assets/projects/fitness-main.png',
     githubUrl: 'https://github.com/lucacatt/Fitness_and_Bodybuilding',
-    demoUrl: 'https://fitness-app.vercel.app',
+    demoUrl: '',
     tags: ['Kotlin', 'Android', 'SQLite', 'Material Design'],
     status: 'done',
     priority: 'medium',
@@ -301,13 +354,13 @@ export const projects: ProjectType[] = [
       deployment: ['Google Play Store']
     },
     screenshots: [
-      { imageUrl: '/assets/projects/fitness-screenshot-1.jpg', caption: 'Dashboard allenamenti' },
-      { imageUrl: '/assets/projects/fitness-screenshot-2.jpg', caption: 'Tracking esercizi' },
-      { imageUrl: '/assets/projects/fitness-screenshot-3.jpg', caption: 'Statistiche progressi' }
+      { imageUrl: '/assets/carousel/fitness-1.png', caption: 'Dashboard allenamenti' },
+      { imageUrl: '/assets/carousel/fitness-2.png', caption: 'Tracking esercizi' },
+      { imageUrl: '/assets/carousel/fitness-3.png', caption: 'Statistiche progressi' }
     ],
     timeline: {
-      startDate: '2023-09',
-      endDate: '2023-11',
+      startDate: 'Settembre 2023',
+      endDate: 'Novembre 2023',
       duration: '3 mesi'
     },
     metrics: {
@@ -336,7 +389,7 @@ export const projects: ProjectType[] = [
     imageUrl: '/assets/projects/spese-main.png',
     githubUrl: 'https://github.com/Payd3r/Tracking_Spese',
     demoUrl: 'https://spese.andrea-mauri.duckdns.org/',
-    tags: ['React', 'TypeScript', 'PWA', 'Firebase', 'Chart.js'],
+    tags: ['React', 'TypeScript', 'PWA', 'Chart.js'],
     status: 'done',
     priority: 'medium',
     context: {
@@ -355,19 +408,19 @@ export const projects: ProjectType[] = [
     ],
     techStack: {
       frontend: ['React', 'TypeScript', 'Tailwind CSS'],
-      backend: ['Firebase'],
+      backend: ['Node.js', 'Express'],
       charts: ['Chart.js'],
       pwa: ['Service Workers'],
-      deployment: ['Vercel']
+      deployment: ['Portainer', 'Nginx']
     },
     screenshots: [
-      { imageUrl: '/assets/projects/tracking-spese-screenshot-1.jpg', caption: 'Dashboard spese' },
-      { imageUrl: '/assets/projects/tracking-spese-screenshot-2.jpg', caption: 'Aggiunta spesa' },
-      { imageUrl: '/assets/projects/tracking-spese-screenshot-3.jpg', caption: 'Report mensili' }
+      { imageUrl: '/assets/carousel/spese-1.png', caption: 'Dashboard spese' },
+      { imageUrl: '/assets/carousel/spese-2.png', caption: 'Aggiunta spesa' },
+      { imageUrl: '/assets/carousel/spese-3.png', caption: 'Impostazioni per gestire tutti gli asset' }
     ],
     timeline: {
-      startDate: '2024-01',
-      endDate: '2024-02',
+      startDate: 'gennaio 2024',
+      endDate: 'febbraio 2024',
       duration: '2 mesi'
     },
     metrics: {
@@ -382,7 +435,6 @@ export const projects: ProjectType[] = [
       'PWA offline'
     ],
     learnings: [
-      'Firebase real-time database',
       'Chart.js integration',
       'State management',
       'PWA development'
@@ -453,12 +505,12 @@ export const projects: ProjectType[] = [
     id: 'car-to-auction',
     title: 'CAR to Auction',
     description: 'Sito per aste auto online',
-    longDescription: 'Partecipazione in un team Fiverr per un\'app di aste auto. Gestione di problemi di pagamento e grafici sulla homepage.',
+    longDescription: 'Partecipazione in un team UpWork per un\'app di aste auto. Gestione di problemi di pagamento e grafici sulla homepage.',
     category: 'main',
-    imageUrl: '/assets/projects/car-to-auction-main.jpg',
+    imageUrl: '/assets/projects/car-main.png',
     githubUrl: 'https://github.com/teamicon/car-to-auction',
-    demoUrl: 'https://car-to-auction.vercel.app',
-    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe', 'WebSocket'],
+    demoUrl: '',
+    tags: ['PHP', 'MySQL', 'Stripe', 'WebSocket'],
     status: 'done',
     priority: 'high',
     context: {
@@ -471,30 +523,29 @@ export const projects: ProjectType[] = [
       'Sistema aste real-time',
       'Gestione garage utenti',
       'Sistema pagamenti',
-      'Chat integrata',
       'Dashboard venditore'
     ],
     techStack: {
-      frontend: ['React', 'TypeScript', 'Tailwind CSS'],
-      backend: ['Node.js', 'Express'],
-      database: ['MongoDB'],
+      frontend: ['PHP', 'HTML', 'CSS', 'JavaScript'],
+      backend: ['PHP', 'MySQL'],
+      database: ['MySQL'],
       payments: ['Stripe'],
       realtime: ['WebSocket']
     },
     screenshots: [
-      { imageUrl: '/assets/projects/car-to-auction-screenshot-1.jpg', caption: 'Homepage' },
-      { imageUrl: '/assets/projects/car-to-auction-screenshot-2.jpg', caption: 'Asta in corso' },
-      { imageUrl: '/assets/projects/car-to-auction-screenshot-3.jpg', caption: 'Gestione garage' }
+      { imageUrl: '/assets/carousel/car-1.png', caption: 'Asta in corso' },
+      { imageUrl: '/assets/carousel/car-2.png', caption: 'Garage di un utente' },
+      { imageUrl: '/assets/carousel/car-3.png', caption: 'Pagine su cui sono intervenuto' }
     ],
     timeline: {
-      startDate: '2024-02',
-      endDate: '2024-04',
+      startDate: 'Febbraio 2024',
+      endDate: 'Aprile 2024',
       duration: '3 mesi'
     },
     metrics: {
-      users: '500+',
-      auctions: '100+',
-      revenue: '€25k+'
+      users: '100+',
+      auctions: '20+',
+      revenue: '€10k+'
     },
     challenges: [
       'Sistema aste real-time',
@@ -506,7 +557,7 @@ export const projects: ProjectType[] = [
       'Payment gateway integration',
       'Real-time bidding system'
     ],
-    workflow: 'Analisi → Sviluppo → Testing → Deploy'
+    workflow: 'Sviluppo → Testing'
   },
   {
     id: "ravai",

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { timelineData } from '@/utils/data'
-import { MapPin, GraduationCap, Briefcase } from 'lucide-react'
+import { MapPin, GraduationCap, Briefcase, ChevronDown } from 'lucide-react'
 
 interface TimelineItemProps {
   item: typeof timelineData[0]
@@ -42,6 +42,7 @@ const sideSpacingMap: Record<'small' | 'medium' | 'large', { left: string; right
 
 const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
   const [isVisible, setIsVisible] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -108,33 +109,49 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
               {/* Card with modern design */}
               <div className={`bg-gradient-to-br from-surface to-surface/80 backdrop-blur-sm rounded-2xl ${cardPadding} shadow-xl border border-secondary/10 hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 hover:scale-105 group-hover:border-accent/30 relative z-50 ${isLeft ? 'ml-auto text-right' : 'mr-auto text-left'
                 }`}>
-                {/* Icon and year badge */}
-                <div className={`flex items-center gap-3 mb-4 ${badgeLayout}`}>
-                  <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-accent to-accent-hover rounded-full text-white shadow-lg">
-                    {getIconComponent()}
+                {/* Header - Cliccabile */}
+                <div 
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className="cursor-pointer"
+                >
+                  {/* Icon and year badge */}
+                  <div className={`flex items-center gap-3 mb-4 ${badgeLayout}`}>
+                    <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-accent to-accent-hover rounded-full text-white shadow-lg">
+                      {getIconComponent()}
+                    </div>
+                    <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-small-mobile md:text-small-desktop font-semibold border border-accent/20">
+                      {item.year}
+                    </span>
                   </div>
-                  <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-small-mobile md:text-small-desktop font-semibold border border-accent/20">
-                    {item.year}
-                  </span>
+
+                  {/* Title with Chevron */}
+                  <div className={`flex items-center gap-2 mb-2 ${isLeft ? 'flex-row-reverse' : ''}`}>
+                    <h3 className={`text-card-mobile md:text-card-desktop font-bold text-primary group-hover:text-accent transition-colors duration-300 ${textAlign} flex-1`}>
+                      {item.title}
+                    </h3>
+                    <ChevronDown 
+                      className={`w-5 h-5 text-accent transition-transform duration-300 flex-shrink-0 ${isExpanded ? 'rotate-180' : ''}`}
+                    />
+                  </div>
+
+                  {showInstitution && (
+                    <div className={`flex flex-wrap items-center gap-2 text-secondary/70 text-small-mobile md:text-small-desktop mb-3 ${locationLayout}`}>
+                      <MapPin className="w-4 h-4" />
+                      <span>{item.institution}</span>
+                      <span className="text-accent">•</span>
+                      <span>{item.location}</span>
+                    </div>
+                  )}
                 </div>
 
-                {/* Content */}
-                <h3 className={`text-card-mobile md:text-card-desktop font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-300 ${textAlign}`}>
-                  {item.title}
-                </h3>
-
-                {showInstitution && (
-                  <div className={`flex flex-wrap items-center gap-2 text-secondary/70 text-small-mobile md:text-small-desktop mb-3 ${locationLayout}`}>
-                    <MapPin className="w-4 h-4" />
-                    <span>{item.institution}</span>
-                    <span className="text-accent">•</span>
-                    <span>{item.location}</span>
-                  </div>
-                )}
-
-                <p className={`text-secondary/80 leading-relaxed text-body-mobile md:text-body-desktop ${textAlign}`}>
-                  {item.description}
-                </p>
+                {/* Description - Collassabile con animazione */}
+                <div 
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}
+                >
+                  <p className={`text-secondary/80 leading-relaxed text-body-mobile md:text-body-desktop ${textAlign}`}>
+                    {item.description}
+                  </p>
+                </div>
 
                 {/* Hover effect line */}
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-accent/40 to-accent-hover/40 transition-all duration-300 group-hover:w-full"></div>
@@ -155,33 +172,49 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
         <div className={`ml-8 pl-3 group cursor-pointer relative z-50 ${cardScale}`}>
           <div className="relative">
             <div className={`bg-gradient-to-br from-surface to-surface/80 backdrop-blur-sm rounded-2xl ${mobilePadding} shadow-xl border border-secondary/10 hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 group-hover:border-accent/30 relative`}>
-              {/* Icon and year badge */}
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-accent to-accent-hover rounded-full text-white shadow-lg">
-                  {getIconComponent() && React.cloneElement(getIconComponent(), { className: 'w-4 h-4' })}
+              {/* Header - Cliccabile */}
+              <div 
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="cursor-pointer"
+              >
+                {/* Icon and year badge */}
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-accent to-accent-hover rounded-full text-white shadow-lg">
+                    {getIconComponent() && React.cloneElement(getIconComponent(), { className: 'w-4 h-4' })}
+                  </div>
+                  <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-small-mobile md:text-small-desktop font-semibold border border-accent/20">
+                    {item.year}
+                  </span>
                 </div>
-                <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-small-mobile md:text-small-desktop font-semibold border border-accent/20">
-                  {item.year}
-                </span>
+
+                {/* Title with Chevron */}
+                <div className="flex items-center gap-2 mb-3">
+                  <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary group-hover:text-accent transition-colors duration-300 leading-tight flex-1">
+                    {item.title}
+                  </h3>
+                  <ChevronDown 
+                    className={`w-5 h-5 text-accent transition-transform duration-300 flex-shrink-0 ${isExpanded ? 'rotate-180' : ''}`}
+                  />
+                </div>
+
+                {showInstitution && (
+                  <div className="flex flex-wrap items-center gap-2 text-secondary/70 text-small-mobile md:text-small-desktop mb-3">
+                    <MapPin className="w-3 h-3 flex-shrink-0" />
+                    <span>{item.institution}</span>
+                    <span className="text-accent">•</span>
+                    <span>{item.location}</span>
+                  </div>
+                )}
               </div>
 
-              {/* Content */}
-              <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-3 group-hover:text-accent transition-colors duration-300 leading-tight">
-                {item.title}
-              </h3>
-
-              {showInstitution && (
-                <div className="flex flex-wrap items-center gap-2 text-secondary/70 text-small-mobile md:text-small-desktop mb-3">
-                  <MapPin className="w-3 h-3 flex-shrink-0" />
-                  <span>{item.institution}</span>
-                  <span className="text-accent">•</span>
-                  <span>{item.location}</span>
-                </div>
-              )}
-
-              <p className="text-secondary/80 leading-relaxed text-body-mobile md:text-body-desktop">
-                {item.description}
-              </p>
+              {/* Description - Collassabile con animazione */}
+              <div 
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}
+              >
+                <p className="text-secondary/80 leading-relaxed text-body-mobile md:text-body-desktop">
+                  {item.description}
+                </p>
+              </div>
 
               {/* Hover effect line */}
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-accent/40 to-accent-hover/40 transition-all duration-300 group-hover:w-full"></div>

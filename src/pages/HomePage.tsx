@@ -209,7 +209,7 @@ const HomePage = () => {
                 Hi, <br />
                 I'm <span className="text-accent">Andrea</span>
                 <br />
-                <span className="text-subtitle-mobile md:text-subtitle-desktop">React.js Developer</span>
+                <span className="text-subtitle-mobile md:text-subtitle-desktop">Web developer e studente di Informatica</span>
               </h1>
               <div className="mt-4 sm:mt-6 md:mt-8 relative z-30">
                 <ScrollLink
@@ -269,77 +269,119 @@ const HomePage = () => {
             </div>
 
             {/* Main Content */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-              {/* Profile Image Section */}
-              <div className="relative group order-1 lg:order-1">
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent-hover/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-                
-                {/* Image container */}
-                <div className="relative">
-                  <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 mx-auto">
-                    {/* Border animation */}
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-accent via-accent-hover to-accent animate-spin-slow"></div>
-                    <div className="absolute inset-1 rounded-3xl bg-dark-surface"></div>
-                    
-                    {/* Profile image */}
-                    <img
-                      src={avatar}
-                      alt="Andrea Mauri"
-                      className="relative w-full h-full rounded-3xl object-cover about-avatar shadow-2xl"
-                      loading="lazy"
-                    />
-                    
-                    {/* Overlay effect */}
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-dark-surface/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
+              {/* Left Column: Profile Image + Stats + Info */}
+              <div className="space-y-6 sm:space-y-8 order-1 lg:order-1">
+                {/* Profile Image Section */}
+                <div className="relative group">
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent-hover/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
                   
-                  {/* Tooltip under the image */}
-                  <div className="mt-4 sm:mt-6 text-center">
-                    <div className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-accent/10 to-accent-hover/10 backdrop-blur-sm rounded-xl px-4 py-2 sm:px-6 sm:py-3 border border-accent/20">
-                      <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-pulse"></div>
-                      <span className="text-caption-mobile md:text-caption-desktop font-semibold text-primary">Disponibile per progetti</span>
+                  {/* Image container */}
+                  <div className="relative">
+                    <div className="relative w-80 h-90 sm:w-66 sm:h-76 md:w-84 md:h-84 mx-auto ">
+                      {/* Border animation */}
+                      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-accent via-accent-hover to-accent animate-spin-slow"></div>
+                      <div className="absolute inset-1 rounded-3xl bg-dark-surface"></div>
+                      
+                      {/* Profile image */}
+                      <img
+                        src={avatar}
+                        alt="Andrea Mauri"
+                        className="relative w-full h-full rounded-3xl object-cover about-avatar shadow-2xl"
+                        loading="lazy"
+                      />
+                      
+                      {/* Overlay effect */}
+                      <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-dark-surface/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    
+                    {/* Tooltip under the image */}
+                    <div className="mt-4 sm:mt-6 text-center">
+                      <div className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-accent/10 to-accent-hover/10 backdrop-blur-sm rounded-xl px-4 py-2 sm:px-6 sm:py-3 border border-accent/20">
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-caption-mobile md:text-caption-desktop font-semibold text-primary">Disponibile per progetti</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Quick Stats */}
+                <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                  <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-xl p-4 sm:p-6 text-center border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:scale-105">
+                    <div className="text-2xl sm:text-3xl font-bold text-accent">2+</div>
+                    <div className="text-small-mobile md:text-small-desktop text-secondary/70 mt-1">Anni di Esperienza</div>
+                  </div>
+                  <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-xl p-4 sm:p-6 text-center border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:scale-105">
+                    <div className="text-2xl sm:text-3xl font-bold text-accent">12+</div>
+                    <div className="text-small-mobile md:text-small-desktop text-secondary/70 mt-1">Progetti Completati</div>
+                  </div>
+                </div>
+
+                {/* Additional Info Card */}
+                <div className="bg-gradient-to-br from-surface/50 to-surface/30 backdrop-blur-sm rounded-2xl p-5 sm:p-6 border border-secondary/10">
+                  <h4 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-4">In breve</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="text-small-mobile md:text-small-desktop font-semibold text-primary">Laurea Triennale</p>
+                        <p className="text-small-mobile md:text-small-desktop text-secondary/70">Università dell'Insubria</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="text-small-mobile md:text-small-desktop font-semibold text-primary">Magistrale in corso</p>
+                        <p className="text-small-mobile md:text-small-desktop text-secondary/70">Università di Milano-Bicocca</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <p className="text-small-mobile md:text-small-desktop font-semibold text-primary">Full-Stack Developer</p>
+                        <p className="text-small-mobile md:text-small-desktop text-secondary/70">React, TypeScript, Node.js</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Text Content Section */}
+              {/* Right Column: Text Content */}
               <div className="space-y-6 sm:space-y-8 about-text order-2 lg:order-2">
                 <div>
-                  <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-4 sm:mb-6">Introduzione</h3>
+                  <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-4 sm:mb-6">Chi sono</h3>
                   <p className="text-secondary/80 leading-relaxed text-body-mobile md:text-body-desktop mb-4 sm:mb-6">
-                    Sono <span className="text-accent font-bold">Andrea Mauri</span>, un{' '}
-                    <span className="text-accent font-bold">Web Developer</span> con una forte passione per la creazione di applicazioni web performanti e visivamente accattivanti.
+                    Ho <span className="text-accent font-bold">22 anni</span>, studio <span className="text-accent font-bold">Informatica magistrale</span> all'Università di Milano-Bicocca e mi sono laureato in Informatica all'Università dell'Insubria (Como) l'11 luglio 2025. Negli ultimi anni ho trasformato la passione per il codice in progetti concreti, lavorando sia su applicazioni full-stack sia su piccole soluzioni per attività locali.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-4 sm:mb-6">Formazione</h3>
+                  <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-4 sm:mb-6">Il Gestionale</h3>
                   <p className="text-secondary/80 leading-relaxed text-body-mobile md:text-body-desktop mb-4 sm:mb-6">
-                    <span className="text-accent font-semibold">Laureato in Informatica</span> e diplomato presso l'Istituto Tecnico Jean Monnet di Mariano Comense, specializzato nello stack moderno con{' '}
-                    <span className="text-accent font-semibold">React</span>, <span className="text-accent font-semibold">TypeScript</span> e tecnologie fullstack.
+                    Affianco lo studio universitario a un lavoro continuo su un <span className="text-accent font-semibold">gestionale completo</span> per un negozio di abbigliamento: ordini, magazzino, casse, report e nuove funzionalità basate su <span className="text-accent font-semibold">AI</span> per migliorare le vendite. Questo progetto nasce come tirocinio e tesi, ma è diventato un sistema reale che uso e aggiorno sul campo, occupandomi sia del software che del setup dei PC e dei dispositivi in negozio.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-4 sm:mb-6">La Mia Missione</h3>
+                  <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-4 sm:mb-6">Progetti per Clienti</h3>
+                  <p className="text-secondary/80 leading-relaxed text-body-mobile md:text-body-desktop mb-4 sm:mb-6">
+                    Oltre ai progetti accademici, realizzo <span className="text-accent font-semibold">siti e web app</span> per piccoli clienti: ristoranti, negozi e attività che hanno bisogno di qualcosa di semplice ma fatto bene. Alcuni incarichi arrivano da piattaforme come <span className="text-accent font-semibold">Upwork/Fiverr</span>, altri dal passaparola di amici e conoscenti: l'obiettivo è sempre lo stesso, capire il problema e costruire una soluzione che abbia senso per chi la userà.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-4 sm:mb-6">Fuori dall'Informatica</h3>
+                  <p className="text-secondary/80 leading-relaxed text-body-mobile md:text-body-desktop mb-4 sm:mb-6">
+                    Fuori dall'informatica, da circa dieci anni lavoro un giorno a settimana con mio papà come <span className="text-accent font-semibold">imbianchino</span>. È un lavoro fisico, dove ti fai davvero il mazzo per 10 ore, ma mi ha insegnato cosa vuol dire rispettare tempi, responsabilità e lavoro degli altri. Questo approccio "terra terra" me lo porto anche nello sviluppo: preferisco essere chiaro, realistico e fare promesse che posso mantenere.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary mb-4 sm:mb-6">Il Mio Obiettivo</h3>
                   <p className="text-secondary/80 leading-relaxed text-body-mobile md:text-body-desktop mb-6 sm:mb-8">
-                    Sono costantemente alla ricerca di nuove sfide tecniche e pronto a contribuire a progetti innovativi nel mondo dello sviluppo web, creando soluzioni che combinano{' '}
-                    <span className="text-accent font-semibold">funzionalità</span> e <span className="text-accent font-semibold">design</span>.
+                    Se hai un'attività o un'idea e ti serve qualcuno che ti aiuti a trasformarla in un sito o in una web app, il mio obiettivo è proprio questo: <span className="text-accent font-semibold">ascoltare</span>, tradurre in requisiti chiari e costruire qualcosa di concreto, senza tecnicismi inutili.
                   </p>
-                </div>
-
-                {/* Quick Stats */}
-                <div className="grid grid-cols-2 gap-4 sm:gap-6">
-                  <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-xl p-4 sm:p-6 text-center border border-accent/20">
-                    <div className="text-2xl sm:text-3xl font-bold text-accent">3+</div>
-                    <div className="text-small-mobile md:text-small-desktop text-secondary/70">Anni di Esperienza</div>
-                  </div>
-                  <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-xl p-4 sm:p-6 text-center border border-accent/20">
-                    <div className="text-2xl sm:text-3xl font-bold text-accent">15+</div>
-                    <div className="text-small-mobile md:text-small-desktop text-secondary/70">Progetti Completati</div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -406,9 +448,7 @@ const HomePage = () => {
                 Migliori <span className="text-accent">Progetti</span>
               </h2>
               <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-accent to-accent-hover mx-auto rounded-full mb-6"></div>
-              <p className="text-secondary/80 text-body-mobile md:text-body-desktop max-w-2xl mx-auto">
-                Alcuni dei miei progetti più significativi, che mostrano diverse competenze e tecnologie
-              </p>
+              
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">

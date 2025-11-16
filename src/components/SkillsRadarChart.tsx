@@ -20,7 +20,7 @@ const skillsData = [
 
 const SkillsRadarChart: React.FC = () => {
   return (
-    <div className="w-full h-full p-1 sm:p-2 md:p-4 flex flex-col">
+    <div className="w-full h-full p-2 sm:p-2 md:p-4 flex flex-col min-h-[180px] sm:min-h-[200px] md:min-h-[100px]">
       <div className="mb-1 sm:mb-2">
         <h3 className="text-xs sm:text-sm md:text-base font-bold text-primary leading-tight">Competenze</h3>
       </div>
@@ -31,14 +31,14 @@ const SkillsRadarChart: React.FC = () => {
             <PolarAngleAxis 
               dataKey="skill" 
               stroke="#F8FAFC" 
-              fontSize={10}
-              className="text-xs"
+              fontSize={9}
+              className="text-[9px] sm:text-xs"
             />
             <PolarRadiusAxis 
               angle={30} 
               domain={[0, 100]} 
               stroke="#94A3B8" 
-              fontSize={8}
+              fontSize={7}
               tickCount={3}
             />
             <Radar
@@ -54,7 +54,7 @@ const SkillsRadarChart: React.FC = () => {
                 backgroundColor: '#1E293B',
                 borderColor: '#38BDF8',
                 color: '#F8FAFC',
-                fontSize: '12px',
+                fontSize: '11px',
               }}
             />
           </RadarChart>
