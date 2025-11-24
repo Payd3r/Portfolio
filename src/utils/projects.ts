@@ -80,58 +80,7 @@ export const projects: ProjectType[] = [
     ],
     workflow: "Architettura → Sviluppo Backend → Sviluppo Frontend → Containerizzazione (Docker) → Deploy"
   },
-  {
-    id: 'portfolio',
-    title: 'Portfolio ',
-    description: 'Portfolio personale che funge da "parco giochi" per tecnologie avanzate come React Three Fiber, GSAP e Framer Motion.',
-    longDescription: 'Questo non è un semplice sito vetrina, ma una web application dinamica progettata per dimostrare competenze avanzate. La homepage presenta un cubo 3D interattivo (React Three Fiber), mentre la navigazione e le micro-interazioni sono gestite con animazioni complesse (Framer Motion, GSAP). Il sito integra un cursore personalizzato, una galleria progetti filtrabile e una sezione che carica dinamicamente le statistiche da GitHub, mostrando un\'applicazione pratica delle API.',
-    category: 'main',
-    imageUrl: '/assets/projects/portfolio-main.jpeg',
-    githubUrl: 'https://github.com/Payd3r/Portfolio',
-    demoUrl: 'https://portfolio.andrea-mauri.duckdns.org/',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'GSAP', 'React Three Fiber', 'Docker'],
-    status: 'done',
-    priority: 'high',
-    context: {
-      type: 'personal',
-      year: '2024'
-    },
-    problem: 'Creare un portfolio che non solo elenchi i progetti, ma che sia esso stesso una dimostrazione di competenze tecniche avanzate, in particolare nell\'ambito delle animazioni e della grafica 3D sul web.',
-    solution: 'Lo sviluppo di una Single Page Application interattiva con React e TypeScript, utilizzando librerie all\'avanguardia come React Three Fiber per la grafica 3D e GSAP/Framer Motion per animazioni complesse. L\'architettura è containerizzata con Docker per una facile esecuzione locale.',
-    features: [
-      'Animazioni di transizione di pagina (Framer Motion)',
-      'Micro-animazioni su elementi UI (GSAP)',
-      'Galleria progetti con filtri dinamici',
-      'Integrazione API di GitHub per statistiche in tempo reale'
-    ],
-    techStack: {
-      frontend: ['React', 'TypeScript', 'Vite', 'Tailwind CSS'],
-      animations: ['Framer Motion', 'GSAP'],
-      graphics_3d: ['React Three Fiber', 'Drei'],
-      deployment: ['Docker', 'Vercel']
-    },
-    screenshots: [
-      { imageUrl: '/assets/projects/portfolio-screenshot-1.jpg', caption: 'Homepage con cubo 3D interattivo' },
-      { imageUrl: '/assets/projects/portfolio-screenshot-2.jpg', caption: 'Galleria progetti con filtri' },
-      { imageUrl: '/assets/projects/portfolio-screenshot-3.jpg', caption: 'Dettaglio di un progetto' }
-    ],
-    timeline: {
-      startDate: '2024-02',
-      endDate: '2024-03',
-      duration: '1 mese'
-    },
-    challenges: [
-      'Integrare rendering 3D (React Three Fiber) in un\'applicazione React mantenendo alte performance.',
-      'Orchestrazione di più librerie di animazione (GSAP, Framer Motion) senza conflitti.',
-      'Garantire che le animazioni complesse e gli effetti grafici siano fluidi su tutti i dispositivi.'
-    ],
-    learnings: [
-      'Sviluppo di scene 3D interattive nel DOM con React Three Fiber.',
-      'Gestione avanzata dello stato di animazioni complesse.',
-      'Ottimizzazione delle performance di rendering per applicazioni web graficamente intensive.'
-    ],
-    workflow: 'Concept & Design → Sviluppo Componenti → Integrazione 3D & Animazioni → Ottimizzazione Performance → Deploy'
-  },
+
   {
     id: 'gestionale',
     title: 'AbbaModa - Sistema Gestionale',
@@ -204,13 +153,85 @@ export const projects: ProjectType[] = [
     workflow: 'Analisi requisiti → Architettura (Django/Celery) → Sviluppo API → Sviluppo Frontend (React) → Testing → Containerizzazione (Docker) → Manutenzione'
   },
   {
+    "id": "omnia",
+    "title": "Omnia",
+    "description": "Piattaforma di apprendimento personalizzato alimentata da AI che genera automaticamente piani di studio settimanali, articoli educativi completi con immagini, quiz, podcast audio e assistente virtuale.",
+    "longDescription": "Omnia è una piattaforma innovativa di apprendimento personalizzato che utilizza l'intelligenza artificiale per creare esperienze educative su misura. Gli utenti possono creare 'settimane di apprendimento' su qualsiasi argomento desiderato, e il sistema genera automaticamente un piano di studio strutturato di 7 giorni. Per ogni giorno, Omnia crea articoli educativi completi e approfonditi con 8 sezioni dettagliate, immagini generate automaticamente, quiz interattivi per verificare la comprensione, curiosità interessanti e risorse esterne (libri, film, app, siti web). La piattaforma include anche la generazione automatica di podcast audio utilizzando Google Text-to-Speech, permettendo agli utenti di ascoltare gli articoli mentre sono in movimento. Un assistente virtuale AI consente agli utenti di fare domande specifiche sugli articoli per approfondire ulteriormente la comprensione. Il sistema utilizza un'architettura microservizi con orchestrazione intelligente tra Google Gemini e Ollama per garantire alta disponibilità e gestione dei rate limit, supporta più lingue (italiano, inglese, tedesco, francese, spagnolo, portoghese) e offre un'interfaccia moderna e responsive.",
+    "category": "main",
+    "imageUrl": "/assets/projects/omnia-main.png",
+    "githubUrl": "https://github.com/Payd3r/omnia",
+    "demoUrl": "https://omnia.andrea-mauri.duckdns.org/",
+    "tags": ["React", "Node.js", "Express", "AI", "Google Gemini", "Ollama", "PostgreSQL", "Docker", "Text-to-Speech", "Educational Platform"],
+    "status": "done",
+    "priority": "high",
+    "context": {
+      "type": "personal",
+      "year": "2025"
+    },
+    "problem": "Necessità di una piattaforma educativa che generi automaticamente contenuti di apprendimento personalizzati, strutturati e completi su qualsiasi argomento, con supporto multi-modale (testo, immagini, audio) e interattività per migliorare l'esperienza di apprendimento.",
+    "solution": "Sviluppo di una piattaforma completa con generazione AI di piani di studio settimanali, articoli educativi dettagliati con immagini, quiz interattivi, podcast audio e assistente virtuale, utilizzando un'architettura microservizi scalabile con fallback intelligente tra provider AI.",
+    "features": [
+      "Generazione automatica di piani di studio settimanali personalizzati",
+      "Creazione AI di articoli educativi completi con 8 sezioni dettagliate",
+      "Generazione automatica di immagini per ogni sezione",
+      "Quiz interattivi con feedback immediato e generazione di domande aggiuntive",
+      "Generazione di podcast audio con Google Text-to-Speech multi-lingua",
+      "Assistente virtuale AI per domande specifiche sugli articoli",
+      "Sistema di preferiti per salvare articoli importanti",
+      "Suggerimenti AI per temi di nuove settimane",
+      "Supporto multi-lingua (6 lingue)",
+      "Orchestrazione intelligente AI con fallback automatico tra Gemini e Ollama",
+      "Gestione rate limit e caching con Redis",
+      "Interfaccia responsive e moderna con dark mode"
+    ],
+    "techStack": {
+      "frontend": ["React", "TypeScript", "Tailwind CSS", "Vite", "React Router", "Clerk Auth"],
+      "backend": ["Node.js", "Express", "TypeScript", "Prisma ORM"],
+      "database": ["PostgreSQL"],
+      "ai": ["Google Gemini", "Ollama", "AI Orchestrator"],
+      "audio": ["Google Cloud Text-to-Speech"],
+      "image": ["Image Generation Service"],
+      "caching": ["Redis"],
+      "devops": ["Docker", "Docker Compose", "NGINX"],
+      "authentication": ["Clerk"]
+    },
+    "screenshots": [
+      { "imageUrl": "/assets/carousel/omnia-1.png", "caption": "Homepage con lista delle settimane di apprendimento" },
+      { "imageUrl": "/assets/carousel/omnia-2.png", "caption": "Piano di studio settimanale con 7 giorni generati automaticamente" },
+      { "imageUrl": "/assets/carousel/omnia-3.png", "caption": "Articolo educativo completo con sezioni" },
+      { "imageUrl": "/assets/carousel/omnia-4.png", "caption": "Assistente virtuale AI per domande sugli articoli" },
+      { "imageUrl": "/assets/carousel/omnia-5.png", "caption": "Card per approfondimenti e rimandi a siti esterni" },
+      { "imageUrl": "/assets/carousel/omnia-6.png", "caption": "Quiz Interattivi per l'utente" }
+    ],
+    "timeline": {
+      "startDate": "Novembre 2025",
+      "endDate": "Dicembre 2025",
+      "duration": "1 mese"
+    },
+    "challenges": [
+      "Orchestrazione intelligente tra multiple AI provider (Gemini e Ollama) con gestione rate limit e fallback automatico",
+      "Generazione asincrona di contenuti complessi (articoli, immagini, quiz) con aggiornamento in tempo reale",
+      "Ottimizzazione delle performance per generazione di contenuti AI pesanti mantenendo responsività dell'interfaccia",
+      "Gestione multi-lingua per generazione contenuti, immagini e audio con coerenza stilistica",
+      "Architettura microservizi con comunicazione efficiente tra servizi (backend, audio-manager, image-manager)"
+    ],
+    "learnings": [
+      "Orchestrazione di multiple AI API con pattern di fallback e gestione errori robusta",
+      "Generazione asincrona di contenuti complessi con polling e aggiornamenti in tempo reale",
+      "Integrazione di servizi esterni (Google TTS, generazione immagini) in architettura microservizi",
+      "Ottimizzazione di performance per applicazioni AI-intensive con caching e rate limiting",
+      "Progettazione di interfacce utente per contenuti generati dinamicamente con stati di loading avanzati"
+    ],
+    "workflow": "Progettazione Architettura → Setup Microservizi → Integrazione AI Orchestrator → Sviluppo Generatori Contenuti → Implementazione Frontend → Integrazione Audio/Immagini → Testing e Ottimizzazione → Deploy"
+  },
+  {
     id: "insidefaraostudio",
     title: "InsideFaraoStudio",
     description: "Sito web su misura per fotografo con gestione progetti, galleria e pagina admin per upload e gestione contenuti.",
     longDescription: "InsideFaraoStudio è un sito web personalizzato creato per un fotografo professionista per presentare il proprio portfolio online in modo elegante e funzionale. Il sito include pagine dedicate come Home, Galleria, Progetti e una pagina Admin personalizzata per il caricamento di nuovi progetti, gestione delle foto in evidenza per la Home e la Galleria. È stata posta particolare attenzione all’ottimizzazione delle immagini, preservando l’alta qualità degli originali e offrendo diverse versioni ottimizzate (thumbnail e conversioni in formati più efficienti) per garantire una navigazione fluida e veloce. Inoltre, è disponibile la possibilità di scaricare gratuitamente le immagini originali, offrendo così una migliore esperienza sia per il fotografo che per i visitatori.",
     category: "main",
     imageUrl: "/assets/projects/insidefaraostudio-main.png",
-    githubUrl: "https://github.com/Payd3r/rafa", 
+    githubUrl: "https://github.com/Payd3r/rafa",
     demoUrl: "https://faraostudio.andrea-mauri.duckdns.org/",
     tags: ["React", "Node.js", "Express", "Image Optimization", "Admin Panel", "Photography Website"],
     status: "done",
@@ -320,6 +341,58 @@ export const projects: ProjectType[] = [
       'Progettazione e documentazione di API RESTful con Swagger.'
     ],
     workflow: 'Architettura Docker → Sviluppo Backend & API → Sviluppo Frontend → Implementazione Testing & Monitoring → Deploy'
+  },
+  {
+    id: 'portfolio',
+    title: 'Portfolio ',
+    description: 'Portfolio personale che funge da "parco giochi" per tecnologie avanzate come React Three Fiber, GSAP e Framer Motion.',
+    longDescription: 'Questo non è un semplice sito vetrina, ma una web application dinamica progettata per dimostrare competenze avanzate. La homepage presenta un cubo 3D interattivo (React Three Fiber), mentre la navigazione e le micro-interazioni sono gestite con animazioni complesse (Framer Motion, GSAP). Il sito integra un cursore personalizzato, una galleria progetti filtrabile e una sezione che carica dinamicamente le statistiche da GitHub, mostrando un\'applicazione pratica delle API.',
+    category: 'main',
+    imageUrl: '/assets/projects/portfolio-main.jpeg',
+    githubUrl: 'https://github.com/Payd3r/Portfolio',
+    demoUrl: 'https://portfolio.andrea-mauri.duckdns.org/',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'GSAP', 'React Three Fiber', 'Docker'],
+    status: 'done',
+    priority: 'high',
+    context: {
+      type: 'personal',
+      year: '2024'
+    },
+    problem: 'Creare un portfolio che non solo elenchi i progetti, ma che sia esso stesso una dimostrazione di competenze tecniche avanzate, in particolare nell\'ambito delle animazioni e della grafica 3D sul web.',
+    solution: 'Lo sviluppo di una Single Page Application interattiva con React e TypeScript, utilizzando librerie all\'avanguardia come React Three Fiber per la grafica 3D e GSAP/Framer Motion per animazioni complesse. L\'architettura è containerizzata con Docker per una facile esecuzione locale.',
+    features: [
+      'Animazioni di transizione di pagina (Framer Motion)',
+      'Micro-animazioni su elementi UI (GSAP)',
+      'Galleria progetti con filtri dinamici',
+      'Integrazione API di GitHub per statistiche in tempo reale'
+    ],
+    techStack: {
+      frontend: ['React', 'TypeScript', 'Vite', 'Tailwind CSS'],
+      animations: ['Framer Motion', 'GSAP'],
+      graphics_3d: ['React Three Fiber', 'Drei'],
+      deployment: ['Docker', 'Vercel']
+    },
+    screenshots: [
+      { imageUrl: '/assets/projects/portfolio-screenshot-1.jpg', caption: 'Homepage con cubo 3D interattivo' },
+      { imageUrl: '/assets/projects/portfolio-screenshot-2.jpg', caption: 'Galleria progetti con filtri' },
+      { imageUrl: '/assets/projects/portfolio-screenshot-3.jpg', caption: 'Dettaglio di un progetto' }
+    ],
+    timeline: {
+      startDate: '2024-02',
+      endDate: '2024-03',
+      duration: '1 mese'
+    },
+    challenges: [
+      'Integrare rendering 3D (React Three Fiber) in un\'applicazione React mantenendo alte performance.',
+      'Orchestrazione di più librerie di animazione (GSAP, Framer Motion) senza conflitti.',
+      'Garantire che le animazioni complesse e gli effetti grafici siano fluidi su tutti i dispositivi.'
+    ],
+    learnings: [
+      'Sviluppo di scene 3D interattive nel DOM con React Three Fiber.',
+      'Gestione avanzata dello stato di animazioni complesse.',
+      'Ottimizzazione delle performance di rendering per applicazioni web graficamente intensive.'
+    ],
+    workflow: 'Concept & Design → Sviluppo Componenti → Integrazione 3D & Animazioni → Ottimizzazione Performance → Deploy'
   },
   {
     id: 'fitness-bodybuilding',

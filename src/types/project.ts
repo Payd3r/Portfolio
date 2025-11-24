@@ -38,6 +38,11 @@ export interface ProjectType {
   solution?: string
   features?: string[]
   techStack?: {
+    authentication?: string[]
+    ai?: string[]
+    audio?: string[]
+    image?: string[]
+    caching?: string[]
     imageProcessing?: string[]
     cache_taskQueue?: string[]
     ecommerce_apis?: string[]

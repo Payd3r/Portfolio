@@ -4,9 +4,9 @@ services:
     container_name: portfolio
     build: .
     restart: unless-stopped
-    networks: # <-- SEZIONE AGGIUNTA
+    networks: 
       - web-proxy
 
-networks: # <-- SEZIONE AGGIUNTA IN FONDO
+networks:
   web-proxy:
     external: true
