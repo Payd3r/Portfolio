@@ -280,6 +280,75 @@ export const projects: ProjectType[] = [
     workflow: "Progettazione UI/UX → Sviluppo Backend → Implementazione Frontend → Ottimizzazione Media → Testing e Deploy"
   },
   {
+    id: "ilaria-link-in-bio",
+    title: "Ilaria UGC Linktree",
+    description: "Landing linktree con vetrina prodotti, affiliazioni e portfolio per creator UGC, gestita da pannello admin.",
+    longDescription: "Web app full-stack per una creator UGC: frontend Vite/React con interfaccia a tab (Best Selling, Free Guides, Blog, Portfolio) e cards dinamiche; backend Express che espone API prodotti con validazione, persistenza su JSON e upload immagini via Multer; pannello admin prototipo per CRUD prodotti con upload e preview, layout selezionabile e CTA personalizzabile. Docker + Nginx per il deploy containerizzato.",
+    category: "main",
+    imageUrl: "/assets/projects/linktree-main.png",
+    githubUrl: "https://github.com/Payd3r/linktree",
+    demoUrl: "https://ila.ravai.it/",
+    tags: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "Multer",
+      "Link-in-bio",
+      "Admin Panel",
+      "Docker",
+      "NGINX"
+    ],
+    status: "in-progress",
+    priority: "medium",
+    context: {
+      type: "work",
+      year: "2025"
+    },
+    problem: "Centralizzare vendita guide, coaching, affiliazioni e portfolio in un unico link-in-bio con gestione autonoma dei contenuti.",
+    solution: "UI a tab dinamiche alimentate da API Express e storage JSON, con pannello admin per CRUD prodotti e upload immagini, deploy containerizzato dietro Nginx.",
+    features: [
+      "Tab Best Selling, Free Guides, Blog, Portfolio con filtraggio lato frontend",
+      "Card prodotti con CTA, prezzi range, layout immagine sinistra/destra",
+      "Pannello admin per creazione/modifica/eliminazione prodotti",
+      "Upload immagini con Multer e salvataggio in /public/uploads",
+      "Validazione payload lato backend e gestione file JSON robusta",
+      "UI responsive con animazioni leggere (fade/scale) e SEO-friendly markup",
+      "Preset Docker + Nginx + supervisord per serve frontend e API"
+    ],
+    techStack: {
+      frontend: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+      backend: ["Node.js", "Express", "Multer"],
+      database: ["File JSON locale"],
+      storage: ["Upload locali su /public/uploads"],
+      devops: ["Docker", "NGINX", "supervisord"],
+      other: ["Lucide Icons"]
+    },
+    screenshots: [
+      { imageUrl: "/assets/projects/linktree-1.png", caption: "Hero profilo con tabs e sezioni prodotti" },
+      { imageUrl: "/assets/projects/linktree-main.png", caption: "Hero profilo con tabs e sezioni prodotti mobile" },
+      { imageUrl: "/assets/projects/linktree-2.png", caption: "Pannello admin per CRUD prodotti e upload immagini" }
+    ],
+    timeline: {
+      startDate: "novembre 2025",
+      endDate: "dicembre 2025",
+      duration: "1 mese"
+    },
+    challenges: [
+      "Gestione robusta di file JSON condivisi tra container e host",
+      "Upload immagini sicuro con limiti e filtri MIME",
+      "UI responsive con layout immagine alternato e testi troncati in modo elegante"
+    ],
+    learnings: [
+      "Hardening di API file-based con validazione e fallback",
+      "Gestione upload e preview lato frontend con Multer lato server",
+      "Setup Docker + Nginx per app React/Express monorepo"
+    ],
+    workflow: "Raccolta requisiti → UI/UX → API Express + storage JSON → Frontend Vite/Tailwind → Upload & admin → Docker/Nginx"
+  },
+  {
     id: 'pane-salame',
     title: 'Pane e Salame',
     description: 'Piattaforma e-commerce full-stack con architettura containerizzata (Docker), suite di testing completa e dashboard di monitoring in tempo reale.',
