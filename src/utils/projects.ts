@@ -327,9 +327,9 @@ export const projects: ProjectType[] = [
       other: ["Lucide Icons"]
     },
     screenshots: [
-      { imageUrl: "/assets/projects/linktree-1.png", caption: "Hero profilo con tabs e sezioni prodotti" },
+      { imageUrl: "/assets/carousel/linktree-1.png", caption: "Hero profilo con tabs e sezioni prodotti" },
       { imageUrl: "/assets/projects/linktree-main.png", caption: "Hero profilo con tabs e sezioni prodotti mobile" },
-      { imageUrl: "/assets/projects/linktree-2.png", caption: "Pannello admin per CRUD prodotti e upload immagini" }
+      { imageUrl: "/assets/carousel/linktree-2.png", caption: "Pannello admin per CRUD prodotti e upload immagini" }
     ],
     timeline: {
       startDate: "novembre 2025",
