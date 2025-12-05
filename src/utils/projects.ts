@@ -285,7 +285,7 @@ export const projects: ProjectType[] = [
     description: "Landing linktree con vetrina prodotti, affiliazioni e portfolio per creator UGC, gestita da pannello admin.",
     longDescription: "Web app full-stack per una creator UGC: frontend Vite/React con interfaccia a tab (Best Selling, Free Guides, Blog, Portfolio) e cards dinamiche; backend Express che espone API prodotti con validazione, persistenza su JSON e upload immagini via Multer; pannello admin prototipo per CRUD prodotti con upload e preview, layout selezionabile e CTA personalizzabile. Docker + Nginx per il deploy containerizzato.",
     category: "main",
-    imageUrl: "/assets/projects/linktree-main.png",
+    imageUrl: "/assets/projects/linktree.png",
     githubUrl: "https://github.com/Payd3r/linktree",
     demoUrl: "https://ila.ravai.it/",
     tags: [
@@ -328,7 +328,7 @@ export const projects: ProjectType[] = [
     },
     screenshots: [
       { imageUrl: "/assets/carousel/linktree-1.png", caption: "Hero profilo con tabs e sezioni prodotti" },
-      { imageUrl: "/assets/projects/linktree-main.png", caption: "Hero profilo con tabs e sezioni prodotti mobile" },
+      { imageUrl: "/assets/projects/linktree.png", caption: "Hero profilo con tabs e sezioni prodotti mobile" },
       { imageUrl: "/assets/carousel/linktree-2.png", caption: "Pannello admin per CRUD prodotti e upload immagini" }
     ],
     timeline: {
