@@ -19,7 +19,7 @@ const milestoneSizeMap = {
 const cardScaleClasses: Record<'small' | 'medium' | 'large', string> = {
   small: 'md:scale-90',
   medium: 'md:scale-100',
-  large: 'md:scale-110 md:shadow-2xl',
+  large: 'md:scale-110 md:shadow',
 }
 
 const cardPaddingClasses: Record<'small' | 'medium' | 'large', string> = {
@@ -107,10 +107,10 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
           >
             <div className="relative w-full">
               {/* Card with modern design */}
-              <div className={`bg-gradient-to-br from-surface to-surface/80 backdrop-blur-sm rounded-2xl ${cardPadding} shadow-xl border border-secondary/10 hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 hover:scale-105 group-hover:border-accent/30 relative z-50 ${isLeft ? 'ml-auto text-right' : 'mr-auto text-left'
+              <div className={`bg-gradient-to-br from-surface to-surface/80 backdrop-blur-sm rounded-2xl ${cardPadding} shadow-xl border border-secondary/10 hover:shadow hover:shadow-accent/10 transition-all duration-300 hover:scale-105 group-hover:border-accent/30 relative z-50 ${isLeft ? 'ml-auto text-right' : 'mr-auto text-left'
                 }`}>
                 {/* Header - Cliccabile */}
-                <div 
+                <div
                   onClick={() => setIsExpanded(!isExpanded)}
                   className="cursor-pointer"
                 >
@@ -129,7 +129,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
                     <h3 className={`text-card-mobile md:text-card-desktop font-bold text-primary group-hover:text-accent transition-colors duration-300 ${textAlign} flex-1`}>
                       {item.title}
                     </h3>
-                    <ChevronDown 
+                    <ChevronDown
                       className={`w-5 h-5 text-accent transition-transform duration-300 flex-shrink-0 ${isExpanded ? 'rotate-180' : ''}`}
                     />
                   </div>
@@ -145,22 +145,19 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
                 </div>
 
                 {/* Description - Collassabile con animazione */}
-                <div 
+                <div
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}
                 >
                   <p className={`text-secondary/80 leading-relaxed text-body-mobile md:text-body-desktop ${textAlign}`}>
                     {item.description}
                   </p>
                 </div>
-
-                {/* Hover effect line */}
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-accent/40 to-accent-hover/40 transition-all duration-300 group-hover:w-full"></div>
               </div>
 
               {/* Connection line */}
               <div className={`absolute top-1/2 -translate-y-1/2 w-12 h-0.5 bg-gradient-to-r ${index % 2 === 0
-                  ? 'from-accent to-transparent right-0 translate-x-full'
-                  : 'from-transparent to-accent left-0 -translate-x-full'
+                ? 'from-accent to-transparent right-0 translate-x-full'
+                : 'from-transparent to-accent left-0 -translate-x-full'
                 }`}></div>
             </div>
           </div>
@@ -171,9 +168,9 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
       <div className="md:hidden px-4">
         <div className={`ml-8 pl-3 group cursor-pointer relative z-50 ${cardScale}`}>
           <div className="relative">
-            <div className={`bg-gradient-to-br from-surface to-surface/80 backdrop-blur-sm rounded-2xl ${mobilePadding} shadow-xl border border-secondary/10 hover:shadow-2xl hover:shadow-accent/10 transition-all duration-300 group-hover:border-accent/30 relative`}>
+            <div className={`bg-gradient-to-br from-surface to-surface/80 backdrop-blur-sm rounded-2xl ${mobilePadding} shadow-xl border border-secondary/10 hover:shadow hover:shadow-accent/10 transition-all duration-300 group-hover:border-accent/30 relative`}>
               {/* Header - Cliccabile */}
-              <div 
+              <div
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="cursor-pointer"
               >
@@ -192,7 +189,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
                   <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary group-hover:text-accent transition-colors duration-300 leading-tight flex-1">
                     {item.title}
                   </h3>
-                  <ChevronDown 
+                  <ChevronDown
                     className={`w-5 h-5 text-accent transition-transform duration-300 flex-shrink-0 ${isExpanded ? 'rotate-180' : ''}`}
                   />
                 </div>
@@ -208,7 +205,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
               </div>
 
               {/* Description - Collassabile con animazione */}
-              <div 
+              <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-96 opacity-100 mt-3' : 'max-h-0 opacity-0'}`}
               >
                 <p className="text-secondary/80 leading-relaxed text-body-mobile md:text-body-desktop">
@@ -216,8 +213,6 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, index }) => {
                 </p>
               </div>
 
-              {/* Hover effect line */}
-              <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-accent/40 to-accent-hover/40 transition-all duration-300 group-hover:w-full"></div>
             </div>
 
             {/* Connection line */}
