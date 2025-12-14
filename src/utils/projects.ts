@@ -349,6 +349,67 @@ export const projects: ProjectType[] = [
     workflow: "Raccolta requisiti → UI/UX → API Express + storage JSON → Frontend Vite/Tailwind → Upload & admin → Docker/Nginx"
   },
   {
+    id: 'tracking-spese',
+    title: 'Tracking Spese',
+    description: 'Applicazione web con PWA e integrazione per iPhone per il controllo spese',
+    longDescription: 'Applicazione web con PWA e integrazione per iPhone per il controllo spese con gestione di conti, categorie. Possibilità di tener traccia delle spese giornaliere con statistiche sui lunghi periodi con design futuristico e minimale.',
+    category: 'main',
+    imageUrl: '/assets/projects/spese-main.png',
+    githubUrl: 'https://github.com/Payd3r/Tracking_Spese',
+    demoUrl: 'https://spese.andrea-mauri.duckdns.org/',
+    tags: ['React', 'TypeScript', 'PWA', 'Chart.js'],
+    status: 'done',
+    priority: 'medium',
+    context: {
+      type: 'personal',
+      year: '2023'
+    },
+    problem: 'Gestione e analisi delle spese personali',
+    solution: 'App PWA con dashboard interattiva e report dettagliati',
+    features: [
+      'Tracking spese',
+      'Categorizzazione',
+      'Budget mensili',
+      'Report grafici',
+      'Esportazione dati',
+      'Design futuristico'
+    ],
+    techStack: {
+      frontend: ['React', 'TypeScript', 'Tailwind CSS'],
+      backend: ['Node.js', 'Express'],
+      charts: ['Chart.js'],
+      pwa: ['Service Workers'],
+      deployment: ['Portainer', 'Nginx']
+    },
+    screenshots: [
+      { imageUrl: '/assets/carousel/spese-1.png', caption: 'Dashboard spese' },
+      { imageUrl: '/assets/carousel/spese-2.png', caption: 'Aggiunta spesa' },
+      { imageUrl: '/assets/carousel/spese-3.png', caption: 'Impostazioni per gestire tutti gli asset' }
+    ],
+    timeline: {
+      startDate: 'gennaio 2024',
+      endDate: 'febbraio 2024',
+      duration: '2 mesi'
+    },
+    metrics: {
+      transactions: '500+',
+      categories: '15+',
+      savings: '€2000+'
+    },
+    challenges: [
+      'Gestione dati real-time',
+      'Ottimizzazione grafici',
+      'UX mobile',
+      'PWA offline'
+    ],
+    learnings: [
+      'Chart.js integration',
+      'State management',
+      'PWA development'
+    ],
+    workflow: 'Design → Sviluppo → Testing → Deploy'
+  },
+  {
     id: "geoguess",
     title: "GeoGuess",
     description: "Gioco interattivo di geografia che sfida gli utenti a indovinare la posizione di punti casuali sulla mappa mondiale, con diverse modalità di gioco e statistiche dettagliate.",
@@ -419,7 +480,7 @@ export const projects: ProjectType[] = [
     priority: "high",
     context: {
       type: "personal",
-      year: "2024"
+      year: "2025"
     },
     problem: "Difficoltà nell'avvicinare i giovani all'analisi poetica tradizionale attraverso metodi didattici convenzionali.",
     solution: "Sviluppo di un gioco a round progressivi con svelto graduale dei versi e sistema di indizi contestuali (movimenti letterari, contesto storico, opere correlate).",
@@ -581,296 +642,6 @@ export const projects: ProjectType[] = [
       'Progettazione e documentazione di API RESTful con Swagger.'
     ],
     workflow: 'Architettura Docker → Sviluppo Backend & API → Sviluppo Frontend → Implementazione Testing & Monitoring → Deploy'
-  },
-  {
-    id: 'portfolio',
-    title: 'Portfolio ',
-    description: 'Portfolio personale che funge da "parco giochi" per tecnologie avanzate come React Three Fiber, GSAP e Framer Motion.',
-    longDescription: 'Questo non è un semplice sito vetrina, ma una web application dinamica progettata per dimostrare competenze avanzate. La homepage presenta un cubo 3D interattivo (React Three Fiber), mentre la navigazione e le micro-interazioni sono gestite con animazioni complesse (Framer Motion, GSAP). Il sito integra un cursore personalizzato, una galleria progetti filtrabile e una sezione che carica dinamicamente le statistiche da GitHub, mostrando un\'applicazione pratica delle API.',
-    category: 'main',
-    imageUrl: '/assets/projects/portfolio-main.jpeg',
-    githubUrl: 'https://github.com/Payd3r/Portfolio',
-    demoUrl: 'https://portfolio.andrea-mauri.duckdns.org/',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'GSAP', 'React Three Fiber', 'Docker'],
-    status: 'done',
-    priority: 'high',
-    context: {
-      type: 'personal',
-      year: '2024'
-    },
-    problem: 'Creare un portfolio che non solo elenchi i progetti, ma che sia esso stesso una dimostrazione di competenze tecniche avanzate, in particolare nell\'ambito delle animazioni e della grafica 3D sul web.',
-    solution: 'Lo sviluppo di una Single Page Application interattiva con React e TypeScript, utilizzando librerie all\'avanguardia come React Three Fiber per la grafica 3D e GSAP/Framer Motion per animazioni complesse. L\'architettura è containerizzata con Docker per una facile esecuzione locale.',
-    features: [
-      'Animazioni di transizione di pagina (Framer Motion)',
-      'Micro-animazioni su elementi UI (GSAP)',
-      'Galleria progetti con filtri dinamici',
-      'Integrazione API di GitHub per statistiche in tempo reale'
-    ],
-    techStack: {
-      frontend: ['React', 'TypeScript', 'Vite', 'Tailwind CSS'],
-      animations: ['Framer Motion', 'GSAP'],
-      graphics_3d: ['React Three Fiber', 'Drei'],
-      deployment: ['Docker', 'Vercel']
-    },
-    screenshots: [
-      { imageUrl: '/assets/projects/portfolio-screenshot-1.jpg', caption: 'Homepage con cubo 3D interattivo' },
-      { imageUrl: '/assets/projects/portfolio-screenshot-2.jpg', caption: 'Galleria progetti con filtri' },
-      { imageUrl: '/assets/projects/portfolio-screenshot-3.jpg', caption: 'Dettaglio di un progetto' }
-    ],
-    timeline: {
-      startDate: '2024-02',
-      endDate: '2024-03',
-      duration: '1 mese'
-    },
-    challenges: [
-      'Integrare rendering 3D (React Three Fiber) in un\'applicazione React mantenendo alte performance.',
-      'Orchestrazione di più librerie di animazione (GSAP, Framer Motion) senza conflitti.',
-      'Garantire che le animazioni complesse e gli effetti grafici siano fluidi su tutti i dispositivi.'
-    ],
-    learnings: [
-      'Sviluppo di scene 3D interattive nel DOM con React Three Fiber.',
-      'Gestione avanzata dello stato di animazioni complesse.',
-      'Ottimizzazione delle performance di rendering per applicazioni web graficamente intensive.'
-    ],
-    workflow: 'Concept & Design → Sviluppo Componenti → Integrazione 3D & Animazioni → Ottimizzazione Performance → Deploy'
-  },
-  {
-    id: 'fitness-bodybuilding',
-    title: 'Fitness & Bodybuilding',
-    description: 'Applicazione in Kotlin per smartphone per tener traccia dell\'allenamento',
-    longDescription: 'Applicazione in Kotlin per smartphone per tener traccia dell\'allenamento con schede, utenti e allenamenti custom. Possibilità di far partire l\'attività e tener traccia dei progressi.',
-    category: 'main',
-    imageUrl: '/assets/projects/fitness-main.png',
-    githubUrl: 'https://github.com/lucacatt/Fitness_and_Bodybuilding',
-    demoUrl: '',
-    tags: ['Kotlin', 'Android', 'SQLite', 'Material Design'],
-    status: 'done',
-    priority: 'medium',
-    context: {
-      type: 'university',
-      year: '2023'
-    },
-    problem: 'Tracking complesso di allenamenti e progressi fitness',
-    solution: 'App mobile nativa con interfaccia intuitiva e statistiche avanzate',
-    features: [
-      'Tracking allenamenti',
-      'Statistiche progressi',
-      'Obiettivi personalizzati',
-      'Sincronizzazione cloud',
-      'Social features',
-      'Schede personalizzate'
-    ],
-    techStack: {
-      mobile: ['Kotlin', 'Android SDK'],
-      database: ['SQLite'],
-      ui: ['Material Design'],
-      deployment: ['Google Play Store']
-    },
-    screenshots: [
-      { imageUrl: '/assets/carousel/fitness-1.png', caption: 'Dashboard allenamenti' },
-      { imageUrl: '/assets/carousel/fitness-2.png', caption: 'Tracking esercizi' },
-      { imageUrl: '/assets/carousel/fitness-3.png', caption: 'Statistiche progressi' }
-    ],
-    timeline: {
-      startDate: 'Settembre 2023',
-      endDate: 'Novembre 2023',
-      duration: '3 mesi'
-    },
-    metrics: {
-      users: '200+',
-      workouts: '1000+',
-      ratings: '4.5/5'
-    },
-    challenges: [
-      'Sincronizzazione offline',
-      'Performance mobile',
-      'UX intuitiva'
-    ],
-    learnings: [
-      'Kotlin best practices',
-      'Android development',
-      'Mobile UX design'
-    ],
-    workflow: 'Design → Sviluppo Mobile → Testing → Deploy'
-  },
-  {
-    id: 'tracking-spese',
-    title: 'Tracking Spese',
-    description: 'Applicazione web con PWA e integrazione per iPhone per il controllo spese',
-    longDescription: 'Applicazione web con PWA e integrazione per iPhone per il controllo spese con gestione di conti, categorie. Possibilità di tener traccia delle spese giornaliere con statistiche sui lunghi periodi con design futuristico e minimale.',
-    category: 'main',
-    imageUrl: '/assets/projects/spese-main.png',
-    githubUrl: 'https://github.com/Payd3r/Tracking_Spese',
-    demoUrl: 'https://spese.andrea-mauri.duckdns.org/',
-    tags: ['React', 'TypeScript', 'PWA', 'Chart.js'],
-    status: 'done',
-    priority: 'medium',
-    context: {
-      type: 'personal',
-      year: '2023'
-    },
-    problem: 'Gestione e analisi delle spese personali',
-    solution: 'App PWA con dashboard interattiva e report dettagliati',
-    features: [
-      'Tracking spese',
-      'Categorizzazione',
-      'Budget mensili',
-      'Report grafici',
-      'Esportazione dati',
-      'Design futuristico'
-    ],
-    techStack: {
-      frontend: ['React', 'TypeScript', 'Tailwind CSS'],
-      backend: ['Node.js', 'Express'],
-      charts: ['Chart.js'],
-      pwa: ['Service Workers'],
-      deployment: ['Portainer', 'Nginx']
-    },
-    screenshots: [
-      { imageUrl: '/assets/carousel/spese-1.png', caption: 'Dashboard spese' },
-      { imageUrl: '/assets/carousel/spese-2.png', caption: 'Aggiunta spesa' },
-      { imageUrl: '/assets/carousel/spese-3.png', caption: 'Impostazioni per gestire tutti gli asset' }
-    ],
-    timeline: {
-      startDate: 'gennaio 2024',
-      endDate: 'febbraio 2024',
-      duration: '2 mesi'
-    },
-    metrics: {
-      transactions: '500+',
-      categories: '15+',
-      savings: '€2000+'
-    },
-    challenges: [
-      'Gestione dati real-time',
-      'Ottimizzazione grafici',
-      'UX mobile',
-      'PWA offline'
-    ],
-    learnings: [
-      'Chart.js integration',
-      'State management',
-      'PWA development'
-    ],
-    workflow: 'Design → Sviluppo → Testing → Deploy'
-  },
-  {
-    id: 'gestionale-calcio',
-    title: 'Gestionale Calcio',
-    description: 'Sito completamente realizzato in PHP per gestire una società calcistica',
-    longDescription: 'Sito completamente realizzato in PHP per gestire una società calcistica con possibilità di creare squadre, giocatori e gestire il materiale e organizzare il calendario degli eventi con una galleria e la possibilità di creare locandine.',
-    category: 'main',
-    imageUrl: '/assets/projects/gestionale-calcio-main.jpg',
-    githubUrl: 'https://github.com/GerosaSimone/GestioneProgetto',
-    demoUrl: 'https://gestionale-calcio.vercel.app',
-    tags: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
-    status: 'done',
-    priority: 'medium',
-    context: {
-      type: 'university',
-      year: '2023'
-    },
-    problem: 'Gestione complessa di squadre, giocatori e partite',
-    solution: 'Sistema integrato per gestione completa del team calcistico',
-    features: [
-      'Gestione giocatori',
-      'Pianificazione allenamenti',
-      'Tracking partite',
-      'Statistiche squadra',
-      'Area amministratore',
-      'Galleria foto',
-      'Creazione locandine'
-    ],
-    techStack: {
-      backend: ['PHP'],
-      database: ['MySQL'],
-      frontend: ['HTML', 'CSS', 'JavaScript'],
-      deployment: ['Apache']
-    },
-    screenshots: [
-      { imageUrl: '/assets/projects/gestionale-calcio-screenshot-1.jpg', caption: 'Dashboard squadra' },
-      { imageUrl: '/assets/projects/gestionale-calcio-screenshot-2.jpg', caption: 'Gestione giocatori' },
-      { imageUrl: '/assets/projects/gestionale-calcio-screenshot-3.jpg', caption: 'Statistiche partite' }
-    ],
-    timeline: {
-      startDate: '2023-03',
-      endDate: '2023-06',
-      duration: '4 mesi'
-    },
-    metrics: {
-      players: '25+',
-      matches: '30+',
-      teams: '3+'
-    },
-    challenges: [
-      'Gestione ruoli utenti',
-      'Sincronizzazione dati',
-      'UX per mobile'
-    ],
-    learnings: [
-      'Role-based access control',
-      'Real-time updates',
-      'Mobile-first design'
-    ],
-    workflow: 'Analisi → Sviluppo → Testing → Deploy'
-  },
-  {
-    id: 'car-to-auction',
-    title: 'CAR to Auction',
-    description: 'Sito per aste auto online',
-    longDescription: 'Partecipazione in un team UpWork per un\'app di aste auto. Gestione di problemi di pagamento e grafici sulla homepage.',
-    category: 'main',
-    imageUrl: '/assets/projects/car-main.png',
-    githubUrl: 'https://github.com/teamicon/car-to-auction',
-    demoUrl: '',
-    tags: ['PHP', 'MySQL', 'Stripe', 'WebSocket'],
-    status: 'done',
-    priority: 'high',
-    context: {
-      type: 'work',
-      year: '2024'
-    },
-    problem: 'Piattaforma per aste auto con gestione pagamenti e garage utenti',
-    solution: 'App completa con sistema di aste real-time e pagamenti sicuri',
-    features: [
-      'Sistema aste real-time',
-      'Gestione garage utenti',
-      'Sistema pagamenti',
-      'Dashboard venditore'
-    ],
-    techStack: {
-      frontend: ['PHP', 'HTML', 'CSS', 'JavaScript'],
-      backend: ['PHP', 'MySQL'],
-      database: ['MySQL'],
-      payments: ['Stripe'],
-      realtime: ['WebSocket']
-    },
-    screenshots: [
-      { imageUrl: '/assets/carousel/car-1.png', caption: 'Asta in corso' },
-      { imageUrl: '/assets/carousel/car-2.png', caption: 'Garage di un utente' },
-      { imageUrl: '/assets/carousel/car-3.png', caption: 'Pagine su cui sono intervenuto' }
-    ],
-    timeline: {
-      startDate: 'Febbraio 2024',
-      endDate: 'Aprile 2024',
-      duration: '3 mesi'
-    },
-    metrics: {
-      users: '100+',
-      auctions: '20+',
-      revenue: '€10k+'
-    },
-    challenges: [
-      'Sistema aste real-time',
-      'Integrazione pagamenti',
-      'Gestione concorrenza'
-    ],
-    learnings: [
-      'WebSocket implementation',
-      'Payment gateway integration',
-      'Real-time bidding system'
-    ],
-    workflow: 'Sviluppo → Testing'
   },
   {
     id: "ravai",
@@ -1196,5 +967,235 @@ export const projects: ProjectType[] = [
       'Email integration'
     ],
     workflow: 'Design → Sviluppo → Testing → Deploy'
+  },
+  {
+    id: 'fitness-bodybuilding',
+    title: 'Fitness & Bodybuilding',
+    description: 'Applicazione in Kotlin per smartphone per tener traccia dell\'allenamento',
+    longDescription: 'Applicazione in Kotlin per smartphone per tener traccia dell\'allenamento con schede, utenti e allenamenti custom. Possibilità di far partire l\'attività e tener traccia dei progressi.',
+    category: 'main',
+    imageUrl: '/assets/projects/fitness-main.png',
+    githubUrl: 'https://github.com/lucacatt/Fitness_and_Bodybuilding',
+    demoUrl: '',
+    tags: ['Kotlin', 'Android', 'SQLite', 'Material Design'],
+    status: 'done',
+    priority: 'medium',
+    context: {
+      type: 'university',
+      year: '2023'
+    },
+    problem: 'Tracking complesso di allenamenti e progressi fitness',
+    solution: 'App mobile nativa con interfaccia intuitiva e statistiche avanzate',
+    features: [
+      'Tracking allenamenti',
+      'Statistiche progressi',
+      'Obiettivi personalizzati',
+      'Sincronizzazione cloud',
+      'Social features',
+      'Schede personalizzate'
+    ],
+    techStack: {
+      mobile: ['Kotlin', 'Android SDK'],
+      database: ['SQLite'],
+      ui: ['Material Design'],
+      deployment: ['Google Play Store']
+    },
+    screenshots: [
+      { imageUrl: '/assets/carousel/fitness-1.png', caption: 'Dashboard allenamenti' },
+      { imageUrl: '/assets/carousel/fitness-2.png', caption: 'Tracking esercizi' },
+      { imageUrl: '/assets/carousel/fitness-3.png', caption: 'Statistiche progressi' }
+    ],
+    timeline: {
+      startDate: 'Settembre 2023',
+      endDate: 'Novembre 2023',
+      duration: '3 mesi'
+    },
+    metrics: {
+      users: '200+',
+      workouts: '1000+',
+      ratings: '4.5/5'
+    },
+    challenges: [
+      'Sincronizzazione offline',
+      'Performance mobile',
+      'UX intuitiva'
+    ],
+    learnings: [
+      'Kotlin best practices',
+      'Android development',
+      'Mobile UX design'
+    ],
+    workflow: 'Design → Sviluppo Mobile → Testing → Deploy'
+  },
+  {
+    id: 'car-to-auction',
+    title: 'CAR to Auction',
+    description: 'Sito per aste auto online',
+    longDescription: 'Partecipazione in un team UpWork per un\'app di aste auto. Gestione di problemi di pagamento e grafici sulla homepage.',
+    category: 'main',
+    imageUrl: '/assets/projects/car-main.png',
+    githubUrl: 'https://github.com/teamicon/car-to-auction',
+    demoUrl: '',
+    tags: ['PHP', 'MySQL', 'Stripe', 'WebSocket'],
+    status: 'done',
+    priority: 'high',
+    context: {
+      type: 'work',
+      year: '2024'
+    },
+    problem: 'Piattaforma per aste auto con gestione pagamenti e garage utenti',
+    solution: 'App completa con sistema di aste real-time e pagamenti sicuri',
+    features: [
+      'Sistema aste real-time',
+      'Gestione garage utenti',
+      'Sistema pagamenti',
+      'Dashboard venditore'
+    ],
+    techStack: {
+      frontend: ['PHP', 'HTML', 'CSS', 'JavaScript'],
+      backend: ['PHP', 'MySQL'],
+      database: ['MySQL'],
+      payments: ['Stripe'],
+      realtime: ['WebSocket']
+    },
+    screenshots: [
+      { imageUrl: '/assets/carousel/car-1.png', caption: 'Asta in corso' },
+      { imageUrl: '/assets/carousel/car-2.png', caption: 'Garage di un utente' },
+      { imageUrl: '/assets/carousel/car-3.png', caption: 'Pagine su cui sono intervenuto' }
+    ],
+    timeline: {
+      startDate: 'Febbraio 2024',
+      endDate: 'Aprile 2024',
+      duration: '3 mesi'
+    },
+    metrics: {
+      users: '100+',
+      auctions: '20+',
+      revenue: '€10k+'
+    },
+    challenges: [
+      'Sistema aste real-time',
+      'Integrazione pagamenti',
+      'Gestione concorrenza'
+    ],
+    learnings: [
+      'WebSocket implementation',
+      'Payment gateway integration',
+      'Real-time bidding system'
+    ],
+    workflow: 'Sviluppo → Testing'
+  },
+  {
+    id: 'gestionale-calcio',
+    title: 'Gestionale Calcio',
+    description: 'Sito completamente realizzato in PHP per gestire una società calcistica',
+    longDescription: 'Sito completamente realizzato in PHP per gestire una società calcistica con possibilità di creare squadre, giocatori e gestire il materiale e organizzare il calendario degli eventi con una galleria e la possibilità di creare locandine.',
+    category: 'main',
+    imageUrl: '/assets/projects/gestionale-calcio-main.jpg',
+    githubUrl: 'https://github.com/GerosaSimone/GestioneProgetto',
+    demoUrl: 'https://gestionale-calcio.vercel.app',
+    tags: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
+    status: 'done',
+    priority: 'medium',
+    context: {
+      type: 'university',
+      year: '2023'
+    },
+    problem: 'Gestione complessa di squadre, giocatori e partite',
+    solution: 'Sistema integrato per gestione completa del team calcistico',
+    features: [
+      'Gestione giocatori',
+      'Pianificazione allenamenti',
+      'Tracking partite',
+      'Statistiche squadra',
+      'Area amministratore',
+      'Galleria foto',
+      'Creazione locandine'
+    ],
+    techStack: {
+      backend: ['PHP'],
+      database: ['MySQL'],
+      frontend: ['HTML', 'CSS', 'JavaScript'],
+      deployment: ['Apache']
+    },
+    screenshots: [
+      { imageUrl: '/assets/projects/gestionale-calcio-screenshot-1.jpg', caption: 'Dashboard squadra' },
+      { imageUrl: '/assets/projects/gestionale-calcio-screenshot-2.jpg', caption: 'Gestione giocatori' },
+      { imageUrl: '/assets/projects/gestionale-calcio-screenshot-3.jpg', caption: 'Statistiche partite' }
+    ],
+    timeline: {
+      startDate: '2023-03',
+      endDate: '2023-06',
+      duration: '4 mesi'
+    },
+    metrics: {
+      players: '25+',
+      matches: '30+',
+      teams: '3+'
+    },
+    challenges: [
+      'Gestione ruoli utenti',
+      'Sincronizzazione dati',
+      'UX per mobile'
+    ],
+    learnings: [
+      'Role-based access control',
+      'Real-time updates',
+      'Mobile-first design'
+    ],
+    workflow: 'Analisi → Sviluppo → Testing → Deploy'
+  },
+
+  {
+    id: 'portfolio',
+    title: 'Portfolio ',
+    description: 'Portfolio personale che funge da "parco giochi" per tecnologie avanzate come React Three Fiber, GSAP e Framer Motion.',
+    longDescription: 'Questo non è un semplice sito vetrina, ma una web application dinamica progettata per dimostrare competenze avanzate. La homepage presenta un cubo 3D interattivo (React Three Fiber), mentre la navigazione e le micro-interazioni sono gestite con animazioni complesse (Framer Motion, GSAP). Il sito integra un cursore personalizzato, una galleria progetti filtrabile e una sezione che carica dinamicamente le statistiche da GitHub, mostrando un\'applicazione pratica delle API.',
+    category: 'main',
+    imageUrl: '/assets/projects/portfolio-main.jpeg',
+    githubUrl: 'https://github.com/Payd3r/Portfolio',
+    demoUrl: 'https://portfolio.andrea-mauri.duckdns.org/',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'GSAP', 'React Three Fiber', 'Docker'],
+    status: 'done',
+    priority: 'high',
+    context: {
+      type: 'personal',
+      year: '2024'
+    },
+    problem: 'Creare un portfolio che non solo elenchi i progetti, ma che sia esso stesso una dimostrazione di competenze tecniche avanzate, in particolare nell\'ambito delle animazioni e della grafica 3D sul web.',
+    solution: 'Lo sviluppo di una Single Page Application interattiva con React e TypeScript, utilizzando librerie all\'avanguardia come React Three Fiber per la grafica 3D e GSAP/Framer Motion per animazioni complesse. L\'architettura è containerizzata con Docker per una facile esecuzione locale.',
+    features: [
+      'Animazioni di transizione di pagina (Framer Motion)',
+      'Micro-animazioni su elementi UI (GSAP)',
+      'Galleria progetti con filtri dinamici',
+      'Integrazione API di GitHub per statistiche in tempo reale'
+    ],
+    techStack: {
+      frontend: ['React', 'TypeScript', 'Vite', 'Tailwind CSS'],
+      animations: ['Framer Motion', 'GSAP'],
+      graphics_3d: ['React Three Fiber', 'Drei'],
+      deployment: ['Docker', 'Vercel']
+    },
+    screenshots: [
+      { imageUrl: '/assets/projects/portfolio-screenshot-1.jpg', caption: 'Homepage con cubo 3D interattivo' },
+      { imageUrl: '/assets/projects/portfolio-screenshot-2.jpg', caption: 'Galleria progetti con filtri' },
+      { imageUrl: '/assets/projects/portfolio-screenshot-3.jpg', caption: 'Dettaglio di un progetto' }
+    ],
+    timeline: {
+      startDate: '2024-02',
+      endDate: '2024-03',
+      duration: '1 mese'
+    },
+    challenges: [
+      'Integrare rendering 3D (React Three Fiber) in un\'applicazione React mantenendo alte performance.',
+      'Orchestrazione di più librerie di animazione (GSAP, Framer Motion) senza conflitti.',
+      'Garantire che le animazioni complesse e gli effetti grafici siano fluidi su tutti i dispositivi.'
+    ],
+    learnings: [
+      'Sviluppo di scene 3D interattive nel DOM con React Three Fiber.',
+      'Gestione avanzata dello stato di animazioni complesse.',
+      'Ottimizzazione delle performance di rendering per applicazioni web graficamente intensive.'
+    ],
+    workflow: 'Concept & Design → Sviluppo Componenti → Integrazione 3D & Animazioni → Ottimizzazione Performance → Deploy'
   }
 ]
