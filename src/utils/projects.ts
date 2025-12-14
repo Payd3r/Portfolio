@@ -153,24 +153,24 @@ export const projects: ProjectType[] = [
     workflow: 'Analisi requisiti → Architettura (Django/Celery) → Sviluppo API → Sviluppo Frontend (React) → Testing → Containerizzazione (Docker) → Manutenzione'
   },
   {
-    "id": "omnia",
-    "title": "Omnia",
-    "description": "Piattaforma di apprendimento personalizzato alimentata da AI che genera automaticamente piani di studio settimanali, articoli educativi completi con immagini, quiz, podcast audio e assistente virtuale.",
-    "longDescription": "Omnia è una piattaforma innovativa di apprendimento personalizzato che utilizza l'intelligenza artificiale per creare esperienze educative su misura. Gli utenti possono creare 'settimane di apprendimento' su qualsiasi argomento desiderato, e il sistema genera automaticamente un piano di studio strutturato di 7 giorni. Per ogni giorno, Omnia crea articoli educativi completi e approfonditi con 8 sezioni dettagliate, immagini generate automaticamente, quiz interattivi per verificare la comprensione, curiosità interessanti e risorse esterne (libri, film, app, siti web). La piattaforma include anche la generazione automatica di podcast audio utilizzando Google Text-to-Speech, permettendo agli utenti di ascoltare gli articoli mentre sono in movimento. Un assistente virtuale AI consente agli utenti di fare domande specifiche sugli articoli per approfondire ulteriormente la comprensione. Il sistema utilizza un'architettura microservizi con orchestrazione intelligente tra Google Gemini e Ollama per garantire alta disponibilità e gestione dei rate limit, supporta più lingue (italiano, inglese, tedesco, francese, spagnolo, portoghese) e offre un'interfaccia moderna e responsive.",
-    "category": "main",
-    "imageUrl": "/assets/projects/omnia-main.png",
-    "githubUrl": "https://github.com/Payd3r/omnia",
-    "demoUrl": "https://omnia.andrea-mauri.duckdns.org/",
-    "tags": ["React", "Node.js", "Express", "AI", "Google Gemini", "Ollama", "PostgreSQL", "Docker", "Text-to-Speech", "Educational Platform"],
-    "status": "done",
-    "priority": "high",
-    "context": {
-      "type": "personal",
-      "year": "2025"
+    id: "omnia",
+    title: "Omnia",
+    description: "Piattaforma di apprendimento personalizzato alimentata da AI che genera automaticamente piani di studio settimanali, articoli educativi completi con immagini, quiz, podcast audio e assistente virtuale.",
+    longDescription: "Omnia è una piattaforma innovativa di apprendimento personalizzato che utilizza l'intelligenza artificiale per creare esperienze educative su misura. Gli utenti possono creare 'settimane di apprendimento' su qualsiasi argomento desiderato, e il sistema genera automaticamente un piano di studio strutturato di 7 giorni. Per ogni giorno, Omnia crea articoli educativi completi e approfonditi con 8 sezioni dettagliate, immagini generate automaticamente, quiz interattivi per verificare la comprensione, curiosità interessanti e risorse esterne (libri, film, app, siti web). La piattaforma include anche la generazione automatica di podcast audio utilizzando Google Text-to-Speech, permettendo agli utenti di ascoltare gli articoli mentre sono in movimento. Un assistente virtuale AI consente agli utenti di fare domande specifiche sugli articoli per approfondire ulteriormente la comprensione. Il sistema utilizza un'architettura microservizi con orchestrazione intelligente tra Google Gemini e Ollama per garantire alta disponibilità e gestione dei rate limit, supporta più lingue (italiano, inglese, tedesco, francese, spagnolo, portoghese) e offre un'interfaccia moderna e responsive.",
+    category: "main",
+    imageUrl: "/assets/projects/omnia-main.png",
+    githubUrl: "https://github.com/Payd3r/omnia",
+    demoUrl: "https://omnia.andrea-mauri.duckdns.org/",
+    tags: ["React", "Node.js", "Express", "AI", "Google Gemini", "Ollama", "PostgreSQL", "Docker", "Text-to-Speech", "Educational Platform"],
+    status: "done",
+    priority: "high",
+    context: {
+      type: "personal",
+      year: "2025"
     },
-    "problem": "Necessità di una piattaforma educativa che generi automaticamente contenuti di apprendimento personalizzati, strutturati e completi su qualsiasi argomento, con supporto multi-modale (testo, immagini, audio) e interattività per migliorare l'esperienza di apprendimento.",
-    "solution": "Sviluppo di una piattaforma completa con generazione AI di piani di studio settimanali, articoli educativi dettagliati con immagini, quiz interattivi, podcast audio e assistente virtuale, utilizzando un'architettura microservizi scalabile con fallback intelligente tra provider AI.",
-    "features": [
+    problem: "Necessità di una piattaforma educativa che generi automaticamente contenuti di apprendimento personalizzati, strutturati e completi su qualsiasi argomento, con supporto multi-modale (testo, immagini, audio) e interattività per migliorare l'esperienza di apprendimento.",
+    solution: "Sviluppo di una piattaforma completa con generazione AI di piani di studio settimanali, articoli educativi dettagliati con immagini, quiz interattivi, podcast audio e assistente virtuale, utilizzando un'architettura microservizi scalabile con fallback intelligente tra provider AI.",
+    features: [
       "Generazione automatica di piani di studio settimanali personalizzati",
       "Creazione AI di articoli educativi completi con 8 sezioni dettagliate",
       "Generazione automatica di immagini per ogni sezione",
@@ -184,18 +184,18 @@ export const projects: ProjectType[] = [
       "Gestione rate limit e caching con Redis",
       "Interfaccia responsive e moderna con dark mode"
     ],
-    "techStack": {
-      "frontend": ["React", "TypeScript", "Tailwind CSS", "Vite", "React Router", "Clerk Auth"],
-      "backend": ["Node.js", "Express", "TypeScript", "Prisma ORM"],
-      "database": ["PostgreSQL"],
-      "ai": ["Google Gemini", "Ollama", "AI Orchestrator"],
-      "audio": ["Google Cloud Text-to-Speech"],
-      "image": ["Image Generation Service"],
-      "caching": ["Redis"],
-      "devops": ["Docker", "Docker Compose", "NGINX"],
-      "authentication": ["Clerk"]
+    techStack: {
+      frontend: ["React", "TypeScript", "Tailwind CSS", "Vite", "React Router", "Clerk Auth"],
+      backend: ["Node.js", "Express", "TypeScript", "Prisma ORM"],
+      database: ["PostgreSQL"],
+      ai: ["Google Gemini", "Ollama", "AI Orchestrator"],
+      audio: ["Google Cloud Text-to-Speech"],
+      image: ["Image Generation Service"],
+      caching: ["Redis"],
+      devops: ["Docker", "Docker Compose", "NGINX"],
+      authentication: ["Clerk"]
     },
-    "screenshots": [
+    screenshots: [
       { "imageUrl": "/assets/carousel/omnia-1.png", "caption": "Homepage con lista delle settimane di apprendimento" },
       { "imageUrl": "/assets/carousel/omnia-2.png", "caption": "Piano di studio settimanale con 7 giorni generati automaticamente" },
       { "imageUrl": "/assets/carousel/omnia-3.png", "caption": "Articolo educativo completo con sezioni" },
@@ -203,26 +203,26 @@ export const projects: ProjectType[] = [
       { "imageUrl": "/assets/carousel/omnia-5.png", "caption": "Card per approfondimenti e rimandi a siti esterni" },
       { "imageUrl": "/assets/carousel/omnia-6.png", "caption": "Quiz Interattivi per l'utente" }
     ],
-    "timeline": {
-      "startDate": "Novembre 2025",
-      "endDate": "Dicembre 2025",
-      "duration": "1 mese"
+    timeline: {
+      startDate: "Novembre 2025",
+      endDate: "Dicembre 2025",
+      duration: "1 mese"
     },
-    "challenges": [
+    challenges: [
       "Orchestrazione intelligente tra multiple AI provider (Gemini e Ollama) con gestione rate limit e fallback automatico",
       "Generazione asincrona di contenuti complessi (articoli, immagini, quiz) con aggiornamento in tempo reale",
       "Ottimizzazione delle performance per generazione di contenuti AI pesanti mantenendo responsività dell'interfaccia",
       "Gestione multi-lingua per generazione contenuti, immagini e audio con coerenza stilistica",
       "Architettura microservizi con comunicazione efficiente tra servizi (backend, audio-manager, image-manager)"
     ],
-    "learnings": [
+    learnings: [
       "Orchestrazione di multiple AI API con pattern di fallback e gestione errori robusta",
       "Generazione asincrona di contenuti complessi con polling e aggiornamenti in tempo reale",
       "Integrazione di servizi esterni (Google TTS, generazione immagini) in architettura microservizi",
       "Ottimizzazione di performance per applicazioni AI-intensive con caching e rate limiting",
       "Progettazione di interfacce utente per contenuti generati dinamicamente con stati di loading avanzati"
     ],
-    "workflow": "Progettazione Architettura → Setup Microservizi → Integrazione AI Orchestrator → Sviluppo Generatori Contenuti → Implementazione Frontend → Integrazione Audio/Immagini → Testing e Ottimizzazione → Deploy"
+    workflow: "Progettazione Architettura → Setup Microservizi → Integrazione AI Orchestrator → Sviluppo Generatori Contenuti → Implementazione Frontend → Integrazione Audio/Immagini → Testing e Ottimizzazione → Deploy"
   },
   {
     id: "insidefaraostudio",
@@ -347,6 +347,177 @@ export const projects: ProjectType[] = [
       "Setup Docker + Nginx per app React/Express monorepo"
     ],
     workflow: "Raccolta requisiti → UI/UX → API Express + storage JSON → Frontend Vite/Tailwind → Upload & admin → Docker/Nginx"
+  },
+  {
+    id: "geoguess",
+    title: "GeoGuess",
+    description: "Gioco interattivo di geografia che sfida gli utenti a indovinare la posizione di punti casuali sulla mappa mondiale, con diverse modalità di gioco e statistiche dettagliate.",
+    longDescription: "GeoGuess è un'applicazione web interattiva che combina elementi di apprendimento geografico con meccaniche di gioco coinvolgenti. Gli utenti possono esplorare diverse modalità tra cui: modalità classica con punti casuali, sfide a tempo, modalità bandiere e quiz su caratteristiche geografiche. L'applicazione utilizza un sistema di punteggio basato sulla precisione delle risposte e offre statistiche dettagliate delle performance. Include layer mappa personalizzabili, gestione degli achievement e una sezione di apprendimento con informazioni dettagliate su paesi e regioni.",
+    category: "main",
+    imageUrl: "/assets/projects/geoguess-main.png",
+    githubUrl: "https://github.com/Payd3r/GeoGuess",
+    demoUrl: "https://geoguess.andrea-mauri.duckdns.org/",
+    tags: ["React", "TypeScript", "D3.js", "Tailwind CSS", "GIS", "Game Development", "Interactive Learning"],
+    status: "done",
+    priority: "high",
+    context: {
+      type: "personal",
+      year: "2025"
+    },
+    problem: "Mancanza di strumenti interattivi per l'apprendimento geografico che combinino accuratezza dei dati, gameplay coinvolgente e visualizzazioni mappa personalizzabili.",
+    solution: "Sviluppo di un'applicazione web con mappa interattiva basata con proiezioni personalizzate con layer informativi per paesi e caratteristiche geografiche",
+    features: [
+      "4 modalità di gioco diverse (Classica, Bandiere, Timed Challenge, GeoQuiz)",
+      "Visualizzazione mappa personalizzabile con diversi layer tematici",
+      "Sistema di coordinate con precisione al chilometro",
+      "Gestione degli achievement e statistiche dettagliate",
+      "Animazioni e feedback visivi per le risposte",
+      "Dati geografici completi per 250+ paesi",
+      "Ottimizzazione delle performance per rendering mappe complesse"
+    ],
+    techStack: {
+      frontend: ["React", "TypeScript", "D3.js", "Tailwind CSS", "Vite"],
+      stateManagement: ["Zustand", "React Query"],
+      visualization: ["TopoJSON", "D3-geo", "D3-zoom"],
+      testing: ["Vitest", "Testing Library"]
+    },
+    screenshots: [
+      { imageUrl: "/assets/carousel/geoguess-1.png", caption: "Interfaccia principale con mappa interattiva" },
+      { imageUrl: "/assets/carousel/geoguess-2.png", caption: "Dettaglio statistiche e progressi" },
+      { imageUrl: "/assets/carousel/geoguess-3.png", caption: "Visualizzazione a confronto tra guess e posizione reale" }
+    ],
+    timeline: {
+      startDate: "Dicembre 2025",
+      endDate: "Dicembre 2025",
+      duration: "1 settimana"
+    },
+    challenges: [
+      "Ottimizzazione rendering mappe ad alte risoluzioni",
+      "Gestione delle proiezioni geografiche in D3.js",
+      "Sincronizzazione stato tra mappa e componenti React",
+      "Calcolo precisione delle coordinate con formule haversine"
+    ],
+    learnings: [
+      "Integrazione D3.js con React tramite hook custom",
+      "Gestione performance per visualizzazioni dati intensive",
+      "Ottimizzazione asset geospaziali (TopoJSON)",
+      "Pattern per gestione stato complesso in applicazioni GIS"
+    ],
+    workflow: "Progettazione UX → Setup base mappa → Implementazione core game logic → Sviluppo componenti React → Integrazione D3.js → Testing performance → Deploy"
+  },
+  {
+    id: "poetryguess",
+    title: "PoetryGuess",
+    description: "Gioco educativo letterario con quiz a versi nascosti che combina analisi testuale e apprendimento interattivo della poesia.",
+    longDescription: "PoetryGuess è un'applicazione web interattiva per esplorare la poesia attraverso frammenti testuali progressivi. Il gioco presenta round tematici con indizi contestuali, un sistema di statistiche in tempo reale e modalità di gioco che incentivano l'analisi letteraria. Integra un database di autori e opere poetiche con informazioni strutturate su movimenti letterari, stili e contesto storico.",
+    category: "main",
+    imageUrl: "/assets/projects/pg-main.png",
+    githubUrl: "https://github.com/Payd3r/PoetryGuess",
+    demoUrl: "",
+    tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "Game Logic", "Educational", "Literary Analysis"],
+    status: "done",
+    priority: "high",
+    context: {
+      type: "personal",
+      year: "2024"
+    },
+    problem: "Difficoltà nell'avvicinare i giovani all'analisi poetica tradizionale attraverso metodi didattici convenzionali.",
+    solution: "Sviluppo di un gioco a round progressivi con svelto graduale dei versi e sistema di indizi contestuali (movimenti letterari, contesto storico, opere correlate).",
+    features: [
+      "Meccanica a versi nascosti con svelto progressivo",
+      "Sistema di hint contestuali (movimenti/stili letterari)",
+      "Statistiche di gioco in tempo reale",
+      "Archivio storico delle partite",
+      "Gestione stato complesso per round multipli",
+      "Animazioni fluide per transizioni testuali",
+      "Supporto multilingua (italiano/inglese)"
+    ],
+    techStack: {
+      frontend: ["React", "TypeScript", "Tailwind CSS", "Vite", "Framer Motion"],
+      data: ["JSON Dataset", "Dynamic Imports", "Local Storage"],
+      testing: ["Vitest", "Testing Library"],
+      devops: ["GitHub Actions", "Vite PWA"]
+    },
+    screenshots: [
+      { imageUrl: "/assets/carousel/poetryguess-1.png", caption: "Interfaccia principale con selezione autore" },
+      { imageUrl: "/assets/carousel/poetryguess-2.png", caption: "Modalità di gioco con versi progressivi" },
+      { imageUrl: "/assets/carousel/poetryguess-3.png", caption: "Panel statistiche avanzate" },
+    ],
+    timeline: {
+      startDate: "Dicembre 2025",
+      endDate: "Dicembre 2025",
+      duration: "1 settimana"
+    },
+    challenges: [
+      "Gestione stato complesso per round multipli",
+      "Ottimizzazione performance animazioni testuali",
+      "Sincronizzazione dati contestuali",
+      "Validazione dinamica risposte"
+    ],
+    learnings: [
+      "Pattern per gestione stato giochi complessi",
+      "Ottimizzazione rendering liste dinamiche",
+      "Tecniche di lazy loading per contenuti testuali",
+      "Integrazione seamless con dataset JSON"
+    ],
+    workflow: "Progettazione UX → Sviluppo core game logic → Implementazione analisi testuale → Ottimizzazione prestazioni → Testing A/B"
+  },
+  {
+    id: "capitalguess",
+    title: "CapitalGuess",
+    description: "Gioco educativo geografico con quiz a carte intercambiabili che utilizza dati reali e AI per generare statistiche di gioco dinamiche.",
+    longDescription: "CapitalGuess è un'applicazione interattiva per testare e migliorare la conoscenza delle capitali mondiali. Il gioco presenta carte tematiche intercambiabili (economia, cultura, demografia) con dati aggiornati, un sistema di statistiche in tempo reale e modalità di gioco diversificate. L'app integra un database di oltre 50 capitali con informazioni dettagliate e utilizza algoritmi intelligenti per generare suggerimenti contestuali durante il gioco.",
+    category: "main",
+    imageUrl: "/assets/projects/capitalguess-main.png",
+    githubUrl: "https://github.com/Payd3r/CapitalGuess",
+    demoUrl: "https://capitalguess.andrea-mauri.duckdns.org/",
+    tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "AI Integration", "Educational Game", "Data Visualization"],
+    status: "done",
+    priority: "high",
+    context: {
+      type: "personal",
+      year: "2025"
+    },
+    problem: "Mancanza di strumenti educativi interattivi per l'apprendimento geografico che combinino dati reali con meccaniche di gioco moderne.",
+    solution: "Sviluppo di una web app con carte intercambiabili contenenti dati strutturati, sistema di statistiche avanzate e feedback contestuale durante il tentativo di indovinare le capitali.",
+    features: [
+      "Carte flip con informazioni multilivello (bandiera, dati economici, curiosità culturali)",
+      "Statistiche di gioco in tempo reale con grafici interattivi",
+      "Modalità di gioco diversificate (time attack, modalità apprendimento)",
+      "Database aggiornabile con nuove capitali",
+      "Sistema di suggerimenti contestuali basato sull'AI",
+      "Supporto multilingua (italiano/inglese)",
+      "Interfaccia utente responsive con animazioni"
+    ],
+    techStack: {
+      frontend: ["React", "TypeScript", "Tailwind CSS", "Vite", "Framer Motion"],
+      data: ["JSON Dataset", "Data Validation", "Dynamic Imports"],
+      testing: ["Vitest", "Testing Library"],
+      devops: ["Docker", "GitHub Actions"]
+    },
+    screenshots: [
+      { "imageUrl": "/assets/carousel/cg-1.png", "caption": "Schermata principale con selezione capitale" },
+      { "imageUrl": "/assets/carousel/cg-2.png", "caption": "Modalità carta culturale con dati demografici" },
+      { "imageUrl": "/assets/carousel/cg-3.png", "caption": "Grafici statistiche avanzate" }
+    ],
+    timeline: {
+      startDate: "Dicembre 2025",
+      endDate: "Dicembre 2025",
+      duration: "1 settimana"
+    },
+    challenges: [
+      "Gestione dello stato complesso per le carte interattive multipli",
+      "Ottimizzazione performance per animazioni fluide",
+      "Integrazione dati real-time con componenti grafici",
+      "Validazione dati dinamica per capitali multiple"
+    ],
+    learnings: [
+      "Gestione stato avanzato con hook custom",
+      "Ottimizzazione rendering liste complesse",
+      "Pattern per animazioni performanti",
+      "Data modeling per dataset geografici"
+    ],
+    workflow: "Progettazione UX → Sviluppo componenti core → Integrazione dati → Implementazione logica di gioco → Ottimizzazione performance → Testing"
   },
   {
     id: 'pane-salame',

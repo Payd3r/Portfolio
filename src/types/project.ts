@@ -10,7 +10,7 @@ export interface ProjectType {
   tags: string[]
   status: 'done' | 'in-progress' | 'pending'
   priority: 'high' | 'medium' | 'low'
-  
+
   // Campi specifici per landing page
   beforeAfter?: {
     before: string
@@ -23,7 +23,7 @@ export interface ProjectType {
     review: string
     rating: number
   }
-  
+
   // Campi specifici per progetti universitari/lavoro
   context?: {
     type: 'university' | 'work' | 'personal'
@@ -33,11 +33,14 @@ export interface ProjectType {
     thesis?: string
     year?: string
   }
-  
+
   problem?: string
   solution?: string
   features?: string[]
   techStack?: {
+    data?: string[]
+    stateManagement?: string[]
+    visualization?: string[]
     authentication?: string[]
     ai?: string[]
     audio?: string[]
