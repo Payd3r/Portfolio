@@ -88,8 +88,6 @@ export const projects: ProjectType[] = [
     longDescription: 'Sviluppato come progetto di tesi e utilizzato in produzione da Abbamoda, questo sistema è una soluzione software completa per la gestione di un business multi-canale. L\'architettura, interamente containerizzata con Docker, si basa su un backend Python/Django REST Framework e un frontend React. Utilizza Celery e Redis per gestire operazioni asincrone complesse come la sincronizzazione dell\'inventario con Shopify ed eBay. Include un sistema cassa (POS), CRM, gestione magazzino, un sistema di backup automatico su SFTP, e una suite di testing con oltre 200 test. Il progetto ha anche incluso la migrazione completa da un database legacy MariaDB a PostgreSQL.',
     category: 'main',
     imageUrl: '/assets/projects/gestionale-main.png',
-    githubUrl: 'https://github.com/lucacatt/gestionale',
-    demoUrl: 'https://gestionale-abbamoda.vercel.app',
     tags: ['Django', 'Python', 'PostgreSQL', 'React', 'Redis', 'Celery', 'Docker', 'Shopify API', 'eBay API'],
     status: 'done',
     priority: 'high',
@@ -671,7 +669,7 @@ export const projects: ProjectType[] = [
     techStack: {
       frontend: ["React", "TypeScript", "Tailwind CSS"],
       animations: ["Framer Motion"],
-      deployment: ["Vercel"]
+      deployment: ["Portainer"]
     },
     screenshots: [
       { imageUrl: "/assets/carousel/ravai-1.png", caption: "Preventivi" },
@@ -739,7 +737,7 @@ export const projects: ProjectType[] = [
     techStack: {
       frontend: ['React', 'TypeScript', 'Tailwind CSS'],
       animations: ['Framer Motion'],
-      deployment: ['Vercel']
+      deployment: ['Portainer']
     },
     screenshots: [
       { imageUrl: '/assets/carousel/gladiatori-1.png', caption: 'Homepage' },
@@ -807,7 +805,7 @@ export const projects: ProjectType[] = [
     techStack: {
       frontend: ['React', 'TypeScript', 'Tailwind CSS'],
       booking: ['Custom Booking System'],
-      deployment: ['Vercel']
+      deployment: ['Portainer']
     },
     screenshots: [
       { imageUrl: '/assets/carousel/betta47-1.png', caption: 'Homepage' },
@@ -876,7 +874,7 @@ export const projects: ProjectType[] = [
       frontend: ['React', 'TypeScript', 'Tailwind CSS'],
       appointments: ['Custom Appointment System'],
       newsletter: ['EmailJS'],
-      deployment: ['Vercel']
+      deployment: ['Portainer']
     },
     screenshots: [
       { imageUrl: '/assets/carousel/chic-1.png', caption: 'Homepage' },
@@ -939,7 +937,7 @@ export const projects: ProjectType[] = [
       frontend: ['React', 'TypeScript', 'Tailwind CSS'],
       appointments: ['Custom Appointment System'],
       newsletter: ['EmailJS'],
-      deployment: ['Vercel']
+      deployment: ['Portainer']
     },
     screenshots: [
       { imageUrl: '/assets/carousel/lariana-1.jpg', caption: 'Homepage' },
@@ -1093,7 +1091,7 @@ export const projects: ProjectType[] = [
     category: 'main',
     imageUrl: '/assets/projects/gestionale-calcio-main.jpg',
     githubUrl: 'https://github.com/GerosaSimone/GestioneProgetto',
-    demoUrl: 'https://gestionale-calcio.vercel.app',
+    demoUrl: 'https://gestionale-calcio.Portainer.app',
     tags: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript'],
     status: 'done',
     priority: 'medium',
@@ -1174,7 +1172,7 @@ export const projects: ProjectType[] = [
       frontend: ['React', 'TypeScript', 'Vite', 'Tailwind CSS'],
       animations: ['Framer Motion', 'GSAP'],
       graphics_3d: ['React Three Fiber', 'Drei'],
-      deployment: ['Docker', 'Vercel']
+      deployment: ['Docker', 'Portainer']
     },
     screenshots: [
       { imageUrl: '/assets/projects/portfolio-screenshot-1.jpg', caption: 'Homepage con cubo 3D interattivo' },

@@ -276,14 +276,14 @@ const HomePage = () => {
                 <div className="relative group">
                   {/* Glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-accent-hover/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-                  
+
                   {/* Image container */}
                   <div className="relative">
                     <div className="relative w-80 h-90 sm:w-66 sm:h-76 md:w-84 md:h-84 mx-auto ">
                       {/* Border animation */}
                       <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-accent via-accent-hover to-accent animate-spin-slow"></div>
                       <div className="absolute inset-1 rounded-3xl bg-dark-surface"></div>
-                      
+
                       {/* Profile image */}
                       <img
                         src={avatar}
@@ -291,11 +291,11 @@ const HomePage = () => {
                         className="relative w-full h-full rounded-3xl object-cover about-avatar shadow-2xl"
                         loading="lazy"
                       />
-                      
+
                       {/* Overlay effect */}
                       <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-dark-surface/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                    
+
                     {/* Tooltip under the image */}
                     <div className="mt-4 sm:mt-6 text-center">
                       <div className="inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-accent/10 to-accent-hover/10 backdrop-blur-sm rounded-xl px-4 py-2 sm:px-6 sm:py-3 border border-accent/20">
@@ -448,273 +448,273 @@ const HomePage = () => {
                 Migliori <span className="text-accent">Progetti</span>
               </h2>
               <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-accent to-accent-hover mx-auto rounded-full mb-6"></div>
-              
+
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-            {/* Sore */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, ease: "easeOut" }}
-              className="group cursor-pointer"
-              onClick={() => handleProjectClick('sore')}
-            >
-              <div className="relative bg-surface/30 border border-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg h-[280px] sm:h-auto flex flex-col">
-                {/* Immagine progetto */}
-                <div className="w-full h-32 sm:h-40 lg:h-56 mb-2 sm:mb-3 lg:mb-4 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-surface to-surface/80">
-                  <img
-                    src="/assets/projects/sore-main.jpeg"
-                    alt="Sore"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 flex-1 flex flex-col">
-                  <div className="flex items-center gap-1 sm:gap-1.5 lg:gap-2 flex-wrap">
-                    <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-primary/20 text-primary text-small-mobile md:text-small-desktop font-medium rounded-full">
-                      2024
-                    </span>
-                    <div className="flex items-center justify-center w-6 h-6 sm:w-auto sm:h-auto sm:gap-1 sm:px-2 sm:py-1 bg-purple-500/20 text-purple-500 rounded-full">
-                      <User className="w-3 h-3" />
-                      <span className="hidden sm:inline text-small-mobile md:text-small-desktop font-medium">Personale</span>
+              {/* Sore */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9, ease: "easeOut" }}
+                className="group cursor-pointer"
+                onClick={() => handleProjectClick('sore')}
+              >
+                <div className="relative bg-surface/30 border border-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg h-[280px] sm:h-auto flex flex-col">
+                  {/* Immagine progetto */}
+                  <div className="w-full h-32 sm:h-40 lg:h-56 mb-2 sm:mb-3 lg:mb-4 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-surface to-surface/80">
+                    <img
+                      src="/assets/projects/sore-main.jpeg"
+                      alt="Sore"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 flex-1 flex flex-col">
+                    <div className="flex items-center gap-1 sm:gap-1.5 lg:gap-2 flex-wrap">
+                      <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-primary/20 text-primary text-small-mobile md:text-small-desktop font-medium rounded-full">
+                        2024
+                      </span>
+                      <div className="flex items-center justify-center w-6 h-6 sm:w-auto sm:h-auto sm:gap-1 sm:px-2 sm:py-1 bg-purple-500/20 text-purple-500 rounded-full">
+                        <User className="w-3 h-3" />
+                        <span className="hidden sm:inline text-small-mobile md:text-small-desktop font-medium">Personale</span>
+                      </div>
+                    </div>
+                    <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary group-hover:text-accent transition-colors leading-tight">
+                      Sore
+                    </h3>
+                    <div className="flex-1 flex flex-col justify-center">
+                      <p className="text-secondary/80 text-small-mobile md:text-small-desktop leading-3 sm:leading-4 lg:leading-5 line-clamp-2">
+                        App gestione spese con analisi
+                      </p>
+                    </div>
+
+                    {/* Link - nascosti su mobile */}
+                    <div className="hidden sm:flex gap-1 sm:gap-1.5 lg:gap-2 pt-1 sm:pt-2">
+                      <a
+                        href="https://github.com/Payd3r/sore"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-black/50 hover:bg-black/70 text-white text-small-mobile md:text-small-desktop rounded-md sm:rounded-lg transition-colors"
+                      >
+                        <Github className="w-3 h-3 sm:w-4 sm:h-4" />
+                        <span className="hidden lg:inline">GitHub</span>
+                        <span className="lg:hidden">Git</span>
+                      </a>
+                      <a
+                        href="https://sore.andrea-mauri.duckdns.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-accent hover:bg-accent/90 text-white text-small-mobile md:text-small-desktop rounded-md sm:rounded-lg transition-colors"
+                      >
+                        <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
+                        Demo
+                      </a>
                     </div>
                   </div>
-                  <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary group-hover:text-accent transition-colors leading-tight">
-                    Sore
-                  </h3>
-                  <div className="flex-1 flex flex-col justify-center">
-                    <p className="text-secondary/80 text-small-mobile md:text-small-desktop leading-3 sm:leading-4 lg:leading-5 line-clamp-2">
-                      App gestione spese con analisi
-                    </p>
-                  </div>
-
-                  {/* Link - nascosti su mobile */}
-                  <div className="hidden sm:flex gap-1 sm:gap-1.5 lg:gap-2 pt-1 sm:pt-2">
-                    <a
-                      href="https://github.com/Payd3r/sore"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-black/50 hover:bg-black/70 text-white text-small-mobile md:text-small-desktop rounded-md sm:rounded-lg transition-colors"
-                    >
-                      <Github className="w-3 h-3 sm:w-4 sm:h-4" />
-                      <span className="hidden lg:inline">GitHub</span>
-                      <span className="lg:hidden">Git</span>
-                    </a>
-                    <a
-                      href="https://sore-app.vercel.app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-accent hover:bg-accent/90 text-white text-small-mobile md:text-small-desktop rounded-md sm:rounded-lg transition-colors"
-                    >
-                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Demo
-                    </a>
-                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Ravai */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.0, ease: "easeOut" }}
-              className="group cursor-pointer"
-              onClick={() => handleProjectClick('ravai')}
-            >
-              <div className="relative bg-surface/30 border border-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg h-[280px] sm:h-auto flex flex-col">
-                {/* Immagine progetto */}
-                <div className="w-full h-32 sm:h-40 lg:h-56 mb-2 sm:mb-3 lg:mb-4 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-surface to-surface/80">
-                  <img
-                    src="/assets/projects/ravai-main.jpeg"
-                    alt="RAVAI"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 flex-1 flex flex-col">
-                  <div className="flex items-center gap-1 sm:gap-1.5 lg:gap-2 flex-wrap">
-                    <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-primary/20 text-primary text-small-mobile md:text-small-desktop font-medium rounded-full">
-                      2024
-                    </span>
-                    <div className="flex items-center justify-center w-6 h-6 sm:w-auto sm:h-auto sm:gap-1 sm:px-2 sm:py-1 bg-green-500/20 text-green-500 rounded-full">
-                      <Building className="w-3 h-3" />
-                      <span className="hidden sm:inline text-small-mobile md:text-small-desktop font-medium">Lavoro</span>
+              {/* Ravai */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.0, ease: "easeOut" }}
+                className="group cursor-pointer"
+                onClick={() => handleProjectClick('ravai')}
+              >
+                <div className="relative bg-surface/30 border border-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg h-[280px] sm:h-auto flex flex-col">
+                  {/* Immagine progetto */}
+                  <div className="w-full h-32 sm:h-40 lg:h-56 mb-2 sm:mb-3 lg:mb-4 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-surface to-surface/80">
+                    <img
+                      src="/assets/projects/ravai-main.jpeg"
+                      alt="RAVAI"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 flex-1 flex flex-col">
+                    <div className="flex items-center gap-1 sm:gap-1.5 lg:gap-2 flex-wrap">
+                      <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-primary/20 text-primary text-small-mobile md:text-small-desktop font-medium rounded-full">
+                        2025
+                      </span>
+                      <div className="flex items-center justify-center w-6 h-6 sm:w-auto sm:h-auto sm:gap-1 sm:px-2 sm:py-1 bg-green-500/20 text-green-500 rounded-full">
+                        <Building className="w-3 h-3" />
+                        <span className="hidden sm:inline text-small-mobile md:text-small-desktop font-medium">Lavoro</span>
+                      </div>
+                    </div>
+                    <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary group-hover:text-accent transition-colors leading-tight">
+                      RAVAI
+                    </h3>
+                    <div className="flex-1 flex flex-col justify-center">
+                      <p className="text-secondary/80 text-small-mobile md:text-small-desktop leading-3 sm:leading-4 lg:leading-5 line-clamp-2">
+                        Web-App servizio landing page
+                      </p>
+                    </div>
+
+                    {/* Link - nascosti su mobile */}
+                    <div className="hidden sm:flex gap-1 sm:gap-1.5 lg:gap-2 pt-1 sm:pt-2">
+                      <a
+                        href="https://github.com/Payd3r/ravai"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-black/50 hover:bg-black/70 text-white text-small-mobile md:text-small-desktop rounded-md sm:rounded-lg transition-colors"
+                      >
+                        <Github className="w-3 h-3 sm:w-4 sm:h-4" />
+                        <span className="hidden lg:inline">GitHub</span>
+                        <span className="lg:hidden">Git</span>
+                      </a>
+                      <a
+                        href="https://ravai.it"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-accent hover:bg-accent/90 text-white text-small-mobile md:text-small-desktop rounded-md sm:rounded-lg transition-colors"
+                      >
+                        <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
+                        Demo
+                      </a>
                     </div>
                   </div>
-                  <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary group-hover:text-accent transition-colors leading-tight">
-                    RAVAI
-                  </h3>
-                  <div className="flex-1 flex flex-col justify-center">
-                    <p className="text-secondary/80 text-small-mobile md:text-small-desktop leading-3 sm:leading-4 lg:leading-5 line-clamp-2">
-                      Web-App servizio landing page
-                    </p>
-                  </div>
-
-                  {/* Link - nascosti su mobile */}
-                  <div className="hidden sm:flex gap-1 sm:gap-1.5 lg:gap-2 pt-1 sm:pt-2">
-                    <a
-                      href="https://github.com/Payd3r/ravai"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-black/50 hover:bg-black/70 text-white text-small-mobile md:text-small-desktop rounded-md sm:rounded-lg transition-colors"
-                    >
-                      <Github className="w-3 h-3 sm:w-4 sm:h-4" />
-                      <span className="hidden lg:inline">GitHub</span>
-                      <span className="lg:hidden">Git</span>
-                    </a>
-                    <a
-                      href="https://ravai.it"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-accent hover:bg-accent/90 text-white text-small-mobile md:text-small-desktop rounded-md sm:rounded-lg transition-colors"
-                    >
-                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Demo
-                    </a>
-                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Tracking Spese */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.1, ease: "easeOut" }}
-              className="group cursor-pointer"
-              onClick={() => handleProjectClick('tracking-spese')}
-            >
-              <div className="relative bg-surface/30 border border-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg h-[280px] sm:h-auto flex flex-col">
-                {/* Immagine progetto */}
-                <div className="w-full h-32 sm:h-40 lg:h-56 mb-2 sm:mb-3 lg:mb-4 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-surface to-surface/80">
-                  <img
-                    src="/assets/projects/spese-main.png"
-                    alt="Tracking Spese"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 flex-1 flex flex-col">
-                  <div className="flex items-center gap-1 sm:gap-1.5 lg:gap-2 flex-wrap">
-                    <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-primary/20 text-primary text-small-mobile md:text-small-desktop font-medium rounded-full">
-                      2024
-                    </span>
-                    <div className="flex items-center justify-center w-6 h-6 sm:w-auto sm:h-auto sm:gap-1 sm:px-2 sm:py-1 bg-purple-500/20 text-purple-500 rounded-full">
-                      <User className="w-3 h-3" />
-                      <span className="hidden sm:inline text-small-mobile md:text-small-desktop font-medium">Personale</span>
+              {/* Tracking Spese */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.1, ease: "easeOut" }}
+                className="group cursor-pointer"
+                onClick={() => handleProjectClick('tracking-spese')}
+              >
+                <div className="relative bg-surface/30 border border-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg h-[280px] sm:h-auto flex flex-col">
+                  {/* Immagine progetto */}
+                  <div className="w-full h-32 sm:h-40 lg:h-56 mb-2 sm:mb-3 lg:mb-4 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-surface to-surface/80">
+                    <img
+                      src="/assets/projects/spese-main.png"
+                      alt="Tracking Spese"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 flex-1 flex flex-col">
+                    <div className="flex items-center gap-1 sm:gap-1.5 lg:gap-2 flex-wrap">
+                      <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-primary/20 text-primary text-small-mobile md:text-small-desktop font-medium rounded-full">
+                        2025
+                      </span>
+                      <div className="flex items-center justify-center w-6 h-6 sm:w-auto sm:h-auto sm:gap-1 sm:px-2 sm:py-1 bg-purple-500/20 text-purple-500 rounded-full">
+                        <User className="w-3 h-3" />
+                        <span className="hidden sm:inline text-small-mobile md:text-small-desktop font-medium">Personale</span>
+                      </div>
+                    </div>
+                    <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary group-hover:text-accent transition-colors leading-tight">
+                      Tracking Spese
+                    </h3>
+                    <div className="flex-1 flex flex-col justify-center">
+                      <p className="text-secondary/80 text-small-mobile md:text-small-desktop leading-3 sm:leading-4 lg:leading-5 line-clamp-2">
+                        App monitoraggio spese
+                      </p>
+                    </div>
+
+                    {/* Link - nascosti su mobile */}
+                    <div className="hidden sm:flex gap-1 sm:gap-1.5 lg:gap-2 pt-1 sm:pt-2">
+                      <a
+                        href="https://github.com/Payd3r/tracking-spese"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-black/50 hover:bg-black/70 text-white text-small-mobile md:text-small-desktop rounded-md sm:rounded-lg transition-colors"
+                      >
+                        <Github className="w-3 h-3 sm:w-4 sm:h-4" />
+                        <span className="hidden lg:inline">GitHub</span>
+                        <span className="lg:hidden">Git</span>
+                      </a>
+                      <a
+                        href="https://tracking-spese.andrea-mauri.duckdns.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-accent hover:bg-accent/90 text-white text-small-mobile md:text-small-desktop rounded-md sm:rounded-lg transition-colors"
+                      >
+                        <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
+                        Demo
+                      </a>
                     </div>
                   </div>
-                  <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary group-hover:text-accent transition-colors leading-tight">
-                    Tracking Spese
-                  </h3>
-                  <div className="flex-1 flex flex-col justify-center">
-                    <p className="text-secondary/80 text-small-mobile md:text-small-desktop leading-3 sm:leading-4 lg:leading-5 line-clamp-2">
-                      App monitoraggio spese
-                    </p>
-                  </div>                 
+                </div>
+              </motion.div>
 
-                  {/* Link - nascosti su mobile */}
-                  <div className="hidden sm:flex gap-1 sm:gap-1.5 lg:gap-2 pt-1 sm:pt-2">
-                    <a
-                      href="https://github.com/Payd3r/tracking-spese"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-black/50 hover:bg-black/70 text-white text-small-mobile md:text-small-desktop rounded-md sm:rounded-lg transition-colors"
-                    >
-                      <Github className="w-3 h-3 sm:w-4 sm:h-4" />
-                      <span className="hidden lg:inline">GitHub</span>
-                      <span className="lg:hidden">Git</span>
-                    </a>
-                    <a
-                      href="https://tracking-spese.vercel.app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-accent hover:bg-accent/90 text-white text-small-mobile md:text-small-desktop rounded-md sm:rounded-lg transition-colors"
-                    >
-                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Demo
-                    </a>
+              {/* Gestionale E-commerce */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, ease: "easeOut" }}
+                className="group cursor-pointer"
+                onClick={() => handleProjectClick('gestionale')}
+              >
+                <div className="relative bg-surface/30 border border-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg h-[280px] sm:h-auto flex flex-col">
+                  {/* Immagine progetto */}
+                  <div className="w-full h-32 sm:h-40 lg:h-56 mb-2 sm:mb-3 lg:mb-4 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-surface to-surface/80">
+                    <img
+                      src="/assets/projects/gestionale-main.png"
+                      alt="Gestionale E-commerce"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
-                </div>
-              </div>
-            </motion.div>
+                  <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 flex-1 flex flex-col">
+                    <div className="flex items-center gap-1 sm:gap-1.5 lg:gap-2 flex-wrap">
+                      <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-primary/20 text-primary text-small-mobile md:text-small-desktop font-medium rounded-full">
+                        2025
+                      </span>
+                      <div className="flex items-center justify-center w-6 h-6 sm:w-auto sm:h-auto sm:gap-1 sm:px-2 sm:py-1 bg-green-500/20 text-green-500 rounded-full">
+                        <Building className="w-3 h-3" />
+                        <span className="hidden sm:inline text-small-mobile md:text-small-desktop font-medium">Lavoro</span>
+                      </div>
+                    </div>
+                    <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary group-hover:text-accent transition-colors leading-tight">
+                      Gestionale E-commerce
+                    </h3>
+                    <div className="flex-1 flex flex-col justify-center">
+                      <p className="text-secondary/80 text-small-mobile md:text-small-desktop leading-3 sm:leading-4 lg:leading-5 line-clamp-2">
+                        Sistema gestione e-commerce
+                      </p>
+                    </div>
 
-            {/* Gestionale E-commerce */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, ease: "easeOut" }}
-              className="group cursor-pointer"
-              onClick={() => handleProjectClick('gestionale')}
-            >
-              <div className="relative bg-surface/30 border border-accent/20 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 hover:bg-surface/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg h-[280px] sm:h-auto flex flex-col">
-                {/* Immagine progetto */}
-                <div className="w-full h-32 sm:h-40 lg:h-56 mb-2 sm:mb-3 lg:mb-4 rounded-lg sm:rounded-xl overflow-hidden bg-gradient-to-br from-surface to-surface/80">
-                  <img
-                    src="/assets/projects/gestionale-main.png"
-                    alt="Gestionale E-commerce"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 flex-1 flex flex-col">
-                  <div className="flex items-center gap-1 sm:gap-1.5 lg:gap-2 flex-wrap">
-                    <span className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-primary/20 text-primary text-small-mobile md:text-small-desktop font-medium rounded-full">
-                      2024
-                    </span>
-                    <div className="flex items-center justify-center w-6 h-6 sm:w-auto sm:h-auto sm:gap-1 sm:px-2 sm:py-1 bg-green-500/20 text-green-500 rounded-full">
-                      <Building className="w-3 h-3" />
-                      <span className="hidden sm:inline text-small-mobile md:text-small-desktop font-medium">Lavoro</span>
+                    {/* Link - nascosti su mobile */}
+                    <div className="hidden sm:flex gap-1 sm:gap-1.5 lg:gap-2 pt-1 sm:pt-2">
+                      <a
+                        href="https://github.com/Payd3r/gestionale-abbamoda"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-black/50 hover:bg-black/70 text-white text-small-mobile md:text-small-desktop rounded-md sm:rounded-lg transition-colors"
+                      >
+                        <Github className="w-3 h-3 sm:w-4 sm:h-4" />
+                        <span className="hidden lg:inline">GitHub</span>
+                        <span className="lg:hidden">Git</span>
+                      </a>
+                      <a
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-accent hover:bg-accent/90 text-white text-small-mobile md:text-small-desktop rounded-md sm:rounded-lg transition-colors"
+                      >
+                        <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
+                        Demo
+                      </a>
                     </div>
                   </div>
-                  <h3 className="text-card-mobile md:text-card-desktop font-bold text-primary group-hover:text-accent transition-colors leading-tight">
-                    Gestionale E-commerce
-                  </h3>
-                  <div className="flex-1 flex flex-col justify-center">
-                    <p className="text-secondary/80 text-small-mobile md:text-small-desktop leading-3 sm:leading-4 lg:leading-5 line-clamp-2">
-                      Sistema gestione e-commerce
-                    </p>
-                  </div>                
-
-                  {/* Link - nascosti su mobile */}
-                  <div className="hidden sm:flex gap-1 sm:gap-1.5 lg:gap-2 pt-1 sm:pt-2">
-                    <a
-                      href="https://github.com/Payd3r/gestionale-abbamoda"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-black/50 hover:bg-black/70 text-white text-small-mobile md:text-small-desktop rounded-md sm:rounded-lg transition-colors"
-                    >
-                      <Github className="w-3 h-3 sm:w-4 sm:h-4" />
-                      <span className="hidden lg:inline">GitHub</span>
-                      <span className="lg:hidden">Git</span>
-                    </a>
-                    <a
-                      href="https://gestionale-abbamoda.vercel.app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-accent hover:bg-accent/90 text-white text-small-mobile md:text-small-desktop rounded-md sm:rounded-lg transition-colors"
-                    >
-                      <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Demo
-                    </a>
-                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
             </div>
           </div>
         </motion.section>
